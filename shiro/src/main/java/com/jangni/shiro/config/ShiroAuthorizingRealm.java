@@ -1,11 +1,14 @@
 package com.jangni.shiro.config;
 
+import com.jangni.shiro.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,7 +19,11 @@ import java.util.Set;
  * @author: Mr.Jangni
  * @create: 2018-07-31 23:48
  **/
+@Component
 public class ShiroAuthorizingRealm extends AuthorizingRealm {
+
+    @Autowired
+    private UserService userService;
     /**
      * 获取授权信息
      * @param principalCollection
@@ -26,6 +33,7 @@ public class ShiroAuthorizingRealm extends AuthorizingRealm {
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+        System.out.println(userService.getUser("Tracy").getId());
         //获得该用户角色
         String role = "获取用户角色";//userMapper.getRole(username);
         Set<String> set = new HashSet<>();
