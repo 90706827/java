@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="druid" />
         <module name="java" />
+        <module name="redis" />
         <module name="shiro" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="druid" target="1.8" />
       <module name="java" target="1.8" />
+      <module name="redis" target="1.8" />
       <module name="shiro" target="1.8" />
     </bytecodeTargetLevel>
   </component>
