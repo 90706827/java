@@ -1,5 +1,7 @@
 package com.jangni.shiro.entity;
 
+import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -13,6 +15,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "tbl_user") // 指定关联的数据库的表名
 public class User implements Serializable {
+
 
     private static final long serialVersionUID = 1L;
 

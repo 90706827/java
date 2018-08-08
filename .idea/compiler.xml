@@ -10,6 +10,7 @@
         <module name="java" />
         <module name="redis" />
         <module name="shiro" />
+        <module name="solr" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,7 @@
       <module name="java" target="1.8" />
       <module name="redis" target="1.8" />
       <module name="shiro" target="1.8" />
+      <module name="solr" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
