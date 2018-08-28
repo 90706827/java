@@ -10,6 +10,7 @@
         <module name="java" />
         <module name="redis" />
         <module name="shiro" />
+        <module name="socket" />
         <module name="solr" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="java" target="1.8" />
       <module name="redis" target="1.8" />
       <module name="shiro" target="1.8" />
+      <module name="socket" target="1.8" />
       <module name="solr" target="1.8" />
     </bytecodeTargetLevel>
   </component>

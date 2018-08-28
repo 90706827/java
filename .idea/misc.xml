@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/druid/pom.xml" />
         <option value="$PROJECT_DIR$/redis/pom.xml" />
         <option value="$PROJECT_DIR$/solr/pom.xml" />
+        <option value="$PROJECT_DIR$/socket/pom.xml" />
       </list>
     </option>
   </component>
