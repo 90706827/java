@@ -1,10 +1,10 @@
 package com.jangni.socket.scala
 
 
+import com.jangni.socket.scala.BizExecutionContext.global
 import io.netty.channel.{ChannelHandlerContext, SimpleChannelInboundHandler}
 import io.netty.handler.codec.TooLongFrameException
 import io.netty.handler.timeout.ReadTimeoutException
-import BizExecutionContext.global
 import org.slf4j.{Logger, LoggerFactory}
 
 class SocketServerHandler(timeoutSeconds: Int, ilistener: IListener) extends SimpleChannelInboundHandler[Array[Byte]] {
@@ -21,6 +21,12 @@ class SocketServerHandler(timeoutSeconds: Int, ilistener: IListener) extends Sim
     } yield {
       logger.info(s"resp xml:${resp}")
       ctx.writeAndFlush(resp.getBytes)
+    }
+
+    if (isKeepAlive) {
+      logger.info("keep alive")
+    } else {
+      ctx.close()
     }
   }
 
