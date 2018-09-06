@@ -7,7 +7,8 @@ import io.netty.handler.codec.TooLongFrameException
 import io.netty.handler.timeout.ReadTimeoutException
 import org.slf4j.{Logger, LoggerFactory}
 
-class SocketServerHandler(timeoutSeconds: Int, ilistener: IListener) extends SimpleChannelInboundHandler[Array[Byte]] {
+class SocketServerHandler(timeoutSeconds: Int, ilistener: IListener)
+  extends SimpleChannelInboundHandler[Array[Byte]] {
 
   private val logger: Logger = LoggerFactory.getLogger("Server")
 

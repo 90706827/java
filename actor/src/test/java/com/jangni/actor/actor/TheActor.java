@@ -32,9 +32,6 @@ public class TheActor extends AbstractActor {
     static ActorSystem system = null;
 
     public static void mian(String[] args){
-        //this is just to make the test below a tiny fraction nicer
-        private ActorSystem getContext() {
-            return system;
-        }
+
     }
 }
