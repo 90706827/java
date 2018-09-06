@@ -63,7 +63,6 @@ public class NettyServer {
             bootstrap.bind(port).sync();
         } catch (Exception e) {
             logger.info("服务监听断口[" + port + "]失败！");
-        } finally {
             stop();
         }
         logger.info("服务监听断口[" + port + "]成功！");

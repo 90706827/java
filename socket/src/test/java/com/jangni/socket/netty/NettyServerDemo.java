@@ -10,6 +10,6 @@ package com.jangni.socket.netty;
 public class NettyServerDemo {
 
     public static void main(String[] args) {
-        new NettyServer(new DateListener());
+        new NettyServer(new DateListener()).start();
     }
 }

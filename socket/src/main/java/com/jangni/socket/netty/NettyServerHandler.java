@@ -30,7 +30,7 @@ public class NettyServerHandler extends SimpleChannelInboundHandler<byte[]> {
     protected void channelRead0(ChannelHandlerContext ctx, byte[] msg) throws Exception {
         String reqXml = new String(msg,"utf-8");
         String respXml = ilistener.proc(reqXml);
-        ctx.writeAndFlush(respXml);
+        ctx.writeAndFlush(respXml.getBytes());
         if(!isKeepAlive){
             ctx.close();
         }

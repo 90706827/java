@@ -44,7 +44,7 @@ class SocketClient(host: String, port: Int, timeout: Int) extends IContext {
       .map {
         case (key, value) => s"<$key>$value</$key>"
       }
-      .mkString("<body>", "", "</body>")
+      .mkString("<context>", "", "</context>")
       .replaceAll(">[\\s]+<", "><")
     val result = (matchActor ? SendAndReq(getkey(jobContext), reqMsg)) (Timeout(timeout, MILLISECONDS)).asInstanceOf[Future[JobContext]]
     result.map {
