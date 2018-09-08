@@ -1,5 +1,6 @@
 package com.jangni.socket.netty;
 
+import com.jangni.socket.core.IListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.TooLongFrameException;

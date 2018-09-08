@@ -1,4 +1,4 @@
-package com.jangni.socket.netty;
+package com.jangni.socket.core;
 
 
 import java.util.concurrent.Future;

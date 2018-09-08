@@ -1,4 +1,4 @@
-package com.jangni.socket.netty;
+package com.jangni.socket.core;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -63,7 +63,9 @@ public class JobContext {
     }
 
     public void setRespCode(String respCode) {
-        toValues("respCode", respCode);
+        if(getRespCode().isEmpty()){
+            toValues("respCode", respCode);
+        }
     }
 
     public String getRespDesc() {
@@ -71,6 +73,8 @@ public class JobContext {
     }
 
     public void setRespDesc(String respDesc) {
-        toValues("respDesc", respDesc);
+        if(getRespDesc().isEmpty()){
+            toValues("respDesc", respDesc);
+        }
     }
 }

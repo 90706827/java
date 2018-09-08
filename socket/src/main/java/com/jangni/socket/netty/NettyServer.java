@@ -1,5 +1,6 @@
 package com.jangni.socket.netty;
 
+import com.jangni.socket.core.IListener;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
