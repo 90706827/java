@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/actor/pom.xml" />
         <option value="$PROJECT_DIR$/demo/pom.xml" />
         <option value="$PROJECT_DIR$/kafka/pom.xml" />
+        <option value="$PROJECT_DIR$/socket_server/pom.xml" />
       </list>
     </option>
   </component>

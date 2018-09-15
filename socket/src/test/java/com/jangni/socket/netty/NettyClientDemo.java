@@ -1,5 +1,7 @@
 package com.jangni.socket.netty;
 
+import com.jangni.socket.core.JobContext;
+
 /**
  * @program: java
  * @description: 客户端
@@ -8,6 +10,12 @@ package com.jangni.socket.netty;
  **/
 public class NettyClientDemo {
     public static void main(String[] args) {
-        new NettyClient().connect();
+       NettyClient client = new NettyClient();
+//       client.connect();
+//        JobContext jobContext = new JobContext();
+//        jobContext.setThridLsid("123456789");
+//        client.post(jobContext);
+//        System.out.println(jobContext.getRespCode()+"-"+jobContext.getRespDesc());
+
     }
 }

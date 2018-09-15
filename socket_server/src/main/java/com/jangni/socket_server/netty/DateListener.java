@@ -1,8 +1,5 @@
-package com.jangni.socket.netty;
+package com.jangni.socket_server.netty;
 
-
-import com.jangni.socket.core.IListener;
-import com.jangni.socket.core.JobContext;
 import org.dom4j.*;
 
 import java.util.Iterator;
@@ -21,7 +18,8 @@ public class DateListener implements IListener {
         JobContext jobContext = new JobContext();
         try {
             Document document = DocumentHelper.parseText(req);
-            Element root = document.getRootElement();//获取根节点
+            //获取根节点
+            Element root = document.getRootElement();
             List<Node> list = root.elements();
             for (Node node : list) {
                 jobContext.toValues(node.getName().trim(), node.getText().trim());
