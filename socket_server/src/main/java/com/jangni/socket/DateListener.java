@@ -1,5 +1,7 @@
-package com.jangni.socket_server.netty;
+package com.jangni.socket;
 
+import com.jangni.socket.core.IListener;
+import com.jangni.socket.core.JobContext;
 import org.dom4j.*;
 
 import java.util.Iterator;

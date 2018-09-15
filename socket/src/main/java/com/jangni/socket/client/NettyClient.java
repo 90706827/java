@@ -1,7 +1,6 @@
-package com.jangni.socket.netty;
+package com.jangni.socket.client;
 
 import akka.actor.ActorRef;
-import akka.japi.pf.Match;
 import akka.pattern.Patterns;
 import akka.util.Timeout;
 import com.jangni.socket.core.JobContext;
@@ -21,7 +20,6 @@ import io.netty.handler.timeout.ReadTimeoutHandler;
 import org.dom4j.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import scala.concurrent.Await;
 import scala.concurrent.Future;
 
@@ -51,6 +49,15 @@ public class NettyClient {
     private Integer connectTimeout = 5000;
     private NioEventLoopGroup workerGroup = new NioEventLoopGroup();
     private Channel channel = null;
+
+    public NettyClient(){
+
+    }
+    public NettyClient(String host, Integer port, Integer timeout) {
+        this.host = host;
+        this.port = port;
+        this.timeout = timeout;
+    }
 
     @PostConstruct
     public void connect() {

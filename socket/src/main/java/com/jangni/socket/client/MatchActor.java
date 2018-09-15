@@ -1,4 +1,4 @@
-package com.jangni.socket.netty;
+package com.jangni.socket.client;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
@@ -7,10 +7,6 @@ import com.jangni.socket.core.SpringUtil;
 import org.dom4j.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import scala.PartialFunction;
-import scala.runtime.BoxedUnit;
 
 import java.util.HashMap;
 import java.util.List;
@@ -33,12 +29,13 @@ public class MatchActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(SendKeyReqMsg.class,req->{
+                .match(SendKeyReqMsg.class, req->{
                     if (map.containsKey(req.getKey())) {
                         JobContext jobContext = new JobContext();
                         try {
                             Document document = DocumentHelper.parseText(req.getReqMsg());
-                            Element root = document.getRootElement();//获取根节点
+                            //获取根节点
+                            Element root = document.getRootElement();
                             List<Node> list = root.elements();
                             for (Node node : list) {
                                 jobContext.toValues(node.getName().trim(), node.getText().trim());

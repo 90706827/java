@@ -1,5 +1,6 @@
-package com.jangni.socket_server.netty;
+package com.jangni.socket.server;
 
+import com.jangni.socket.core.IListener;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -26,7 +27,7 @@ import java.nio.ByteOrder;
  * @create: 2018-09-06 20:26
  **/
 public class NettyServer {
-    protected Logger logger = LoggerFactory.getLogger("server");
+    private Logger logger = LoggerFactory.getLogger("server");
     private int port = 8989;
     private int timeoutSeconds = 60;
     private NioEventLoopGroup listenGroup = new NioEventLoopGroup(1);
@@ -34,6 +35,11 @@ public class NettyServer {
     private IListener iListener;
 
     public NettyServer(IListener iListener) {
+        this.iListener = iListener;
+    }
+    public NettyServer(int port, int timeoutSeconds, IListener iListener) {
+        this.port = port;
+        this.timeoutSeconds = timeoutSeconds;
         this.iListener = iListener;
     }
 

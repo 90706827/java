@@ -1,4 +1,4 @@
-package com.jangni.socket_server.netty;
+package com.jangni.socket.core;
 
 
 public interface IListener {

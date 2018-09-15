@@ -1,4 +1,4 @@
-package com.jangni.socket_server;
+package com.jangni.socket;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

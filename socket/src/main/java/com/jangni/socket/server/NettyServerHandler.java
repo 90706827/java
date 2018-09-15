@@ -1,5 +1,6 @@
-package com.jangni.socket_server.netty;
+package com.jangni.socket.server;
 
+import com.jangni.socket.core.IListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.TooLongFrameException;
@@ -28,22 +29,22 @@ public class NettyServerHandler extends SimpleChannelInboundHandler<byte[]> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, byte[] msg) throws Exception {
-        String reqXml = new String(msg,"utf-8");
+        String reqXml = new String(msg, "utf-8");
         String respXml = ilistener.proc(reqXml);
         ctx.writeAndFlush(respXml.getBytes());
-        if(!isKeepAlive){
+        if (!isKeepAlive) {
             ctx.close();
         }
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        if(cause instanceof ReadTimeoutException){
-            logger.warn("客户端连接服务端在"+timeoutSeconds+"秒内未发送数据，连接将进行关闭！");
-        }else if(cause instanceof TooLongFrameException){
-            logger.warn("客户端发送给服务端的报文超长，请检查报文!",cause);
-        }else{
-            logger.warn("客户端请求服务端发送错误：",cause);
+        if (cause instanceof ReadTimeoutException) {
+            logger.warn("客户端连接服务端在" + timeoutSeconds + "秒内未发送数据，连接将进行关闭！");
+        } else if (cause instanceof TooLongFrameException) {
+            logger.warn("客户端发送给服务端的报文超长，请检查报文!", cause);
+        } else {
+            logger.warn("客户端请求服务端发送错误：", cause);
         }
         ctx.channel().close();
     }
