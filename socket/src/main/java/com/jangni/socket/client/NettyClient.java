@@ -93,6 +93,7 @@ public class NettyClient {
                                                 jobContext.setRespCode("99");
                                                 jobContext.setRespDesc("报文格式错误");
                                             }
+                                            logger.info("");
                                             matchActor.tell(jobContext, ActorRef.noSender());
                                         }
 

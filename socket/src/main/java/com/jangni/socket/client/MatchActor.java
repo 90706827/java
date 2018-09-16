@@ -40,6 +40,7 @@ public class MatchActor extends AbstractActor {
                             for (Node node : list) {
                                 jobContext.toValues(node.getName().trim(), node.getText().trim());
                             }
+                            logger.info("交易重复");
                             jobContext.setRespCode("99");
                             jobContext.setRespDesc("交易重复");
                         } catch (DocumentException e) {
@@ -48,8 +49,9 @@ public class MatchActor extends AbstractActor {
                         }
                         getSender().tell(jobContext,getSender());
                     } else {
+                        logger.info("存储唯一key");
                         map.put(req.getKey(),getSelf());
-                        //发送报文
+                        logger.info("发送报文");
                         nettyClient.write(req.getReqMsg().getBytes());
                     }
                 })
@@ -57,12 +59,14 @@ public class MatchActor extends AbstractActor {
                     //服务端返回的报文处理
                     String key = nettyClient.getKey(jobContext);
                     if (map.containsKey(key)) {
+                        logger.info("服务端返回发送actor响应");
                         getSender().tell(key, getSelf());
                         map.get(key).tell(jobContext, getSender());
                     } else {
-                        logger.warn("服务端返回的交易不存在，交易唯一流水key:" + key);
+                        logger.info("服务端返回的交易不存在，交易唯一流水key:" + key);
                     }
                 }).match(String.class, key -> {
+                    logger.info("移除唯一key");
                     map.remove(key);
                 }).build();
     }

@@ -4,6 +4,8 @@ import com.jangni.socket.client.NettyClient;
 import com.jangni.socket.core.IListener;
 import com.jangni.socket.core.JobContext;
 import org.dom4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +22,7 @@ import java.util.Map;
  **/
 
 public class SocketDataListener implements IListener {
-
+    Logger logger = LoggerFactory.getLogger(this.getClass());
     NettyClient nettyClient;
 
     public SocketDataListener(NettyClient nettyClient) {
@@ -42,8 +44,10 @@ public class SocketDataListener implements IListener {
             jobContext.setRespCode("99");
             jobContext.setRespDesc("报文格式错误");
         }
+        logger.info("业务逻辑处理");
         //业务逻辑处理开始
         nettyClient.post(jobContext);
+        logger.info("业务逻辑处理完成");
         //业务逻辑处理完成
         StringBuffer sb = new StringBuffer("<context>");
         Iterator<Map.Entry<String, String>> entries = jobContext.getContextValues().entrySet().iterator();

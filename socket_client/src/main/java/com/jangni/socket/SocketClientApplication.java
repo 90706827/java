@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Bean;
 public class SocketClientApplication {
     @Bean
     ActorSystem actorSystem() {
-        return ActorSystem.create("system");
+        return ActorSystem.create("system1");
     }
 
     @Bean
