@@ -14,6 +14,8 @@
         <module name="redis" />
         <module name="shiro" />
         <module name="socket" />
+        <module name="socket_client" />
+        <module name="socket_server" />
         <module name="solr" />
       </profile>
     </annotationProcessing>
@@ -26,6 +28,8 @@
       <module name="redis" target="1.8" />
       <module name="shiro" target="1.8" />
       <module name="socket" target="1.8" />
+      <module name="socket_client" target="1.8" />
+      <module name="socket_server" target="1.8" />
       <module name="solr" target="1.8" />
     </bytecodeTargetLevel>
   </component>
