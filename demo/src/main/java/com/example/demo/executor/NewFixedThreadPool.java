@@ -1,5 +1,9 @@
 package com.example.demo.executor;
 
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -26,6 +30,7 @@ public class NewFixedThreadPool {
     }
 
     public static void main(String args[]) {
+
         ExecutorService fixPool = Executors.newFixedThreadPool(10);
         for (int i = 0; i < 10; i++) {
             fixPool.execute(getThread(i));

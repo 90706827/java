@@ -44,18 +44,21 @@ public class SocketTest {
     public static void main(String[] args) {
         SocketTest socketTest = new SocketTest();
         socketTest.connect();
-        JobContext jobContext = new JobContext();
-        jobContext.setThridLsid("1234567891");
-        StringBuilder sb = new StringBuilder("<context>");
-        for (Map.Entry<String, String> entry : jobContext.getContextValues().entrySet()) {
-            sb.append("<").append(entry.getKey()).append(">")
-                    .append(entry.getValue())
-                    .append("</").append(entry.getKey()).append(">");
-        }
-        sb.append("</context>");
-        String reqMsg = sb.toString().replaceAll(">[\\s]+<", "><");
+        for(int i =10000;i<100000;i++){
+            JobContext jobContext = new JobContext();
+            jobContext.setThridLsid(String.valueOf(i));
+            StringBuilder sb = new StringBuilder("<context>");
+            for (Map.Entry<String, String> entry : jobContext.getContextValues().entrySet()) {
+                sb.append("<").append(entry.getKey()).append(">")
+                        .append(entry.getValue())
+                        .append("</").append(entry.getKey()).append(">");
+            }
+            sb.append("</context>");
+            String reqMsg = sb.toString().replaceAll(">[\\s]+<", "><");
 
-        socketTest.write(reqMsg.getBytes());
+            socketTest.write(reqMsg.getBytes());
+        }
+
     }
     private boolean isConnect() {
         return channel.isActive() && channel.isRegistered() && channel.isOpen();
