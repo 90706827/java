@@ -4,10 +4,12 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import com.jangni.socket.core.JobContext;
 import com.jangni.socket.core.SpringUtil;
+import com.sun.xml.internal.ws.runtime.config.TubelineFeatureReader;
 import org.dom4j.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,10 +52,13 @@ public class MatchActor extends AbstractActor {
                         getSender().tell(jobContext,getSender());
                     } else {
                         logger.info("存储唯一key");
-                        map.put(req.getKey(),getSelf());
+                        map.put(req.getKey(),getSender());
                         logger.info("发送报文");
                         nettyClient.write(req.getReqMsg().getBytes());
                     }
+                }).match(String.class, key -> {
+                    logger.info("移除唯一key");
+                    map.remove(key);
                 })
                 .match(JobContext.class, jobContext -> {
                     //服务端返回的报文处理
@@ -65,9 +70,13 @@ public class MatchActor extends AbstractActor {
                     } else {
                         logger.info("服务端返回的交易不存在，交易唯一流水key:" + key);
                     }
-                }).match(String.class, key -> {
-                    logger.info("移除唯一key");
-                    map.remove(key);
                 }).build();
+    }
+
+    public static void main(String[] args) {
+
+         Map<String, String> map = new HashMap<String, String>();
+         map.put("123","1234");
+        System.out.println(map.containsKey("123"));
     }
 }
