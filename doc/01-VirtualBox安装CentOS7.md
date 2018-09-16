@@ -120,13 +120,14 @@
    cat ifcfg-enp0s3
    ```
 
-2. 修改网络配置文件
+2. 动态地址修改网络配置文件
 
    ```shell
    TYPE="Ethernet"
    PROXY_METHOD="none"
    BROWSER_ONLY="no"
-   BOOTPROTO="dhcp"
+   # dhcp
+   BOOTPROTO="dhcp"  
    DEFROUTE="yes"
    IPV4_FAILURE_FATAL="no"
    IPV6INIT="yes"
@@ -137,6 +138,7 @@
    NAME="enp0s3"
    UUID="e6fe93bc-a190-491e-8d5b-da38179819de"
    DEVICE="enp0s3"
+   # yes
    ONBOOT="yes"
    ```
 
