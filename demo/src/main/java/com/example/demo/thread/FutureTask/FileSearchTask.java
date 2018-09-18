@@ -15,7 +15,7 @@ import java.util.concurrent.FutureTask;
  * Created by Mobin on 2016/11/30.
  * 查找文件中的关键字，每个文件一个线程
  */
-public class FileSearchTask {
+public class FileSearchTask{
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         String path = "E:\\test";
         String keyword = "a1";

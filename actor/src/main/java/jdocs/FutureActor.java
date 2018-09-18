@@ -14,6 +14,7 @@ import scala.concurrent.duration.Duration;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @program: java
@@ -36,7 +37,7 @@ public class FutureActor {
         ActorRef actor = system.actorOf(Props.create(MyActor.class));
         String msg = "hello";
         //#ask-blocking
-        Timeout timeout = new Timeout(Duration.create(5, "seconds"));
+        Timeout timeout = new Timeout(Duration.create(5, TimeUnit.SECONDS));
         Future<Object> future = Patterns.ask(actor, msg, timeout);
         Car result = (Car) Await.result(future, timeout.duration());
         System.out.println(result.getName());

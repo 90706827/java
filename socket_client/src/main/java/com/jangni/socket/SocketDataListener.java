@@ -1,13 +1,13 @@
 package com.jangni.socket;
 
+import akka.actor.ActorRef;
 import com.jangni.socket.client.NettyClient;
 import com.jangni.socket.core.IListener;
 import com.jangni.socket.core.JobContext;
+import com.jangni.socket.tps.TransInfo;
 import org.dom4j.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.Iterator;
 import java.util.List;
@@ -24,9 +24,11 @@ import java.util.Map;
 public class SocketDataListener implements IListener {
     Logger logger = LoggerFactory.getLogger(this.getClass());
     NettyClient nettyClient;
+    ActorRef tpsActor;
 
-    public SocketDataListener(NettyClient nettyClient) {
+    public SocketDataListener(NettyClient nettyClient, ActorRef tpsActor) {
         this.nettyClient = nettyClient;
+        this.tpsActor = tpsActor;
     }
 
     @Override
@@ -48,6 +50,9 @@ public class SocketDataListener implements IListener {
         //业务逻辑处理开始
         nettyClient.post(jobContext);
         logger.info("业务逻辑处理完成");
+
+        tpsActor.tell(new TransInfo("",jobContext.getRespCode()),ActorRef.noSender());
+
         //业务逻辑处理完成
         StringBuffer sb = new StringBuffer("<context>");
         Iterator<Map.Entry<String, String>> entries = jobContext.getContextValues().entrySet().iterator();

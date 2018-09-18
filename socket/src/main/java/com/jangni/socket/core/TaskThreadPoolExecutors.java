@@ -13,12 +13,12 @@ import java.util.concurrent.TimeUnit;
  **/
 public class TaskThreadPoolExecutors {
 
-    ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+    private static ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
 
-    public ThreadPoolTaskExecutor getThreadPoolTaskExecutor() {
+    public static ThreadPoolTaskExecutor getThreadPoolTaskExecutor() {
         threadPoolTaskExecutor.setCorePoolSize(4);
         threadPoolTaskExecutor.setMaxPoolSize(8);
-        threadPoolTaskExecutor.setKeepAliveSeconds(1);
+        threadPoolTaskExecutor.setKeepAliveSeconds(10);
         threadPoolTaskExecutor.setAllowCoreThreadTimeOut(true);
         threadPoolTaskExecutor.setThreadNamePrefix("taks-jangni-");
         threadPoolTaskExecutor.afterPropertiesSet();

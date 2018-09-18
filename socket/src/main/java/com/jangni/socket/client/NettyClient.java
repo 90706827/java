@@ -22,12 +22,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scala.concurrent.Await;
 import scala.concurrent.Future;
+import scala.concurrent.duration.Duration;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.net.InetSocketAddress;
 import java.nio.ByteOrder;
-import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -93,7 +93,7 @@ public class NettyClient {
                                                 jobContext.setRespCode("99");
                                                 jobContext.setRespDesc("报文格式错误");
                                             }
-                                            logger.info("");
+                                            logger.info("接收服务端返回的数据");
                                             matchActor.tell(jobContext, ActorRef.noSender());
                                         }
 
@@ -145,9 +145,7 @@ public class NettyClient {
         }
         sb.append("</context>");
         String reqMsg = sb.toString().replaceAll(">[\\s]+<", "><");
-//        Timeout t = Timeout.create(Duration.ofSeconds(1));
-        //#ask-blocking
-        Timeout timeout = Timeout.create(Duration.ofSeconds(10000));
+        Timeout timeout = new Timeout(Duration.create(60, TimeUnit.SECONDS));
         Future<Object> future = Patterns.ask(matchActor, new SendKeyReqMsg(getKey(jobContext), reqMsg), timeout);
         try {
             JobContext result = (JobContext) Await.result(future, timeout.duration());

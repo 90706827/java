@@ -56,17 +56,14 @@ public class MatchActor extends AbstractActor {
                         logger.info("发送报文");
                         nettyClient.write(req.getReqMsg().getBytes());
                     }
-                }).match(String.class, key -> {
-                    logger.info("移除唯一key");
-                    map.remove(key);
-                })
-                .match(JobContext.class, jobContext -> {
+                }).match(JobContext.class, jobContext -> {
                     //服务端返回的报文处理
                     String key = nettyClient.getKey(jobContext);
                     if (map.containsKey(key)) {
                         logger.info("服务端返回发送actor响应");
-                        getSender().tell(key, getSelf());
                         map.get(key).tell(jobContext, getSender());
+                        logger.info("移除唯一key");
+                        map.remove(key);
                     } else {
                         logger.info("服务端返回的交易不存在，交易唯一流水key:" + key);
                     }
