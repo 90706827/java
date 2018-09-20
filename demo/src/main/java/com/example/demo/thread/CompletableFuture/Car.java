@@ -1,24 +1,26 @@
 package com.example.demo.thread.CompletableFuture;
 
-/**
- * @ClassName Car
- * @Description
- * @Author Mr.Jangni
- * @Date 2018/9/20 9:06
- * @Version 1.0
- **/
 public class Car {
-    private String color;
+	int id;
+	int manufacturerId;
+	String model;
+	int year;
+	float rating;
 
-    public Car(String color) {
-        this.color = color;
-    }
+	public Car(int id, int manufacturerId, String model, int year) {
+		this.id = id;
+		this.manufacturerId = manufacturerId;
+		this.model = model;
+		this.year = year;
+	}
 
-    public String getColor() {
-        return color;
-    }
+	void setRating(float rating) {
+		this.rating = rating;
+	}
 
-    public void setColor(String color) {
-        this.color = color;
-    }
+	@Override
+	public String toString() {
+		return "Car (id=" + id + ", manufacturerId=" + manufacturerId + ", model=" + model + ", year=" + year
+				+ ", rating=" + rating;
+	}
 }

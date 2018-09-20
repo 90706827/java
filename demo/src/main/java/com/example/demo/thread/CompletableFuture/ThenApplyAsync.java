@@ -21,31 +21,31 @@ public class ThenApplyAsync {
 
     public static CompletableFuture<Car> starts(Car car) {
         return CompletableFuture.supplyAsync(() -> {
-            logger.info(car.getColor());
-            car.setColor("black");
+            logger.info(car.model);
+            car.model=("black");
             return car;
         }, TaskExecutors.pool);
     }
 
     public static void main(String[] args) {
-        Car car = new Car("yellow");
-        CompletableFuture.supplyAsync(() -> {
-            logger.info(car.getColor());
-            car.setColor("red");
-            return car;
-        }, TaskExecutors.pool).thenCompose(result ->
-                starts(car))
-                .thenCompose(result -> CompletableFuture.supplyAsync(() -> {
-                    logger.info(result.getColor());
-                    result.setColor("green");
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    return result;
-                }, TaskExecutors.pool)).join();
-        logger.info(car.getColor());
+//        Car car = new Car();
+//        CompletableFuture.supplyAsync(() -> {
+//            logger.info(car.getColor());
+//            car.setColor("red");
+//            return car;
+//        }, TaskExecutors.pool).thenCompose(result ->
+//                starts(car))
+//                .thenCompose(result -> CompletableFuture.supplyAsync(() -> {
+//                    logger.info(result.getColor());
+//                    result.setColor("green");
+//                    try {
+//                        Thread.sleep(1000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                    return result;
+//                }, TaskExecutors.pool)).join();
+//        logger.info(car.getColor());
     }
 
 }
