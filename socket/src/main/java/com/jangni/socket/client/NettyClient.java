@@ -26,6 +26,7 @@ import scala.concurrent.duration.Duration;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
 import java.nio.ByteOrder;
 import java.util.Iterator;
@@ -45,14 +46,15 @@ public class NettyClient {
     private String host = "127.0.0.1";
     private Integer port = 8989;
     private Integer timeout = 60000;
-    ActorRef matchActor = SpringUtil.getBean("matchActor",ActorRef.class);
+    ActorRef matchActor = SpringUtil.getBean("matchActor", ActorRef.class);
     private Integer connectTimeout = 5000;
     private NioEventLoopGroup workerGroup = new NioEventLoopGroup();
     private Channel channel = null;
 
-    public NettyClient(){
+    public NettyClient() {
 
     }
+
     public NettyClient(String host, Integer port, Integer timeout) {
         this.host = host;
         this.port = port;
@@ -89,7 +91,7 @@ public class NettyClient {
                                                 for (Node node : list) {
                                                     jobContext.toValues(node.getName().trim(), node.getText().trim());
                                                 }
-                                            } catch (DocumentException e) {
+                                            } catch (DocumentException | UnsupportedEncodingException e) {
                                                 jobContext.setRespCode("99");
                                                 jobContext.setRespDesc("报文格式错误");
                                             }
@@ -147,16 +149,17 @@ public class NettyClient {
         String reqMsg = sb.toString().replaceAll(">[\\s]+<", "><");
         Timeout timeout = new Timeout(Duration.create(60, TimeUnit.SECONDS));
         Future<Object> future = Patterns.ask(matchActor, new SendKeyReqMsg(getKey(jobContext), reqMsg), timeout);
+        JobContext result = jobContext;
         try {
-            JobContext result = (JobContext) Await.result(future, timeout.duration());
-            jobContext.getContextValues().clear();
-            Iterator<Map.Entry<String, String>> iterator = result.getContextValues().entrySet().iterator();
-            while (iterator.hasNext()) {
-                Map.Entry<String, String> entry = iterator.next();
-                jobContext.getContextValues().put(entry.getKey(), entry.getValue());
-            }
+            result = (JobContext) Await.result(future, timeout.duration());
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        jobContext.getContextValues().clear();
+        Iterator<Map.Entry<String, String>> iterator = result.getContextValues().entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, String> entry = iterator.next();
+            jobContext.getContextValues().put(entry.getKey(), entry.getValue());
         }
 
     }

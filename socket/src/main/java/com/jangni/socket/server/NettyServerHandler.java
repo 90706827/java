@@ -1,7 +1,6 @@
 package com.jangni.socket.server;
 
 import com.jangni.socket.core.IListener;
-import com.jangni.socket.core.TaskThreadPoolExecutors;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.TooLongFrameException;
@@ -10,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.UnsupportedEncodingException;
-import java.util.concurrent.CompletableFuture;
 
 
 /**
@@ -33,20 +31,17 @@ public class NettyServerHandler extends SimpleChannelInboundHandler<byte[]> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, byte[] msg) throws Exception {
-        CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> {
-            String reqXml = null;
-            try {
-                reqXml = new String(msg, "utf-8");
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-            String respXml = ilistener.proc(reqXml);
-            ctx.writeAndFlush(respXml.getBytes());
-            if (!isKeepAlive) {
-                ctx.close();
-            }
-            return null;
-        }, TaskThreadPoolExecutors.getThreadPoolTaskExecutor());
+        String reqXml = null;
+        try {
+            reqXml = new String(msg, "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        String respXml = ilistener.proc(reqXml);
+        ctx.writeAndFlush(respXml.getBytes());
+        if (!isKeepAlive) {
+            ctx.close();
+        }
     }
 
     @Override

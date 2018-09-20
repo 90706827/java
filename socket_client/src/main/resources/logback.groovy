@@ -25,4 +25,4 @@ appender(console,ConsoleAppender){
     }
 }
 
-root(ERROR,[base,console])
+root(INFO,[base,console])

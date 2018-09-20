@@ -1,13 +1,11 @@
 package com.jangni.socket;
 
 import akka.actor.ActorRef;
-import com.jangni.socket.core.TaskThreadPoolExecutors;
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -28,7 +26,7 @@ public class ScheluleTpsActor {
     @Autowired
     ActorRef tpsActor;
 
-    @PostConstruct
+//    @PostConstruct
     public void init(){
         executorService.scheduleAtFixedRate(new Runnable() {
             @Override

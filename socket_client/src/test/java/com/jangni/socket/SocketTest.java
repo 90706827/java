@@ -45,11 +45,11 @@ public class SocketTest {
         SocketTest socketTest = new SocketTest();
         socketTest.connect();
         int start = 100000;
-        while(start < 200001){
-            for(int i =0;i<5;i++){
+        while(start < 100005){
+            for(int i =0;i<1;i++){
                 start++;
                 JobContext jobContext = new JobContext();
-                jobContext.setThridLsid(String.valueOf(i));
+                jobContext.setThridLsid(String.valueOf(start));
                 StringBuilder sb = new StringBuilder("<context>");
                 for (Map.Entry<String, String> entry : jobContext.getContextValues().entrySet()) {
                     sb.append("<").append(entry.getKey()).append(">")
@@ -60,11 +60,6 @@ public class SocketTest {
                 String reqMsg = sb.toString().replaceAll(">[\\s]+<", "><");
 
                 socketTest.write(reqMsg.getBytes());
-            }
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
             }
         }
 
