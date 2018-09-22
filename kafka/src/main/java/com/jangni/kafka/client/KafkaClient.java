@@ -22,7 +22,7 @@ public class KafkaClient {
     private String reqTimeoutMs = "15000";
     private String valueSerializer = "org.apache.kafka.common.serialization.StringSerializer";
     private String keySerializer = "org.apache.kafka.common.serialization.StringSerializer";
-    private String bootstrapServers = "127.0.0.1:50001,127.0.0.1:50002";
+    private String bootstrapServers = "192.168.0.121:50005,192.168.0.122:50005,192.168.0.123:50005";
     private String acks = "all";
     private String retries = "0";
     private String batchSize = "16384";
@@ -84,5 +84,10 @@ public class KafkaClient {
         });
         kafkaProducer.flush();
     }
-
+    public static void main(String[] args){
+        KafkaClient kafkaClient = new KafkaClient("192.168.0.121:50005,192.168.0.122:50005,192.168.0.123:50005");
+        for(int i=0;i<1000;i++){
+            kafkaClient.push("test","test"+i);
+        }
+    }
 }
