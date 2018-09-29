@@ -14,10 +14,10 @@ import java.util.concurrent.LinkedBlockingQueue;
  **/
 public class WorkerRunnable implements Runnable {
     protected Logger logger = LoggerFactory.getLogger(WorkerRunnable.class);
-    private LinkedBlockingQueue<ConsumerRecord<String, String>> queue;
+    private LinkedBlockingQueue<Object> queue;
     protected KafkaServerHandler kafkaServerHandler;
 
-    public WorkerRunnable(LinkedBlockingQueue<ConsumerRecord<String, String>> queue, KafkaServerHandler kafkaServerHandler) {
+    public WorkerRunnable(LinkedBlockingQueue<Object> queue, KafkaServerHandler kafkaServerHandler) {
         this.queue = queue;
         this.kafkaServerHandler = kafkaServerHandler;
     }
@@ -26,12 +26,8 @@ public class WorkerRunnable implements Runnable {
     public void run() {
         while (!Thread.interrupted()) {
             try {
-                while (queue.isEmpty()) {
-                    kafkaServerHandler.proc(queue.take());
-                }
-            } catch (InterruptedException e) {
-                logger.warn("线程退出", e);
-            } catch (Throwable cause) {
+                queue.stream().forEach(take-> kafkaServerHandler.proc((ConsumerRecord<String, String>)take));
+            }catch (Throwable cause) {
                 logger.error("工作线程发生未知异常", cause);
             }
         }

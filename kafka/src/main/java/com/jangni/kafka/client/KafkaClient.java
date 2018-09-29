@@ -86,7 +86,7 @@ public class KafkaClient {
     }
     public static void main(String[] args){
         KafkaClient kafkaClient = new KafkaClient("192.168.0.121:50005,192.168.0.122:50005,192.168.0.123:50005");
-        for(int i=0;i<1000;i++){
+        for(int i=0;i<1;i++){
             kafkaClient.push("test","test"+i);
         }
     }

@@ -1,12 +1,12 @@
 package com.jangni.kafka.server;
 
-import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
@@ -21,19 +21,30 @@ import java.util.concurrent.LinkedBlockingQueue;
  **/
 public class KafkaServer {
     protected Logger logger = LoggerFactory.getLogger(KafkaServer.class);
-    protected String bootstrapServers = "127.0.0.1:50001,127.0.0.1:50002";
-    protected String groupId = "";
+    /**
+     *  kafka的server地址
+     */
+    protected String bootstrapServers = "192.168.0.121:50005,192.168.0.122:50005,192.168.0.123:50005";
+    /**
+     *设置kafka组id
+     */
+    protected String groupId = "groupid";
+    //设置value的反序列化类
     protected String valueDeserializer = "org.apache.kafka.common.serialization.StringDeserializer";
+    //设置key的反序列化类
     protected String keyDeserializer = "org.apache.kafka.common.serialization.StringDeserializer";
+    //请求等待响应时间,单位毫秒。默认值是305000
     protected String reqTimeoutMs = "60000";
     //如果缓冲区中没有数据，轮训的间隔时间，单位毫秒
-    protected long pollMillions = 200;
-    protected int workThreadNum = 4;
-    protected LinkedBlockingQueue<ConsumerRecord<String, String>> queue = new LinkedBlockingQueue<ConsumerRecord<String, String>>();
+    protected long pollMillions = 20000;
+    //设置工作线程数
+    protected int workThreadNum = 1;
+    protected LinkedBlockingQueue<Object> queue = new LinkedBlockingQueue<Object>();
     protected ExecutorService workerExecutor;
     protected ExecutorService monitorExecutor;
     protected KafkaConsumer<String, String> kafkaConsumer;
-    protected List<String> topics;
+    //设置关注的topic列表
+    protected List<String> topics = new ArrayList<String>();
     protected KafkaServerHandler kafkaServerHandler = new KafkaServerHandler();
 
 
@@ -58,14 +69,14 @@ public class KafkaServer {
         props.setProperty("enable.auto.commit", "true");
         //每次从单个分区中拉取的消息最大尺寸（byte），默认1MB
         props.setProperty("max.partition.fetch.bytes", "1048576");
-
+        topics.add("test");
         kafkaConsumer = new KafkaConsumer<String, String>(props);
         kafkaConsumer.subscribe(topics);
         for (int i = 0; i < workThreadNum; i++) {
             workerExecutor.execute(new WorkerRunnable(queue, kafkaServerHandler));
         }
 
-        monitorExecutor.execute(new MonitorRunnable());
+        monitorExecutor.execute(new MonitorRunnable(kafkaConsumer,queue,topics,pollMillions));
 
         logger.info("服务连接到Kafka节点" + props.get("bootstrap.servers") + "成功！");
 
@@ -83,5 +94,11 @@ public class KafkaServer {
         kafkaConsumer = null;
         queue.clear();
         logger.info("Kafka服务停止操作完成.....");
+    }
+
+
+    public static void main(String[] args){
+        KafkaServer kafkaServer = new KafkaServer();
+        kafkaServer.start();
     }
 }

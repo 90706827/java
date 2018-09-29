@@ -83,7 +83,7 @@ log.roll.hours=1
 log.segment.bytes=1073741284
 log.retention.check.interval.ms=3600000
 zookeeper.connect=192.168.0.121:2181,192.168.0.122:2182,192.168.0.123:2183
-zookeeper.connection.timeout.ms=6000
+zookeeper.connection.timeout.ms=60000
 ```
 
 ### 节点二配置
@@ -149,7 +149,7 @@ log.roll.hours=1
 log.segment.bytes=1073741284
 log.retention.check.interval.ms=3600000
 zookeeper.connect=192.168.0.121:2181,192.168.0.122:2182,192.168.0.123:2183
-zookeeper.connection.timeout.ms=6000
+zookeeper.connection.timeout.ms=60000
 ```
 
 ### 节点三配置
@@ -215,7 +215,7 @@ log.roll.hours=1
 log.segment.bytes=1073741284
 log.retention.check.interval.ms=3600000
 zookeeper.connect=192.168.0.121:2181,192.168.0.122:2182,192.168.0.123:2183
-zookeeper.connection.timeout.ms=6000
+zookeeper.connection.timeout.ms=60000
 ```
 
 
@@ -331,10 +331,7 @@ sh bin/kafka-console-consumer.sh --bootstrap-server 192.168.0.121:50005,192.168.
 | log.flush.interval.messages              | log文件”sync”到磁盘之前累积的消息条数,因为磁盘IO操作是一个慢操作,但又是一个”数据可靠性"的必要手段,所以此参数的设置,需要在"数据可靠性"与"性能"之间做必要的权衡.如果此值过大,将会导致每次"fsync"的时间较长(IO阻塞),如果此值过小,将会导致"fsync"的次数较多,这也意味着整体的client请求有一定的延迟.物理server故障,将会导致没有fsync的消息丢失.表示每当消息记录数达到设定值时flush一次数据到磁盘 |
 | log.flush.interval.ms                    | 仅仅通过interval来控制消息的磁盘写入时机,是不足的.此参数用于控制"fsync"的时间间隔,如果消息量始终没有达到阀值,但是离上一次磁盘同步的时间间隔达到阀值,也将触发 |
 | log.cleanup.policy                       | 日志清理策略选择有：delete和compact主要针对过期数据的处理，或是日志文件达到限制的额度，会被 topic创建时的指定参数覆盖 |
-| log.retention.hours                      | 数据文件保留多长时间， 存储的最大时间超过这个时间会根据log.cleanup.policy设置数据清除策略：log.retention.bytes和log.retention.minutes或log.retention.hours任意一个达到要求，都会执行删除
-有2删除数据文件方式：
-      按照文件大小删除：log.retention.bytes
-  按照2中不同时间粒度删除：分别为分钟，小时 |
+| log.retention.hours                      | 数据文件保留多长时间， 存储的最大时间超过这个时间会根据log.cleanup.policy设置数据清除策略：log.retention.bytes和log.retention.minutes或log.retention.hours任意一个达到要求，都会执行删除 有2删除数据文件方式：按照文件大小删除：log.retention.bytes 按照2中不同时间粒度删除：分别为分钟，小时 |
 | log.segment.bytes                        | topic每个分区的最大文件大小，一个topic的大小限制 = 分区数*log.retention.bytes。-1没有大小限log.retention.bytes和log.retention.minutes任意一个达到要求，都会执行删除，会被topic创建时的指定参数覆盖 |
 | log.retention.check.interval.ms          | 文件大小检查的周期时间，是否处罚 log.cleanup.policy中设置的策略 |
 | zookeeper.connect                        | zookeeper集群的地址，可以是多个，多个之间用逗号分割 hostname1:port1,hostname2:port2,hostname3:port3 |

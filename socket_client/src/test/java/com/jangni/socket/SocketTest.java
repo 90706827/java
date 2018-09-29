@@ -2,6 +2,7 @@ package com.jangni.socket;
 
 import akka.actor.ActorRef;
 import com.jangni.socket.core.JobContext;
+import com.jangni.socket.core.TaskExecutors;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -18,10 +19,12 @@ import org.dom4j.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
 import java.nio.ByteOrder;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -35,7 +38,7 @@ public class SocketTest {
     Logger logger  = LoggerFactory.getLogger(this.getClass());
     private String host = "127.0.0.1";
     private int port = 8888;
-    private int timeout = 60000;
+    private int timeout = 70000;
 
     private NioEventLoopGroup workerGroup = new NioEventLoopGroup();
     private Channel channel = null;
@@ -45,7 +48,7 @@ public class SocketTest {
         SocketTest socketTest = new SocketTest();
         socketTest.connect();
         int start = 100000;
-        while(start < 100005){
+        while(start < 100001){
             for(int i =0;i<1;i++){
                 start++;
                 JobContext jobContext = new JobContext();
@@ -97,20 +100,22 @@ public class SocketTest {
                                     .addLast(new SimpleChannelInboundHandler<byte[]>() {
                                         @Override
                                         protected void channelRead0(ChannelHandlerContext ctx, byte[] msg) throws Exception {
-                                            JobContext jobContext = new JobContext();
-                                            try {
-                                                Document document = DocumentHelper.parseText(new String(msg, "utf-8"));
-                                                //获取根节点
-                                                Element root = document.getRootElement();
-                                                List<Node> list = root.elements();
-                                                for (Node node : list) {
-                                                    jobContext.toValues(node.getName().trim(), node.getText().trim());
+                                            CompletableFuture.runAsync(()->{
+                                                JobContext jobContext = new JobContext();
+                                                try {
+                                                    Document document = DocumentHelper.parseText(new String(msg, "utf-8"));
+                                                    //获取根节点
+                                                    Element root = document.getRootElement();
+                                                    List<Node> list = root.elements();
+                                                    for (Node node : list) {
+                                                        jobContext.toValues(node.getName().trim(), node.getText().trim());
+                                                    }
+                                                } catch (DocumentException | UnsupportedEncodingException e) {
+                                                    jobContext.setRespCode("99");
+                                                    jobContext.setRespDesc("报文格式错误");
                                                 }
-                                            } catch (DocumentException e) {
-                                                jobContext.setRespCode("99");
-                                                jobContext.setRespDesc("报文格式错误");
-                                            }
-                                            logger.info(jobContext.getRespCode() + "=" + jobContext.getRespDesc());
+                                                logger.info(jobContext.getRespCode() + "=" + jobContext.getRespDesc());
+                                            }, TaskExecutors.pool);
                                         }
 
                                         @Override
