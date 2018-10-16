@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/kafka/pom.xml" />
         <option value="$PROJECT_DIR$/socket_server/pom.xml" />
         <option value="$PROJECT_DIR$/socket_client/pom.xml" />
+        <option value="$PROJECT_DIR$/jersey/pom.xml" />
       </list>
     </option>
   </component>

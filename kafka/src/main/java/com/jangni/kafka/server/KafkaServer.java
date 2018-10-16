@@ -1,5 +1,6 @@
 package com.jangni.kafka.server;
 
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,7 +40,7 @@ public class KafkaServer {
     protected long pollMillions = 20000;
     //设置工作线程数
     protected int workThreadNum = 1;
-    protected LinkedBlockingQueue<Object> queue = new LinkedBlockingQueue<Object>();
+    protected LinkedBlockingQueue<ConsumerRecord<String, String>> queue = new LinkedBlockingQueue<ConsumerRecord<String, String>>();
     protected ExecutorService workerExecutor;
     protected ExecutorService monitorExecutor;
     protected KafkaConsumer<String, String> kafkaConsumer;
