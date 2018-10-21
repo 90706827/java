@@ -5,12 +5,12 @@
 > **一、安装依赖包**
 ```
 顺序安装依赖包：遇到【y/n】都选y回车
-yum install gcc*
-yum install pcre*
-yum install zlib*
-yum install openssl*
-yum install links*
-yum install lsb
+yum -y install gcc*
+yum -y install pcre*
+yum -y install zlib*
+yum -y install openssl*
+yum -y install links*
+yum -y install lsb
 查看系统版本：lsb_release -a
 ```
 > **二、下载安装包**
@@ -68,7 +68,7 @@ cd /opt/software/nginx-1.10.2/
 --with-threads \
 --with-stream \
 --with-stream_ssl_module \
---with-openssl=/opt/software/nginx-1.10.2/openssl-1.0.2j
+--with-openssl=/var/cache/nginx/openssl-1.0.2j
 
 make & make install
 ```
