@@ -241,6 +241,10 @@ location ~/group([0-9])/M00 {
 }
 #启动命令：
 /usr/local/nginx/sbin/nginx
+#配置开机启动
+vim /etc/rc.d/rc.local
+#写入：
+/usr/local/nginx/sbin/nginx
 #访问图片成功则配置成功
 http://192.168.0.121:8089/group1/M00/00/00/wKgAeVvMoSGAX5apAAL3tTRs1g0493.jpg
 ```
