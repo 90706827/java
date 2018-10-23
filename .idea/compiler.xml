@@ -9,6 +9,7 @@
         <module name="actor" />
         <module name="demo" />
         <module name="druid" />
+        <module name="fastdfs" />
         <module name="java" />
         <module name="jersey" />
         <module name="kafka" />
@@ -24,6 +25,7 @@
       <module name="actor" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="druid" target="1.8" />
+      <module name="fastdfs" target="1.8" />
       <module name="java" target="1.8" />
       <module name="jersey" target="1.8" />
       <module name="kafka" target="1.8" />
