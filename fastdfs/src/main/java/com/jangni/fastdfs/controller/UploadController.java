@@ -17,14 +17,14 @@ public class UploadController {
         // 显示图片
         map.put("fileName", file.getOriginalFilename());
         UploadFileUtil uploadFileUtil = new UploadFileUtil();
-        String url = "";
+        StringBuffer url = new StringBuffer("");
         try {
-            url = "192.168.0.121:8089/" + uploadFileUtil.upload(file.getOriginalFilename());
+            url.append("<img src='http://192.168.0.121:8089/").append(uploadFileUtil.upload(file.getOriginalFilename())).append("'/>");
         } catch (Exception e) {
             e.printStackTrace();
         }
         System.out.println(url);
 
-        return url;
+        return url.toString();
     }
 }
