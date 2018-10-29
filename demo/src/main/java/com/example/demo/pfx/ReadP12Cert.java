@@ -28,12 +28,6 @@ public class ReadP12Cert {
         keyStore();
     }
 
-    public ReadP12Cert(String keystoreFile, String keystorePassrowd, String keystoreAlias) throws Exception {
-        this.keystoreFile = keystoreFile;
-        this.keystorePassrowd = keystorePassrowd;
-        this.keystoreAlias = keystoreAlias;
-        keyStore();
-    }
     private void keyStore() {
         try {
             InputStream in = new FileInputStream(new File(keystoreFile));
@@ -56,10 +50,16 @@ public class ReadP12Cert {
         }
     }
 
+    public ReadP12Cert(String keystoreFile, String keystorePassrowd, String keystoreAlias) throws Exception {
+        this.keystoreFile = keystoreFile;
+        this.keystorePassrowd = keystorePassrowd;
+        this.keystoreAlias = keystoreAlias;
+        keyStore();
+    }
 
     public static void main(String[] args) {
         ReadP12Cert readP12Cert = new ReadP12Cert("E://sposzmkuat.pfx", "111111");
-        String publicStr =readP12Cert.getPublicKey();
+        String publicStr = readP12Cert.getPublicKey();
         String privateStr = readP12Cert.getPrivateKey();
 
 //        String privateStr = "MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDPX1pMUkjYyT77vtOmjNGoU88GsU8qFeD8UpbZ0FBvtvl3UnR7HRQuwcGypBgdZMRu+cS+d/s+zgxDowAdNwToU384DhvrsfnE/Mr+cSOB+BZGOxCi3Uhoklcnads5OqxdFLN9toahOm2rZFsUrgJ+8Ir2bc4FP3pVbwS5lbVnCxaujQjBXSggXw3eC0Irgo+UZiQqM8Wse2ynJJz7d4SBqGoBfEmx92LboIOKo8ql2yowZLpsjtRchmBE5nQ+zzMoQcup10+DZoB1XS3SFil3LOu2wXVOPEY3cotmHCAVDUqeIW43XrLOhwAdZffWkg/6GkTZ227zrUBrzu6QM/DbAgMBAAECggEAMIHbe3Lb+2nHw9d1ZsYV3MwN50DehbescxlWlAi4aAli/VhaStoYeH92MbVUtrt1f4gJT4x9Rsmn8MJWKn9ONJIjdhdGzLFK/ZssWKxaY/KGM1Npps8gOuXQYTXPw+lHnFZVThi+EUS7lpXZAFNb3hmiR9aTlIKuuQFJF6g/UKTJfMO/WbzWPcW8r7o0IL0QwZA9A7BdBRDo2XXYo1yKAD7KPCKCWSngI4vjj/6sA50w7xrLaWNduJ5p16uJilxW234m9/KKgnbXr6mfYTQkWbcGR5H9DyrPyk/jTAQ9LqeYe2GHNFHYKAtRH9ThbY/EF+M4h/xawfrlc0XIEOufYQKBgQDwMSPzDbyiMNn1DvR57v0kZsPV/LwNqkTLSN0/VhBI6gfWkOYbNh/wZzpxXLA6Ec7wWFpN5S5RqoW+JUGkpjoFoyq/xbRro10Qx9+pSYMcwGp8FOkXjt0zoJ+1swO1b/aPMQlKvxm6MNc1aW2oPKle5mmQc+aXD9ki0EGuA70+mQKBgQDdBUFWq6RDoRm2fhUl51W75F/VJHXeuiP2QuFdbPClJu1idkkOZKjEfb/2IGvMqFV+Rcr9zzzbEXQNEH2/bs2Z3h0eBmDFIbWR5x1HbwhRyNas+bZbH4crFb5Vpq3J0Nx/3DYNy/LembAKG5J9t50d1BPTGtQIlFiEX0e6NTtXkwKBgH3lU/F+3sOolWW0bAJJeRgOYVGVQkBrYdmnnIgpJSoCuQ8HLgVPTlhk0yY+LgSR9wTVWqf/m1Kk7asnvgt+MWVpC+wuxY2xuAMmsJ378SQt2uKk1zRI5rq701qatTPxtquBSVyLZAHKvdK6KwcGnMQoQ2a6yT+ex/JOdE6wmQ3pAoGAMCbi80T1xp4kgfO6G8XokcTRdBg7bcjT6OTtQHNpgjGW6iqnA/G+KwDSf4bUtYO/DIGcFeu+cGO/CtGa88fqFymi4lW1Y31Sl3TolhWElHzS+GB28CdQRXy5OOPVXPCZ+Wk6hYr3YLPO/ITBR45nNoZrw0RHCY94MW6oq9LJGO0CgYAp8lsYKOH2/zH1kzlBoKpCLtCYjbcycPWueqKMyAXwxpOrPi3NzHPSo8oXvDIovEG6UKLl6d4CREqIjSpZYvRE+k203o6+yR74PPM8BkkmRVhHMgbtquoMUsz75FCG3Ol4UAABzax4LiOdhZ3zwcvnp7RILSIPEOiSQJnJiqr5CA==";
@@ -68,6 +68,32 @@ public class ReadP12Cert {
         String signStr = signString(privateStr, "123123");
         System.out.println(signVerify(publicStr, "123123", signStr));
 
+    }
+
+    public String getPublicKey() {
+        String pubKey = "";
+        try {
+            Certificate cert = keyStore.getCertificate(keystoreAlias);
+            PublicKey pubkey = cert.getPublicKey(); // 公钥
+            pubKey = Base64.encode(pubkey.getEncoded());
+            System.out.println("公钥：[" + pubKey + "]");
+        } catch (KeyStoreException e1) {
+            e1.printStackTrace();
+        }
+        return pubKey;
+    }
+
+    public String getPrivateKey() {
+        String priKey = "";
+        try {
+
+            PrivateKey privateKey = (PrivateKey) keyStore.getKey(keystoreAlias, keystorePassrowd.toCharArray());
+            priKey = Base64.encode(privateKey.getEncoded());
+            System.out.println("私钥：[" + priKey + "]");
+        } catch (KeyStoreException | NoSuchAlgorithmException | UnrecoverableKeyException e1) {
+            e1.printStackTrace();
+        }
+        return priKey;
     }
 
     /**
@@ -80,7 +106,6 @@ public class ReadP12Cert {
     private static String signString(String privateKey, String data) {
         String signValue = "";
         try {
-
             Signature sign = Signature.getInstance("SHA1WithRSA");
             PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(Base64.decode(privateKey));
             KeyFactory keyf = KeyFactory.getInstance("RSA");
@@ -163,32 +188,4 @@ public class ReadP12Cert {
         }
         return signBool;
     }
-
-    public String getPrivateKey() {
-        String priKey = "";
-        try {
-
-            PrivateKey privateKey = (PrivateKey) keyStore.getKey(keystoreAlias, keystorePassrowd.toCharArray());
-            priKey = Base64.encode(privateKey.getEncoded());
-            System.out.println("私钥：[" + priKey + "]");
-        } catch (KeyStoreException | NoSuchAlgorithmException | UnrecoverableKeyException e1) {
-            e1.printStackTrace();
-        }
-        return priKey;
-    }
-
-    public String getPublicKey() {
-        String pubKey = "";
-        try {
-            Certificate cert = keyStore.getCertificate(keystoreAlias);
-            PublicKey pubkey = cert.getPublicKey(); // 公钥
-            pubKey = Base64.encode(pubkey.getEncoded());
-            System.out.println("公钥：[" + pubKey + "]");
-        } catch (KeyStoreException e1) {
-            e1.printStackTrace();
-        }
-        return pubKey;
-    }
-
-
 }
