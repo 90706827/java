@@ -1,7 +1,8 @@
 package com.example.demo.pfx;
 
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+import org.apache.commons.codec.binary.Hex;
 
+import javax.xml.bind.DatatypeConverter;
 import java.io.*;
 import java.security.*;
 import java.security.cert.Certificate;
@@ -12,17 +13,17 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.Enumeration;
 import java.util.NoSuchElementException;
 
-public class ReadP12Cert {
+public class PkcsCert {
 
     private KeyStore keyStore = null;
     private String keystoreAlias = null;
     private String keystoreFile = null;
     private String keystorePassrowd = null;
 
-    public ReadP12Cert() {
+    public PkcsCert() {
     }
 
-    public ReadP12Cert(String keystoreFile, String keystorePassrowd) {
+    public PkcsCert(String keystoreFile, String keystorePassrowd) {
         this.keystoreFile = keystoreFile;
         this.keystorePassrowd = keystorePassrowd;
         keyStore();
@@ -50,7 +51,7 @@ public class ReadP12Cert {
         }
     }
 
-    public ReadP12Cert(String keystoreFile, String keystorePassrowd, String keystoreAlias) throws Exception {
+    public PkcsCert(String keystoreFile, String keystorePassrowd, String keystoreAlias) throws Exception {
         this.keystoreFile = keystoreFile;
         this.keystorePassrowd = keystorePassrowd;
         this.keystoreAlias = keystoreAlias;
@@ -58,7 +59,7 @@ public class ReadP12Cert {
     }
 
     public static void main(String[] args) {
-        ReadP12Cert readP12Cert = new ReadP12Cert("E://sposzmkuat.pfx", "111111");
+        PkcsCert readP12Cert = new PkcsCert("D://sposzmkuat.pfx", "111111");
         String publicStr = readP12Cert.getPublicKey();
         String privateStr = readP12Cert.getPrivateKey();
 
@@ -75,7 +76,7 @@ public class ReadP12Cert {
         try {
             Certificate cert = keyStore.getCertificate(keystoreAlias);
             PublicKey pubkey = cert.getPublicKey(); // 公钥
-            pubKey = Base64.encode(pubkey.getEncoded());
+            pubKey = Hex.encodeHexString(pubkey.getEncoded());
             System.out.println("公钥：[" + pubKey + "]");
         } catch (KeyStoreException e1) {
             e1.printStackTrace();
@@ -88,7 +89,7 @@ public class ReadP12Cert {
         try {
 
             PrivateKey privateKey = (PrivateKey) keyStore.getKey(keystoreAlias, keystorePassrowd.toCharArray());
-            priKey = Base64.encode(privateKey.getEncoded());
+            priKey = Hex.encodeHexString(privateKey.getEncoded());
             System.out.println("私钥：[" + priKey + "]");
         } catch (KeyStoreException | NoSuchAlgorithmException | UnrecoverableKeyException e1) {
             e1.printStackTrace();
@@ -107,13 +108,13 @@ public class ReadP12Cert {
         String signValue = "";
         try {
             Signature sign = Signature.getInstance("SHA1WithRSA");
-            PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(Base64.decode(privateKey));
+            PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(DatatypeConverter.parseHexBinary(privateKey));
             KeyFactory keyf = KeyFactory.getInstance("RSA");
             PrivateKey priKey = keyf.generatePrivate(priPKCS8);
             sign.initSign(priKey);//设置私钥
             sign.update(data.getBytes());//设置明文
             byte[] signRstByte = sign.sign();//加密
-            signValue = Base64.encode(signRstByte);
+            signValue = Hex.encodeHexString(signRstByte);
             System.out.println("密文：[" + signValue + "]");
         } catch (InvalidKeyException | NoSuchAlgorithmException | SignatureException | InvalidKeySpecException e1) {
             e1.printStackTrace();
@@ -134,10 +135,10 @@ public class ReadP12Cert {
         try {
             Signature sign = Signature.getInstance("SHA1WithRSA");
             KeyFactory keyFactory = KeyFactory.getInstance("RSA");
-            PublicKey pubKey = keyFactory.generatePublic(new X509EncodedKeySpec(Base64.decode(publicKey)));
+            PublicKey pubKey = keyFactory.generatePublic(new X509EncodedKeySpec(DatatypeConverter.parseHexBinary(publicKey)));
             sign.initVerify(pubKey);
             sign.update(data.getBytes());
-            byte[] signBytes = Base64.decode(signMsg);
+            byte[] signBytes = DatatypeConverter.parseHexBinary(signMsg);
             signBool = sign.verify(signBytes);
         } catch (InvalidKeyException | NoSuchAlgorithmException | SignatureException | InvalidKeySpecException e1) {
             e1.printStackTrace();
@@ -159,7 +160,7 @@ public class ReadP12Cert {
             sign.initSign(privateKey);//设置私钥
             sign.update(data.getBytes());//设置明文
             byte[] signRstByte = sign.sign();//加密
-            signValue = Base64.encode(signRstByte);
+            signValue =Hex.encodeHexString(signRstByte);
             System.out.println("密文：[" + signValue + "]");
         } catch (InvalidKeyException | NoSuchAlgorithmException | SignatureException e1) {
             e1.printStackTrace();
@@ -181,7 +182,7 @@ public class ReadP12Cert {
             Signature sign = Signature.getInstance("SHA1WithRSA");
             sign.initVerify(publicKey);
             sign.update(data.getBytes());
-            byte[] signBytes = Base64.decode(signMsg);
+            byte[] signBytes = DatatypeConverter.parseHexBinary(signMsg);
             signBool = sign.verify(signBytes);
         } catch (InvalidKeyException | NoSuchAlgorithmException | SignatureException e1) {
             e1.printStackTrace();
