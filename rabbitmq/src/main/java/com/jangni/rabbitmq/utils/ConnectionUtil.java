@@ -22,7 +22,7 @@ public class ConnectionUtil {
         //定义端口
         factory.setPort(5672);
         //设置账号信息，用户名、密码、vhost
-        factory.setVirtualHost("doc");
+        factory.setVirtualHost("/");
         factory.setUsername("admin");
         factory.setPassword("admin");
         // 通过工厂获取连接

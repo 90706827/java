@@ -51,8 +51,10 @@ rabbitmqctl add_user admin admin
 rabbitmqctl set_user_tags admin administrator
 
 #开放端口15672
+firewall-cmd --zone=public --add-port=4369/tcp --permanent
 firewall-cmd --zone=public --add-port=5672/tcp --permanent
 firewall-cmd --zone=public --add-port=15672/tcp --permanent
+firewall-cmd --zone=public --add-port=25672/tcp --permanent
 #重启防火墙
 firewall-cmd --reload
 #查看开放端口
@@ -61,5 +63,31 @@ firewall-cmd --zone=public --list-ports
 service rabbitmq-server status
 service rabbitmq-server start
 service rabbitmq-server stop
+
+
+#集群配置
+ll -a /var/lib/rabbitmq/
+chmod u+w /var/lib/rabbitmq/.erlang.cookie
+##统一cookie中的值后 修改回权限
+chmod u-w /var/lib/rabbitmq/.erlang.cookie
+#修改机器名称
+vim /etc/hostname
+#两台服务器都修改
+vim /etc/hosts
+192.168.0.121 rabbitmq_node1
+192.168.0.122 rabbitmq_node2
+#验证你配置的正确不正确 你只需要在你的node1机器上ping rabbitmq_node2
+
+rabbitmqctl stop_app
+#--ram 指定内存节点类型，--disc指定磁盘节点类型
+#在rabbitmq_node2节点上执行
+rabbitmqctl join_cluster --ram rabbit@rabbitmq_node1
+rabbitmqctl start_app
+#修改节点类型
+rabbitmqctl stop_app
+rabbitmqctl change_cluster_node_type disc
+rabbitmqctl start_app
+rabbitmqctl cluster_status
+
 ```
 

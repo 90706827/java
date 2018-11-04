@@ -11,7 +11,7 @@ import java.util.concurrent.TimeoutException;
  * @Date 2018/11/4 16:12
  **/
 public class Producer {
-    private final static String QUEUE_NAME = "doc";
+    private final static String QUEUE_NAME = "test";
 
     public static void main(String[] argv) throws java.io.IOException, TimeoutException {
 
