@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/socket_client/pom.xml" />
         <option value="$PROJECT_DIR$/jersey/pom.xml" />
         <option value="$PROJECT_DIR$/fastdfs/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq/pom.xml" />
       </list>
     </option>
   </component>
