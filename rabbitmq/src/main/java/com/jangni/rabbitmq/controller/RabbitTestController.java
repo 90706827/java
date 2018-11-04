@@ -18,6 +18,13 @@ public class RabbitTestController {
     @Autowired
     private ProducerService pullService;
 
+    /**
+     * @Author Mr.Jangni
+     * @Description dsdfasdfasdf
+     * @Date 2018/11/5 0:22
+     * @Param []
+     * @return void
+     **/
     @GetMapping("/test")
     public void hello() {
         pullService.send();
