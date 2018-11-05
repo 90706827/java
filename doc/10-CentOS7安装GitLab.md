@@ -87,5 +87,90 @@ gitlab_rails['smtp_domain'] = "smtp.qq.com"
 gitlab_rails['smtp_authentication'] = 'plain'
 gitlab_rails['smtp_enable_starttls_auto'] = true
 
+
+#Nexus
+
+wget https://sonatype-download.global.ssl.fastly.net/repository/repositoryManager/3/nexus-3.14.0-04-unix.tar.gz
+
+mkdir /usr/local/nexus
+
+tar -zxvf nexus-3.14.0-04-unix.tar.gz -C /usr/local/nexus/
+
+cd /usr/local/nexus/nexus-3.14.0-04/bin
+
+./nexus run &
+
+#查看到如下内容表示安装启动成功
+-------------------------------------------------
+Started Sonatype Nexus OSS 3.14.0-04
+-------------------------------------------------
+
+#开放端口
+firewall-cmd --zone=public --add-port=8081/tcp --permanent
+firewall-cmd --reload
+firewall-cmd --zone=public --list-ports
+#访问NEXUS
+http://192.168.0.122:8081
+
+#设置开机自启
+#参考https://help.sonatype.com/repomanager3/system-requirements#SystemRequirements-Linux
+vim /usr/lib/systemd/system/nexus.service
+
+[Unit]
+Description=nexus service
+
+[Service]
+Type=forking
+LimitNOFILE=65536
+ExecStart=/usr/local/nexus/nexus-3.14.0-04/bin/nexus start
+ExecReload=/usr/local/nexus/nexus-3.14.0-04/bin/nexus restart
+ExecStop=/usr/local/nexus/nexus-3.14.0-04/bin/nexus stop
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+systemctl enable nexus.service
+
+systemctl daemon-reload
+
+
+cd /usr/local/nexus/nexus-3.14.0-04/
+#修改nexus用户root
+vim bin/nexus.rc
+run_as_user="root"
+
+#查找jdk路径
+which java
+#/usr/bin/java
+ls -lrt /usr/bin/java
+# /usr/bin/java -> /etc/alternatives/java
+ls -lrt /etc/alternatives/java
+#/etc/alternatives/java -> /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el7_5.x86_64/jre/bin/java
+
+#修改jdk
+vim bin/nexus
+INSTALL4J_JAVA_HOME_OVERRIDE=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-0.el7_5.x86_64
+
+#修改默认端口
+vim etc/nexus-default.properties
+application-port=8081
+#修改数据、日志存储位置
+vim bin/nexus.vmoptions
+
+#下载放到同一目录下 可百度网盘查找
+wget http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.gz
+wget http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+wget http://central.maven.org/maven2/org/apache/maven/indexer/indexer-cli/6.0.0/indexer-cli-6.0.0.jar
+
+java -jar indexer-cli-6.0.0.jar -u nexus-maven-repository-index.gz -d indexer
+#等待程序运行完成之后可以发现indexer文件夹下出现了很多文件，将这些文件放置到{nexus-home}/sonatype-work/nexus3/indexer/central-ctx目录下
+cp -r /opt/indexer/ /usr/local/nexus/sonatype-work/nexus3/instances/
+mv indexer/ central-ctx
+#重启nexus
+systemctl restart  nexus.service
+
+
+
 ```
 
