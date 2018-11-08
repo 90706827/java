@@ -170,7 +170,24 @@
    ONBOOT="yes"
    ```
 
+   ```
    
+   vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
+   BOOTPROTO="static"
+   IPADDR="192.168.0.121"
+   NETMASK="255.255.255.0"
+   GATEWAY="192.168.0.253"
+   
+   BOOTPROTO="static"
+   IPADDR="192.168.0.122"
+   NETMASK="255.255.255.0"
+   GATEWAY="192.168.0.253"
+   
+   BOOTPROTO="static"
+   IPADDR="192.168.0.123"
+   NETMASK="255.255.255.0"
+   GATEWAY="192.168.0.253"
+   ```
 
 4. 重新启动
 
