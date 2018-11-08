@@ -1,11 +1,7 @@
 # Idea 插件
-
 ## 类和方法注释模板设置
-
 ### 类注释模板添加
-
 File-->settings-->Editor-->File and Code Templates-->Files-->Class
-
 ```java
 #if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
 #parse("File Header.java")
@@ -19,15 +15,9 @@ File-->settings-->Editor-->File and Code Templates-->Files-->Class
 public class ${NAME} {
 }
 ```
-
 ![实例](img\set_class.png)
-
-
-
 ### 方法注释模板添加
-
 File-->Settings-->Editor-->Live Templates
-
 ```java
  *
  * @Author Mr.Jangni
@@ -37,14 +27,12 @@ File-->Settings-->Editor-->Live Templates
  * @return $return$
  **/
 ```
-
 ![实例](img\set_method.png)
-
+### 设置不区分下小写提示
+![实例](img/daxiaoxie.png)
 ## GsonFormat
-
 使用快捷鍵 Alt+s
 使用Json串生成对象字段
-
 ## Alibaba Java Coding
 阿里巴巴 编码提示插件
 ## Rainbow Brackets
