@@ -1,5 +1,3 @@
-# 安装GitLab 搭建Neuxs私服
-
 ## 安装GitLab
 
 ### 环境准备
@@ -92,61 +90,5 @@ ssh-keygen -t rsa -C 'xxx@xxx.com'
 #2.然后打开~/.ssh/id_rsa.pub文件(~表示用户目录，比如我的windows就是C:\Users\Administrator)
 #3.打开gitlab,找到Profile Settings-->SSH Keys--->Add SSH Key,并把上一步中复制的内容粘贴到Key所对应的文本框，在Title对应的文本框中给这个sshkey设置一个名字，点击Add key按钮
 #4.使用git下载项目
-```
-
-## 安装Nexus私服
-
- ### 下载
-
-```shell
-cd /opt
-wget https://sonatype-download.global.ssl.fastly.net/repository/repositoryManager/3/nexus-3.14.0-04-unix.tar.gz
-```
-
-### 部署
-
-```shell
-#解压
-tar -zxvf nexus-3.14.0-04-unix.tar.gz 
-#创建链接
-mv nexus-3.14.0-04 nexus
-#创建 nexus 用户
-useradd nexus 
-#授权
-chown -R nexus:nexus /opt/nexus
-chown -R nexus:nexus /opt/sonatype-work/
-#打开 /opt/nexus/bin/nexus.rc 文件, 去掉 run_as_user 变量的注释
-vi /opt/nexus/bin/nexus.rc
-
-run_as_user="nexus"
-
-#启动
-cd nexus/bin/
-./nexus run &
-# 显示如下信息提示 表示启动成功
--------------------------------------------------
-Started Sonatype Nexus OSS 3.14.0-04
--------------------------------------------------
-```
-
-### 开启防火墙
-```shell
-firewall-cmd --zone=public --permanent --add-port=8081/tcp
-firewall-cmd --reload
-```
-
-### 访问测试
-
-```shell
-访问地址： http://ip:8081/
-访问凭证(默认的用户名和密码)：
-username: admin
-password: admin123
-```
-
-### Maven使用Nexus私库
-
-```shell
-
 ```
 
