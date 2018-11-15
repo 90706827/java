@@ -20,6 +20,7 @@
         <module name="socket_client" />
         <module name="socket_server" />
         <module name="solr" />
+        <module name="tomcatjdbc" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -37,6 +38,7 @@
       <module name="socket_client" target="1.8" />
       <module name="socket_server" target="1.8" />
       <module name="solr" target="1.8" />
+      <module name="tomcatjdbc" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

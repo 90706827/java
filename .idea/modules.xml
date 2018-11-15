@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/socket_client/socket_client.iml" filepath="$PROJECT_DIR$/socket_client/socket_client.iml" />
       <module fileurl="file://$PROJECT_DIR$/socket_server/socket_server.iml" filepath="$PROJECT_DIR$/socket_server/socket_server.iml" />
       <module fileurl="file://$PROJECT_DIR$/solr/solr.iml" filepath="$PROJECT_DIR$/solr/solr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tomcatjdbc/tomcatjdbc.iml" filepath="$PROJECT_DIR$/tomcatjdbc/tomcatjdbc.iml" />
     </modules>
   </component>
 </project>

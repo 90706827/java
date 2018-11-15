@@ -17,6 +17,7 @@
         <option value="$PROJECT_DIR$/jersey/pom.xml" />
         <option value="$PROJECT_DIR$/fastdfs/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq/pom.xml" />
+        <option value="$PROJECT_DIR$/tomcatjdbc/pom.xml" />
       </list>
     </option>
   </component>
