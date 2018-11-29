@@ -39,9 +39,16 @@ public class DruidConfig {
 
     @Bean
     public FilterRegistrationBean<WebStatFilter> filterRegistrationBean() {
-        FilterRegistrationBean<WebStatFilter> filterRegistrationBean = new FilterRegistrationBean<>(new WebStatFilter());
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean<>();
+        //注入过滤器
+        filterRegistrationBean.setFilter(new WebStatFilter());
+        //拦截规则
         filterRegistrationBean.addUrlPatterns("/*");
         filterRegistrationBean.addInitParameter("exclusions", "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
+        //过滤器名称
+//        filterRegistrationBean.setName("testFilter2");
+        //过滤器顺序
+//        filterRegistrationBean.setOrder(FilterRegistrationBean.LOWEST_PRECEDENCE - 1);
         return filterRegistrationBean;
     }
 }

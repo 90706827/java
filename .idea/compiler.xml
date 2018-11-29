@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="actor" />
         <module name="demo" />
+        <module name="doubledatasource" />
         <module name="druid" />
         <module name="fastdfs" />
         <module name="java" />
@@ -26,6 +27,7 @@
     <bytecodeTargetLevel>
       <module name="actor" target="1.8" />
       <module name="demo" target="1.8" />
+      <module name="doubledatasource" target="1.8" />
       <module name="druid" target="1.8" />
       <module name="fastdfs" target="1.8" />
       <module name="java" target="1.8" />
