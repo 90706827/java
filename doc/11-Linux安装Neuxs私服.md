@@ -123,9 +123,31 @@ password: admin123
 </build>
 
 <!-- 使用jar包配置 -->
+<!-- repository可以添加多个 -->
+<!-- releases-enabled可以从这个仓库下载releases版本的构件 -->
+<!-- snapshots-snapshots不要从这个仓库下载snapshot版本的构件，禁止从公共仓库下载snapshot构件是推荐的做法，因为这些构件不稳定，且不受你控制，你应该避免使用，如果你想使用局域网内组织内部的仓库，你可以激活snapshot的支持 -->
+<!-- layout布局 default和legacy-->
+<repositories>  
+  <repository>  
+    <id>neuxs</id>  
+    <name>neuxs</name>  
+    <url>https://repo.maven.apache.org/maven2</url>  
+    <releases>  
+      <enabled>true</enabled>  
+    </releases>  
+    <layout>default</layout>  
+    <snapshots>  
+      <enabled>true</enabled>  
+    </snapshots>  
+  </repository>  
+</repositories>
+<!-- pluginRepositories用来指定下载插件仓库的地址的 -->
+<!-- -->
+<!-- -->
 <pluginRepositories>
 	<pluginRepository>
-		<id>releases</id>
+		<id>neuxs</id>
+        <name>neuxs</name>
 		<url>http://192.168.0.121:8081/repository/java/</url>
 	</pluginRepository>
 </pluginRepositories>
