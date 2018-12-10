@@ -91,3 +91,30 @@ rabbitmqctl cluster_status
 
 ```
 
+
+
+
+
+windows安装rabbit
+
+- 安装erlang依赖
+
+  http://www.erlang.org/downloads
+
+- 下载rabbitmq
+
+  http://www.rabbitmq.com/install-windows.html
+
+- 安装rabbitmq管理插件
+
+  ```
+  cmd
+  cd C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.9\sbin
+  rabbitmq-plugins enable rabbitmq_management
+  ```
+
+- http://localhost:15672/
+
+  用户：guest 
+
+  密码：guest
