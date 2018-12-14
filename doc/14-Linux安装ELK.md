@@ -34,8 +34,6 @@ vim /etc/elasticsearch/elasticsearch.yml
 ##主节点配置如下内容
 cluster.name: master-node  # 集群中的名称
 node.name: master  # 该节点名称
-node.master: true  # 意思是该节点为主节点 不用设置自主选择
-node.data: false  # 表示这不是数据节点
 network.host: 0.0.0.0  # 监听全部ip，在实际环境中应设置为一个安全的ip
 http.port: 9200  # es服务的端口号
 discovery.zen.ping.unicast.hosts: ["192.168.0.121", "192.168.77.122", "192.168.77.123"] # 配置自动发现
@@ -82,14 +80,14 @@ https://www.elastic.co/downloads/kibana
 只有主节点需要安装kibana 
 
 ```bash
- rpm -ivh kibana-6.5.2-x86_64.rpm
+rpm -ivh kibana-6.5.2-x86_64.rpm
 vim /etc/kibana/kibana.yml 
 server.port: 5601  # 配置kibana的端口
 server.host: 192.168.77.128  # 配置监听ip
-elasticsearch.url: "http://192.168.77.128:9200"  # 配置es服务器的ip，如果是集群则配置该集群中主节点的ip
+elasticsearch.url: "http://192.168.0.121:9200"  # 配置es服务器的ip，如果是集群则配置该集群中主节点的ip
 logging.dest: /var/log/kibana.log  # 配置kibana的日志文件路径，不然默认是messages里记录日志
 
-chmod 777 /var/log/kibana.log
+touch /var/log/kibana.log; chmod 777 /var/log/kibana.log
 
 
 systemctl start kibana
@@ -105,7 +103,7 @@ firewall-cmd --zone=public --list-ports
 
 
 
-http://192.168.77.128:5601/
+http://192.168.0.121:5601/
 
 
 
@@ -115,7 +113,80 @@ http://192.168.77.128:5601/
 
 https://www.elastic.co/downloads/logstash
 
+```bash
+#第二台服务器
+rpm -ivh rpm -ivh logstash-6.5.2.rpm
 
+vim /etc/logstash/conf.d/syslog.conf 
+
+input {  # 定义日志源
+  syslog {
+    type => "system-syslog"  # 定义类型
+    port => 10514    # 定义监听端口
+  }
+}
+output {  # 定义日志输出
+  stdout {
+    codec => rubydebug  # 将日志输出到当前的终端上显示
+  }
+}
+
+
+cd /usr/share/logstash/bin
+ ./logstash --path.settings /etc/logstash/ -f /etc/logstash/conf.d/syslog.conf --config.test_and_exit
+ Sending Logstash's logs to /var/log/logstash which is now configured via log4j2.properties
+Configuration OK  # 为ok则代表配置文件没有问题 虚拟机可以调整处理器数量 1个会报错
+##配置kibana服务器的ip以及配置的监听端口：
+vim /etc/rsyslog.conf
+*.* @@192.168.0.123:10514
+
+systemctl restart rsyslog
+
+cd /usr/share/logstash/bin
+./logstash --path.settings /etc/logstash/ -f /etc/logstash/conf.d/syslog.conf
+Sending Logstash's logs to /var/log/logstash which is now configured via log4j2.properties
+# 这时终端会停留在这里，因为我们在配置文件中定义的是将信息输出到当前终端
+netstat -lntp |grep 10514
+
+cd /usr/share/logstash/bin
+./logstash --path.settings /etc/logstash/ -f /etc/logstash/conf.d/syslog.conf
+
+配置logstash
+以上只是测试的配置，这一步我们需要重新改一下配置文件，让收集的日志信息输出到es服务器中，而不是当前终端：
+
+vim /etc/logstash/conf.d/syslog.conf 
+
+input {
+  syslog {
+    type => "system-syslog"
+    port => 10514
+  }
+}
+output {
+  elasticsearch {
+    hosts => ["192.168.77.128:9200"]  # 定义es服务器的ip
+    index => "system-syslog-%{+YYYY.MM}" # 定义索引
+  }
+}
+
+cd /usr/share/logstash/bin
+./logstash --path.settings /etc/logstash/ -f /etc/logstash/conf.d/syslog.conf --config.test_and_exit
+Sending Logstash's logs to /var/log/logstash which is now configured via log4j2.properties
+Configuration OK
+显示没有问题
+
+systemctl start logstash
+ps aux |grep logstash
+
+查看有没有信息
+http://192.168.0.121:9200/_cat/indices?v
+
+http://192.168.0.121:9200/system-syslog-2018.12?pretty
+
+firewall-cmd --zone=public --add-port=10514/tcp --permanent
+firewall-cmd --reload
+firewall-cmd --zone=public --list-ports
+```
 
 ## 安装filebeat
 
