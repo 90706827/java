@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/tomcatjdbc/pom.xml" />
         <option value="$PROJECT_DIR$/doubledatasource/pom.xml" />
         <option value="$PROJECT_DIR$/pack/pom.xml" />
+        <option value="$PROJECT_DIR$/logback/pom.xml" />
       </list>
     </option>
   </component>
