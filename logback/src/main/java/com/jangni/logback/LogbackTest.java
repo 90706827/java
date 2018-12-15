@@ -21,6 +21,11 @@ public class LogbackTest {
             logger.info("你好");
             logger.error("我错了");
             logger.warn("我改正");
+            try{
+                int a = 2/0;
+            }catch (Exception t){
+                logger.error("异常",t);
+            }
             try {
                 Thread.sleep(10000);
             } catch (InterruptedException e) {

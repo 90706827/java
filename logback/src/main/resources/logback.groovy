@@ -8,7 +8,7 @@ import java.nio.charset.Charset
 //String logPath = "${user_home}/log"
 String appPath = "E:/logs/"
 //日志输出前置统一格式
-String commonPattern = "BaseLog %d{YYYY-MM-DD HH:mm:ss.SSS}|%-5level|%-30thread|%logger{36}|%msg%n"
+String commonPattern = "BaseLog %d{yyyy-MM-dd HH:mm:ss SSS}|%-5level|%-30thread|%logger{36}|%msg%n"
 
 // 基础日志文件配置
 appender("base", RollingFileAppender) {
