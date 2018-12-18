@@ -33,8 +33,8 @@ public class NewCachedThreadPool {
          *  SynchronousQueue: 一个不存储元素的阻塞队列。每个插入操作必须等到另一个线程调用移除操作，否则插入操作一直处于阻塞状态，
          *  吞吐量高于LinkedBlockingQueue，静态工厂方法Excutors.newCachedThreadPool()使用了这个队列
          *  PriorityBlockingQueue:一个具有优先级的无限阻塞队列。
-         * maximumPoolSize（线程池最大数量）
-         * threadFactory（线程工厂）
+         *  maximumPoolSize（线程池最大数量）
+         *  threadFactory（线程工厂）
          *  RejectedExecutionHandler （饱和策略）
          *  AbortPolicy:直接抛出异常，默认情况下采用这种策略
          *  CallerRunsPolicy:只用调用者所在线程来运行任务
