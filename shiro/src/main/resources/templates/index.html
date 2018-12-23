@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+	<div id="app">
+        <button @click='sendPost'>post方式发送Ajax请求</button>
+    </div>
+
+		<script>
+            new Vue({
+                el:'#app',
+                data:{
+                    user:{name:'eric',id:24},
+                },
+                methods:{
+                    sendPost(){
+                        axios.post('http://localhost:8080/user/list',this.user,{
+                            transformRequest:[
+                                function(data){
+                                    let params='';
+                                    for(let index in data){
+                                        params+=index+'='+data[index]+'&';
+                                    }
+                                    return params;
+                                }
+                            ]
+                        }).then(resp=>{
+                            console.log(resp.data)
+                        }).catch(err=>{
+                            console.log('请求失败:'+err.status+','+err.statusText);
+                        });
+                    },
+                },
+            });
+    </script>
+	</body>
+	<!--<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>-->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+</html>
