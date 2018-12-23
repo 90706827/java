@@ -17,7 +17,7 @@ import java.util.Set;
  * author: Mr.Jangni
  * create: 2018-07-31 23:48
  **/
-@Component
+//@Component
 public class ShiroAuthorizingRealm extends AuthorizingRealm {
 
     /**

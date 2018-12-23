@@ -2,6 +2,7 @@ package com.jangni.shiro;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -12,7 +13,8 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.*;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.jangni.shiro")
+@MapperScan("com.jangni.shiro.mapper")
 public class ShiroApplication {
 	private static final Logger logger = LoggerFactory.getLogger(ShiroApplication.class);
 
