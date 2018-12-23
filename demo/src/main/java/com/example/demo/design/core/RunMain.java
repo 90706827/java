@@ -10,7 +10,7 @@ import java.util.List;
  * @Date 2018/12/18 9:54
  * @Version 1.0
  **/
-public class RunMain implements ServiceLogger{
+public class RunMain implements Logging {
     public static void main(String[] args) {
         AService a = new AService();
         BService b = new BService();

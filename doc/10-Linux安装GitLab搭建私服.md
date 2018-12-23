@@ -27,7 +27,7 @@ wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/gitlab-ce-8.0.0-ce.0
 rpm -i gitlab-ce-8.0.0-ce.0.el7.x86_64.rpm
 vim  /etc/gitlab/gitlab.rb
 #修改访问路径
-external_url 'http://192.168.0.122:8087'
+external_url 'http://192.168.0.122：8787'
 
 gitlab-ctl reconfigure
 # 显示如下表示配置成功
@@ -52,14 +52,37 @@ gitlab-ctl restart
 #ok: run: redis-exporter: (pid 8165) 0s
 #ok: run: sidekiq: (pid 8184) 0s
 #ok: run: unicorn: (pid 8204) 0s
+
+
+
+vim /opt/gitlab/embedded/service/gitlab-rails/config/gitlab.yml
+##编辑IP地址 外网地址
+gitlab:
+	host: gitlab.arts.com
+	port: 80
+	https: false
+	
+vim /etc/gitlab/gitlab.rb 
+##编辑IP地址 外网地址
+external_url 'http://192.168.0.122:8787'
+
+gitlab-ctl restart
 ```
 
 ### 开放端口
 
 ```shell
-firewall-cmd --zone=public --add-port=8087/tcp --permanent
+firewall-cmd --zone=public --add-port=8787/tcp --permanent
 firewall-cmd --reload
 firewall-cmd --zone=public --list-ports
+
+service firewalld status
+# 开启
+service firewalld start
+# 重启
+service firewalld restart
+# 关闭
+service firewalld stop
 ```
 
 ### 访问
