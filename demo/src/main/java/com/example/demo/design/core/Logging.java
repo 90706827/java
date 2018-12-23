@@ -11,7 +11,8 @@ import org.slf4j.LoggerFactory;
  * @Date 2018/12/18 10:32
  * @Version 1.0
  **/
-public interface ServiceLogger {
+public interface Logging {
+
     Logger logger = LoggerFactory.getLogger("other_all");
 
 }

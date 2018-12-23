@@ -30,61 +30,23 @@ tar -zxvf openssl-1.0.2j.tar.gz
 ```
 cd /opt/software/nginx-1.10.2/
 
-./configure \
---prefix=/usr/local/nginx\
---sbin-path=/usr/sbin/nginx \
---conf-path=/etc/nginx/nginx.conf \
---error-log-path=/var/log/nginx/error.log \
---http-log-path=/var/log/nginx/access.log \
---pid-path=/var/run/nginx.pid \
---lock-path=/var/run/nginx.lock \
---http-client-body-temp-path=/var/cache/nginx/client_temp \
---http-proxy-temp-path=/var/cache/nginx/proxy_temp \
---http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp \
---http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp \
---http-scgi-temp-path=/var/cache/nginx/scgi_temp \
---user=nobody \
---group=nobody \
---with-pcre \
---with-http_v2_module \
---with-http_ssl_module \
---with-http_realip_module \
---with-http_addition_module \
---with-http_sub_module \
---with-http_dav_module \
---with-http_flv_module \
---with-http_mp4_module \
---with-http_gunzip_module \
---with-http_gzip_static_module \
---with-http_random_index_module \
---with-http_secure_link_module \
---with-http_stub_status_module \
---with-http_auth_request_module \
---with-mail \
---with-mail_ssl_module \
---with-file-aio \
---with-ipv6 \
---with-http_v2_module \
---with-threads \
---with-stream \
---with-stream_ssl_module \
---with-openssl=/var/cache/nginx/openssl-1.0.2j
+ ./configure --prefix=/usr/local/nginx --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --pid-path=/var/run/nginx.pid --lock-path=/var/run/nginx.lock --http-client-body-temp-path=/var/cache/nginx/client_temp --http-proxy-temp-path=/var/cache/nginx/proxy_temp --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp --http-scgi-temp-path=/var/cache/nginx/scgi_temp --user=nobody --group=nobody --with-pcre --with-http_v2_module --with-http_ssl_module --with-http_realip_module --with-http_addition_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_random_index_module --with-http_secure_link_module --with-http_stub_status_module --with-http_auth_request_module --with-mail --with-mail_ssl_module --with-file-aio --with-ipv6 --with-http_v2_module --with-threads --with-stream --with-stream_ssl_module --with-openssl=/var/cache/nginx/openssl-1.0.2j
 
 make & make install
 ```
 > **五、启动验证安装成功**
 ```
-/usr/local/nginx/sbin/nginx
+/usr/sbin/nginx
 links 127.0.0.1
 ```
 显示welcome to nginx！安装成功。
 > **六、开放80访问端口**
 ```
 开放80端口
-firewall-cmd --zone=public --add-port=80/tcp --permanent
-重启防火墙
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
 firewall-cmd --reload
-关闭防火墙
+firewall-cmd --zone=public --list-ports
+
 service firewalld stop
 ```
 > **七、编辑启动脚本**
@@ -226,7 +188,7 @@ netstat -lntp|grep nginx
 
    **重点内容根据一下内容修改nginx配置项，没有无需改动，相同无需改动.**
 ```
-vim /usr/local/nginx/conf/nginx.conf
+vim /etc/nginx/nginx.conf
 -------------------开始---------------------
 events
 {
@@ -280,3 +242,58 @@ vim /usr/local/nginx/conf/nginx.conf
 未完待续
 -------------------结束---------------------
 ```
+
+**十一、配置 二级域名**
+
+```
+	upstream web_app { 
+      server localhost:8180 weight=1 max_fails=2 fail_timeout=30s; 
+    }
+	
+	server {
+        listen       80;
+        server_name  pay.arts.com;
+        location / {
+           proxy_pass http://172.24.129.22:8181;
+           proxy_headers_hash_max_size 51200;
+           proxy_headers_hash_bucket_size 6400;
+           proxy_set_header Host $host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header REMOTE-HOST $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    }
+	server {
+        listen       80;
+        server_name  gitlab.arts.com;
+        location / {
+           proxy_pass http://172.24.129.22:8787;
+           proxy_headers_hash_max_size 51200;
+           proxy_headers_hash_bucket_size 6400;
+           proxy_set_header Host $host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header REMOTE-HOST $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    }
+    server {
+        listen       80;
+        server_name  www.arts.com;
+		location / {
+			proxy_headers_hash_max_size 51200;
+			proxy_headers_hash_bucket_size 6400;
+			proxy_set_header Host $host;
+			proxy_set_header X-Real-IP $remote_addr;
+			proxy_set_header REMOTE-HOST $remote_addr;
+			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+			proxy_pass http://web_app; 
+			expires  3d;
+		}
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+
+```
+

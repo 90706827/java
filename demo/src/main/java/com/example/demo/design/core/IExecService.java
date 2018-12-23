@@ -7,7 +7,7 @@ package com.example.demo.design.core;
  * @Date 2018/12/18 13:02
  * @Version 1.0
  **/
-public interface IExecService extends IExec,ServiceLogger {
+public interface IExecService extends IExec, Logging {
 
     public void err(Context context,Exception e);
 }
