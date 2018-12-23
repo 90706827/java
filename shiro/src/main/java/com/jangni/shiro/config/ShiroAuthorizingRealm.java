@@ -1,39 +1,35 @@
 package com.jangni.shiro.config;
 
-import com.jangni.shiro.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @program: java
- * @description: 自定义身份和权限认证操作
- * @author: Mr.Jangni
- * @create: 2018-07-31 23:48
+ * program: java
+ * description: 自定义身份和权限认证操作
+ * author: Mr.Jangni
+ * create: 2018-07-31 23:48
  **/
 @Component
 public class ShiroAuthorizingRealm extends AuthorizingRealm {
 
-    @Autowired
-    private UserService userService;
     /**
      * 获取授权信息
-     * @param principalCollection
-     * @return
+     * param principalCollection
+     * return
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-        System.out.println(userService.getUser("Tracy").getId());
+//        System.out.println(userService.getUser("Tracy").getId());
         //获得该用户角色
         String role = "获取用户角色";//userMapper.getRole(username);
         Set<String> set = new HashSet<>();
@@ -47,6 +43,7 @@ public class ShiroAuthorizingRealm extends AuthorizingRealm {
     /**
      * 获取身份验证信息
      * Shiro中，最终是通过 Realm 来获取应用程序中的用户、角色及权限信息的。
+     *
      * @param authenticationToken 用户身份信息 token
      * @return 返回封装了用户信息的 AuthenticationInfo 实例
      */

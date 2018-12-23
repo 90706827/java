@@ -1,6 +1,7 @@
 package com.jangni.shiro.config;
 
 
+import com.alibaba.druid.pool.DataSourceClosedException;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -12,12 +13,12 @@ import java.util.Map;
 
 
 /**
- * @program: java
- * @description: shiro配置
- * @author: Mr.Jangni
- * @create: 2018-08-01 23:40
+ * program: java
+ * description: shiro配置
+ * author: Mr.Jangni
+ * create: 2018-08-01 23:40
  **/
-@Configuration
+//@Configuration
 public class ShiroConfig {
 
     /**
