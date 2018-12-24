@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jangni.shiro.mapper.PowerMapper">
+  <resultMap id="BaseResultMap" type="com.jangni.shiro.entity.Power">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="power_name" jdbcType="VARCHAR" property="powerName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, power_name
+  </sql>
+  <select id="selectByRoleId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select p.id,p.power_name from t_r_role_power rp
+    join t_p_power p
+    on rp.power_id = p.id
+    where rp.role_id =  #{roleId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_p_power
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_p_power
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jangni.shiro.entity.Power">
+    insert into t_p_power (id, power_name)
+    values (#{id,jdbcType=INTEGER}, #{powerName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jangni.shiro.entity.Power">
+    insert into t_p_power
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="powerName != null">
+        power_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="powerName != null">
+        #{powerName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jangni.shiro.entity.Power">
+    update t_p_power
+    <set>
+      <if test="powerName != null">
+        power_name = #{powerName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jangni.shiro.entity.Power">
+    update t_p_power
+    set power_name = #{powerName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,7 +1,9 @@
 package com.jangni.shiro.service;
 
 import com.jangni.shiro.entity.PomeloUser;
+import com.jangni.shiro.entity.User;
 import com.jangni.shiro.mapper.PomeloUserMapper;
+import com.jangni.shiro.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -19,12 +21,9 @@ import java.util.List;
 public class UserService {
 
     @Autowired
-    private PomeloUserMapper userMapper;
+    private UserMapper userMapper;
 
-    public PomeloUser getUserById(Integer id) {
-        return userMapper.selectByPrimaryKey(id);
-    }
-    public List<PomeloUser> getPageUser(){
-        return  userMapper.selectPageAll();
+    public User getUserByUserName(String userName) {
+        return userMapper.selectByUserName(userName);
     }
 }
