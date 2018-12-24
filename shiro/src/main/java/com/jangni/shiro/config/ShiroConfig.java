@@ -19,7 +19,7 @@ import java.util.Map;
  * create: 2018-08-01 23:40
  **/
 @Configuration
-public class ShiroConfig {
+public class ShiroConfig implements Logger{
 
     //加入注解的使用，不加入这个注解不生效
     @Bean

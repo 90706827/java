@@ -2,18 +2,10 @@ package com.jangni.shiro.config;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-
-import javax.sql.DataSource;
 
 /**
  * @program: java
@@ -22,8 +14,7 @@ import javax.sql.DataSource;
  * @create: 2018-08-02 21:44
  **/
 @Configuration
-public class DruidConfig {
-    private static final Logger logger = LoggerFactory.getLogger(DruidConfig.class);
+public class DruidConfig implements Logger {
 
     @Bean
     public FilterRegistrationBean filterRegistrationBean() {

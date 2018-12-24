@@ -10,8 +10,6 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,7 +22,7 @@ import java.util.List;
  * create: 2018-07-31 23:48
  **/
 @Component
-public class ShiroRealm extends AuthorizingRealm {
+public class ShiroRealm extends AuthorizingRealm implements Logger {
 
     @Autowired
     private RoleService roleService;
@@ -65,7 +63,6 @@ public class ShiroRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        Logger logger = LoggerFactory.getLogger(this.getName());
         //获取登录用户名称
         String userName = (String) principalCollection.getPrimaryPrincipal();
         //查询用户
