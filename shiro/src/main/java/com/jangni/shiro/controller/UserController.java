@@ -38,7 +38,7 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/id", method = RequestMethod.GET)
+    @RequestMapping(value = "/id", method = RequestMethod.POST)
     public String getUser() {
 
 //        return new Gson().toJson(userService.getUserById(2));

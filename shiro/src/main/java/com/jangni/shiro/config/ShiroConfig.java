@@ -63,9 +63,9 @@ public class ShiroConfig implements Logger{
         //游客，开发权限
         filterMap.put("/guest/**", "anon");
         //用户，需要角色权限 “user”
-        filterMap.put("/user/**", "roles[user]");
+        filterMap.put("/user/**", "roles[user,admin]");
         //管理员，需要角色权限 “admin”
-        filterMap.put("/admin/**", "roles[admin]");
+        filterMap.put("/admin/**", "roles[admin,user]");
         //开放登陆接口
         filterMap.put("/login", "anon");
         //其余接口一律拦截

@@ -1,9 +1,41 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8"/>
-		<title>首页</title>
-	</head>
-	<body>
-	</body>
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:v-on="http://www.w3.org/1999/xhtml"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>首页</title>
+</head>
+<body>
+<div id="box">
+    <input type="button" v-on:click="post()" value="点击"/>
+</div>
+<script th:inline="javascript">
+window.onload = function(){
+		var vm = new Vue({
+			el:'#box',
+			data:{
+				msg:'Hello World!',
+			},
+			methods:{
+				post:function(){
+				    var url = [[@{/user/id}]]
+				    var urls= 'http://localhost:8081'+url
+					this.$http.post(urls).then(function(res){
+                         var json = res.body;
+                        var jsonObj = eval('(' + json + ')');
+					},function(res){
+						console.log(res.status);
+					});
+				}
+			}
+		});
+		}
+
+</script>
+<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</body>
 </html>
