@@ -12,26 +12,25 @@
     <input type="button" v-on:click="post()" value="点击"/>
 </div>
 <script th:inline="javascript">
-window.onload = function(){
-		var vm = new Vue({
-			el:'#box',
-			data:{
-				msg:'Hello World!',
-			},
-			methods:{
-				post:function(){
-				    var url = [[@{/user/id}]]
-				    var urls= 'http://localhost:8081'+url
-					this.$http.post(urls).then(function(res){
-                         var json = res.body;
-                        var jsonObj = eval('(' + json + ')');
-					},function(res){
-						console.log(res.status);
-					});
+<div id="app">
+			{{ info }}
+		</div>
+		<script th:inline="javascript">
+			var vue = new Vue({
+				el: '#app',
+				data() {
+					return {
+						info: null
+					}
+				},
+				mounted() {
+					axios
+					.get('http://localhost:8080/user/123456789')
+					.then(response => (this.info = response))
+					.catch(response => Console.log(response))
 				}
-			}
-		});
-		}
+			});
+		</script>
 
 </script>
 <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
