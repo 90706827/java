@@ -13,6 +13,7 @@
         <module name="fastdfs" />
         <module name="java" />
         <module name="jersey" />
+        <module name="jpa" />
         <module name="kafka" />
         <module name="logback" />
         <module name="pack" />
@@ -34,6 +35,7 @@
       <module name="fastdfs" target="1.8" />
       <module name="java" target="1.8" />
       <module name="jersey" target="1.8" />
+      <module name="jpa" target="1.8" />
       <module name="kafka" target="1.8" />
       <module name="logback" target="1.8" />
       <module name="pack" target="7" />

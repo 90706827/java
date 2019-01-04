@@ -21,6 +21,7 @@
         <option value="$PROJECT_DIR$/doubledatasource/pom.xml" />
         <option value="$PROJECT_DIR$/pack/pom.xml" />
         <option value="$PROJECT_DIR$/logback/pom.xml" />
+        <option value="$PROJECT_DIR$/jpa/pom.xml" />
       </list>
     </option>
   </component>
