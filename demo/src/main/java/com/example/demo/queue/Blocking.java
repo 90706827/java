@@ -1,5 +1,7 @@
 package com.example.demo.queue;
 
+import java.util.concurrent.*;
+
 /**
  * ClassName Blocking
  * Description 阻塞队列
@@ -35,6 +37,61 @@ public class Blocking {
          * 长的 Delayed 元素。如果延迟都还没有期满，则队列没有头部，并且poll将返回null。当一个元素的 getDelay(TimeUnit.NANOSECONDS) 方法返回一个小于或等于零
          * 的值时，则出现期满，poll就以移除这个元素了。此队列不允许使用 null 元素。
          */
+        ExecutorService fixPool = Executors.newFixedThreadPool(10);
+        LinkedBlockingDeque<String> blockingQueue = new LinkedBlockingDeque<>(1000000);
 
+        fixPool.execute(new Runnable() {
+            @Override
+            public void run() {
+                for (long i =1 ; i<=1000000;i++){
+                    try {
+                        blockingQueue.put(String.valueOf(i));
+//                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        fixPool.execute(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    Thread.sleep(20000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                long count = 1;
+                while (true){
+                    try {
+                        System.out.println("1-"+count+"-"+blockingQueue.take());
+                        count+=1;
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        fixPool.execute(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    Thread.sleep(20000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                long count = 1;
+                while (true){
+                    try {
+                        System.out.println("2-"+count+"-"+blockingQueue.take());
+                        count+=1;
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
     }
 }

@@ -23,6 +23,7 @@
         <option value="$PROJECT_DIR$/logback/pom.xml" />
         <option value="$PROJECT_DIR$/jpa/pom.xml" />
         <option value="$PROJECT_DIR$/sofabolt/pom.xml" />
+        <option value="$PROJECT_DIR$/http/pom.xml" />
       </list>
     </option>
   </component>
