@@ -24,6 +24,8 @@
         <option value="$PROJECT_DIR$/jpa/pom.xml" />
         <option value="$PROJECT_DIR$/sofabolt/pom.xml" />
         <option value="$PROJECT_DIR$/http/pom.xml" />
+        <option value="$PROJECT_DIR$/api_template/pom.xml" />
+        <option value="$PROJECT_DIR$/password/pom.xml" />
       </list>
     </option>
   </component>

@@ -17,7 +17,7 @@ import java.util.concurrent.CountDownLatch;
 public class ConcurrentHashMap_Example {
 
     public static void main(String[] args) {
-        ConcurrentHashMap<String,Integer> concurrentHashMap = new ConcurrentHashMap<String,Integer>();
+       ConcurrentHashMap<String,Integer> concurrentHashMap = new ConcurrentHashMap<String,Integer>();
         concurrentHashMap.put("count",0);
       Thread thread1 =  new Thread(new Runnable() {
             @Override
@@ -37,13 +37,25 @@ public class ConcurrentHashMap_Example {
                 }
             }
         });
+        Thread thread3 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(int i =0;i<100;i++){
+                    int a =concurrentHashMap.get("count");
+                    concurrentHashMap.put("count",a-1);
+                }
+            }
+        });
         thread1.start();
         thread2.start();
+        thread3.start();
         try {
-            Thread.sleep(10000);
+            Thread.sleep(15000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println(concurrentHashMap.get("count"));
+        concurrentHashMap.clear();
         System.out.println(concurrentHashMap.get("count"));
     }
 }
