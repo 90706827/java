@@ -12,6 +12,7 @@
         <module name="doubledatasource" />
         <module name="druid" />
         <module name="fastdfs" />
+        <module name="ftputils" />
         <module name="http" />
         <module name="java" />
         <module name="jersey" />
@@ -38,6 +39,7 @@
       <module name="doubledatasource" target="1.8" />
       <module name="druid" target="1.8" />
       <module name="fastdfs" target="1.8" />
+      <module name="ftputils" target="1.8" />
       <module name="http" target="1.8" />
       <module name="java" target="1.8" />
       <module name="jersey" target="1.8" />
