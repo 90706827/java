@@ -3,16 +3,23 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/actor" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api_template" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/pfx/PKCSUtil.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/pfx/PkcsCert.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/doubledatasource" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/druid" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/fastdfs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ftputils" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/http" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jersey" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jpa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kafka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/logback" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pack" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/password" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/password/target/classes/PrivateKey" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/password/target/classes/PublicKey" charset="GBK" />
     <file url="file://$PROJECT_DIR$/rabbitmq" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/redis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shiro" charset="UTF-8" />
@@ -22,6 +29,6 @@
     <file url="file://$PROJECT_DIR$/sofabolt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/solr" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tomcatjdbc" charset="UTF-8" />
-    <file url="PROJECT" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
   </component>
 </project>

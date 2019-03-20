@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="actor" />
+        <module name="api_template" />
         <module name="demo" />
         <module name="doubledatasource" />
         <module name="druid" />
         <module name="fastdfs" />
+        <module name="ftputils" />
         <module name="http" />
         <module name="java" />
         <module name="jersey" />
@@ -18,6 +20,7 @@
         <module name="kafka" />
         <module name="logback" />
         <module name="pack" />
+        <module name="password" />
         <module name="rabbitmq" />
         <module name="redis" />
         <module name="shiro" />
@@ -31,10 +34,12 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="actor" target="1.8" />
+      <module name="api_template" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="doubledatasource" target="1.8" />
       <module name="druid" target="1.8" />
       <module name="fastdfs" target="1.8" />
+      <module name="ftputils" target="1.8" />
       <module name="http" target="1.8" />
       <module name="java" target="1.8" />
       <module name="jersey" target="1.8" />
@@ -42,6 +47,7 @@
       <module name="kafka" target="1.8" />
       <module name="logback" target="1.8" />
       <module name="pack" target="7" />
+      <module name="password" target="1.8" />
       <module name="rabbitmq" target="1.8" />
       <module name="redis" target="1.8" />
       <module name="shiro" target="1.8" />

@@ -3,10 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/actor/actor.iml" filepath="$PROJECT_DIR$/actor/actor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api_template/api_template.iml" filepath="$PROJECT_DIR$/api_template/api_template.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/doubledatasource/doubledatasource.iml" filepath="$PROJECT_DIR$/doubledatasource/doubledatasource.iml" />
       <module fileurl="file://$PROJECT_DIR$/druid/druid.iml" filepath="$PROJECT_DIR$/druid/druid.iml" />
       <module fileurl="file://$PROJECT_DIR$/fastdfs/fastdfs.iml" filepath="$PROJECT_DIR$/fastdfs/fastdfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftputils/ftputils.iml" filepath="$PROJECT_DIR$/ftputils/ftputils.iml" />
       <module fileurl="file://$PROJECT_DIR$/http/http.iml" filepath="$PROJECT_DIR$/http/http.iml" />
       <module fileurl="file://$PROJECT_DIR$/java.iml" filepath="$PROJECT_DIR$/java.iml" />
       <module fileurl="file://$PROJECT_DIR$/jersey/jersey.iml" filepath="$PROJECT_DIR$/jersey/jersey.iml" />
@@ -14,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/kafka/kafka.iml" filepath="$PROJECT_DIR$/kafka/kafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/logback/logback.iml" filepath="$PROJECT_DIR$/logback/logback.iml" />
       <module fileurl="file://$PROJECT_DIR$/pack/pack.iml" filepath="$PROJECT_DIR$/pack/pack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/password/password.iml" filepath="$PROJECT_DIR$/password/password.iml" />
       <module fileurl="file://$PROJECT_DIR$/rabbitmq/rabbitmq.iml" filepath="$PROJECT_DIR$/rabbitmq/rabbitmq.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/shiro/shiro.iml" filepath="$PROJECT_DIR$/shiro/shiro.iml" />

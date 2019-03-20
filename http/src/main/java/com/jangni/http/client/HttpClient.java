@@ -1,20 +1,16 @@
 package com.jangni.http.client;
 
-import com.google.common.io.CharStreams;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.concurrent.FutureCallback;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
 import org.apache.http.impl.nio.client.HttpAsyncClients;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /**
  * @ClassName HttpClient
@@ -24,10 +20,10 @@ import java.util.concurrent.CompletableFuture;
  * @Version 1.0
  **/
 public class HttpClient {
+    private CloseableHttpAsyncClient client;
     private String host;
     private int port;
     private int timeout;
-    private CloseableHttpAsyncClient client;
 
     HttpClient(String host, int port, int timeout) {
         this.host = host;
@@ -46,45 +42,6 @@ public class HttpClient {
                 .build();
     }
 
-    public CompletableFuture<String> send(String msg) {
-        HttpPost post = new HttpPost("http://" + host + ":" + port);
-        post.setConfig(requestConfig());
-        post.setEntity(new StringEntity(msg, ContentType.TEXT_PLAIN.withCharset("UTF-8")));
-
-        return CompletableFuture.supplyAsync(() -> {
-            client.execute(post, new FutureCallback<HttpResponse>() {
-                @Override
-                public void completed(HttpResponse resp) {
-                    if (resp.getStatusLine().getStatusCode() == 200) {
-                        String respStr = "";
-                        try {
-                            InputStream input = resp.getEntity().getContent();
-                            respStr = CharStreams.toString(new InputStreamReader(input, StandardCharsets.UTF_8));
-                        } catch (IOException e) {
-                            throw new RuntimeException("请求异常");
-                        }
-                        if (respStr.isEmpty()) {
-                            throw new RuntimeException("返回为空");
-                        }
-                    } else {
-                        throw new RuntimeException("server from code != 200, return code :" + resp.getStatusLine().getStatusCode());
-                    }
-                }
-
-                @Override
-                public void failed(Exception e) {
-                    e.getCause();
-                }
-
-                @Override
-                public void cancelled() {
-                    new RuntimeException();
-                }
-            });
-            return "";
-        });
-    }
-
     private RequestConfig requestConfig() {
         return RequestConfig.custom()
                 .setConnectTimeout(5000)
@@ -93,11 +50,33 @@ public class HttpClient {
                 .build();
     }
 
-    public void close(){
+    public void close() {
         try {
             client.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    public Future<HttpResponse> send(BasicHttpContext context) {
+        HttpPost post = new HttpPost("http://" + host + ":" + port +"/post");
+        post.setConfig(requestConfig());
+        post.setEntity(new StringEntity(context.getAttribute("reqMsg").toString(), ContentType.TEXT_PLAIN.withCharset("UTF-8")));
+        return client.execute(post,context, new RespFutureCallback(context));
+    }
+
+    public static void main(String[] args) {
+        HttpClient httpClient = new HttpClient("127.0.0.1",8080,60000);
+        BasicHttpContext context = new BasicHttpContext();
+        context.setAttribute("reqMsg","你好");
+        Future<HttpResponse> future = httpClient.send(context);
+        try {
+            HttpResponse response = future.get();
+            System.out.println(response.getStatusLine().getStatusCode());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
         }
     }
 }
