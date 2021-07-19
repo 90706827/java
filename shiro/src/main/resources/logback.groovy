@@ -31,7 +31,7 @@ appender("base", RollingFileAppender) {
 
 
 appender("console", ConsoleAppender) {
-    logger("com.jangni.shiro.mapper", DEBUG)
+    logger("com.jimmy.shiro.mapper", DEBUG)
     encoder(PatternLayoutEncoder) {
         pattern = commonPattern
     }

@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 /**
  * ClassName Blocking
  * Description 阻塞队列
- * Author  Mr.Jangni
+ * Author  Mr.jimmy
  * Date 2019/1/8 17:12
  * Version 1.0
  **/

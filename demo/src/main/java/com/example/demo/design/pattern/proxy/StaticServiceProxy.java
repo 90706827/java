@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * @Description 静态代理-代理类 固定代理一个接口，实现此接口的类都被代理，代理什么类已经固定，代理类同被代理类一样实现此接口
- * @Author Jangni
+ * @Author jimmy
  * @Date 2018/11/29 21:11
  **/
 public class StaticServiceProxy implements IStaticService {
@@ -12,7 +12,7 @@ public class StaticServiceProxy implements IStaticService {
     private IStaticService iStaticService;
 
     /**
-     * @Author Mr.Jangni
+     * @Author Mr.jimmy
      * @Description 构造方法参数接口类
      * @Date 2018/11/29 21:32
      * @Param [iStaticService]

@@ -5,7 +5,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 /**
  * @ClassName TaskExecutors
  * @Description 自定义线程池
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/9/19 11:13
  * @Version 1.0
  **/
@@ -18,7 +18,7 @@ public class TaskExecutors {
         pool.setMaxPoolSize(8);
         pool.setKeepAliveSeconds(10);
         pool.setAllowCoreThreadTimeOut(true);
-        pool.setThreadNamePrefix("taks-jangni-");
+        pool.setThreadNamePrefix("taks-jimmy-");
         pool.afterPropertiesSet();
         return pool;
     }

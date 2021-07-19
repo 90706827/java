@@ -3,7 +3,7 @@ package com.example.demo.design.core;
 /**
  * @ClassName Context
  * @Description 上下文基类，定义框架所用参数，根据不同业务模块，子类可继承定义属于自己的上下问参数
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/12/18 13:04
  * @Version 1.0
  **/

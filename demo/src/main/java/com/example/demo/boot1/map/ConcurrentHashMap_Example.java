@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
  * 在JDK8之前采用分段加锁的方式，分为16个桶，每次只对其中一个加锁
  * 在JDK8中又增加了红黑树算法和CAS算法来实现
  * concurrent [kənˈkʌrənt] 同时发生的
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2019/2/27 9:51
  * @Version 1.0
  **/

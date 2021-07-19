@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @Description 总结 1：在
- * @Author Jangni
+ * @Author jimmy
  * @Date 2018/11/21 20:31
  **/
 public class CountDownLatchTest {

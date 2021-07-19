@@ -18,7 +18,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * @ClassName CustomHandlerExceptionResolver
  * @Description 统一异常处理
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2019/3/13 8:58
  * @Version 1.0
  **/

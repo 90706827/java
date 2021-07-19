@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @program: java
  * @description: 定时任务类线程池
- * @author: Mr.Jangni
+ * @author: Mr.jimmy
  * @create: 2018-09-04 22:20
  **/
 public class NewScheduledThreadPool {

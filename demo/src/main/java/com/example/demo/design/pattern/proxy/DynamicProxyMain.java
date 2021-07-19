@@ -4,7 +4,7 @@ import java.lang.reflect.Proxy;
 
 /**
  * @Description jdk动态代理
- * @Author Jangni
+ * @Author jimmy
  * @Date 2018/11/29 22:24
  **/
 public class DynamicProxyMain {

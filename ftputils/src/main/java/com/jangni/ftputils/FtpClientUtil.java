@@ -1,4 +1,4 @@
-package com.jangni.ftputils;
+package com.jimmy.ftputils;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPReply;
@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 /**
  * @ClassName FtpClientUtil
  * @Description
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2019/3/9 18:44
  * @Version 1.0
  **/
@@ -38,7 +38,7 @@ public class FtpClientUtil {
     }
 
     /**
-     * Author Mr.Jangni
+     * Author Mr.jimmy
      * Description 连接ftp
      * Date 2019/3/9 18:53
      * Param []
@@ -69,7 +69,7 @@ public class FtpClientUtil {
     }
 
     /**
-     * Author Mr.Jangni
+     * Author Mr.jimmy
      * Description 关闭ftp连接
      * Date 2019/3/9 18:58
      * Param []
@@ -92,7 +92,7 @@ public class FtpClientUtil {
     }
 
     /**
-     * Author Mr.Jangni
+     * Author Mr.jimmy
      * Description
      * Date 2019/3/9 18:53
      * Param [remotePathAndName-FTP上的路径及名字, localDirectory-本地路径, FileName-名字]

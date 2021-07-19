@@ -3,7 +3,7 @@ package com.example.demo;
 /**
  * ClassName CalulateTwoLanLon
  * Description 计算两个经纬度的距离
- * Author  Mr.Jangni
+ * Author  Mr.jimmy
  * Date 2019/1/7 10:25
  * Version 1.0
  * */

@@ -2,7 +2,7 @@ package com.pomelo.pack.exception;
 
 /**
  * @Description 异常
- * @Author Jangni
+ * @Author jimmy
  * @Date 2018/12/1 13:13
  **/
 public class PackException extends Exception {

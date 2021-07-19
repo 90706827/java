@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 /**
  * @program: java
  * @description: 固定线程池
- * @author: Mr.Jangni
+ * @author: Mr.jimmy
  * @create: 2018-09-04 22:15
  **/
 public class NewFixedThreadPool {

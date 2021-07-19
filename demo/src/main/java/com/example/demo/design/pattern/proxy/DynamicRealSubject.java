@@ -2,7 +2,7 @@ package com.example.demo.design.pattern.proxy;
 
 /**
  * @Description 动态代理-被代理类
- * @Author Jangni
+ * @Author jimmy
  * @Date 2018/11/29 22:19
  **/
 public class DynamicRealSubject implements IDynamicSubject {

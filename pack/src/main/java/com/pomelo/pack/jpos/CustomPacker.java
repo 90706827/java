@@ -7,7 +7,7 @@ import org.jpos.iso.ISOException;
 import java.nio.ByteBuffer;
 
 /**
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Description 一个可定制的packer
  * @Date 2018/12/3 21:06
  **/

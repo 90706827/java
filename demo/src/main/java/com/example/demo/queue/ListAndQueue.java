@@ -9,7 +9,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 /**
  * ClassName ListAndQueue
  * Description 并发情况下使用queue替换list
- * Author  Mr.Jangni
+ * Author  Mr.jimmy
  * Date 2019/1/8 15:59
  * Version 1.0
  **/

@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 /**
  * @program: java
  * @description: 单个线程线程池
- * @author: Mr.Jangni
+ * @author: Mr.jimmy
  * @create: 2018-09-04 22:18
  **/
 public class NewSingleThreadExecutor {

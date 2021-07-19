@@ -3,7 +3,7 @@
 package com.example.demo.book2.mtpattern.ch1;
 
 /**
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Description run执行方法的线程是当前线程
  * @Date 14:44 2018/12/7
  * @Param

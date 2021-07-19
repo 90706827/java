@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @program: java
  * @description:
- * @author: Mr.Jangni
+ * @author: Mr.jimmy
  * @create: 2018-09-08 15:23
  **/
 public class FutureActor {

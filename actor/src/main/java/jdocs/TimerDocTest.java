@@ -10,7 +10,7 @@ import java.time.Duration;
 /**
  * @program: java
  * @description:
- * @author: Mr.Jangni
+ * @author: Mr.jimmy
  * @create: 2018-09-09 10:24
  **/
 public class TimerDocTest {

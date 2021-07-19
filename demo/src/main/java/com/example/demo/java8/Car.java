@@ -3,7 +3,7 @@ package com.example.demo.java8;
 /**
  * @ClassName Car
  * @Description car
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/9/25 16:46
  * @Version 1.0
  **/

@@ -3,7 +3,7 @@ package com.example.demo.design.core;
 /**
  * @ClassName IExec
  * @Description 业务处理基类接口
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/12/18 12:47
  * @Version 1.0
  **/

@@ -3,7 +3,7 @@ package com.example.demo.mianshi;
 /**
  * ClassName Bean
  * Description 主类
- * Author  Mr.Jangni
+ * Author  Mr.jimmy
  * Date 2018/12/24 9:13
  * Version 1.0
  **/

@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @ClassName TaskTest
  * @Description
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/9/16 13:12
  * @Version 1.0
  **/

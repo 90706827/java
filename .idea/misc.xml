@@ -15,7 +15,6 @@
         <option value="$PROJECT_DIR$/socket_server/pom.xml" />
         <option value="$PROJECT_DIR$/socket_client/pom.xml" />
         <option value="$PROJECT_DIR$/jersey/pom.xml" />
-        <option value="$PROJECT_DIR$/fastdfs/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq/pom.xml" />
         <option value="$PROJECT_DIR$/tomcatjdbc/pom.xml" />
         <option value="$PROJECT_DIR$/doubledatasource/pom.xml" />
@@ -27,6 +26,8 @@
         <option value="$PROJECT_DIR$/api_template/pom.xml" />
         <option value="$PROJECT_DIR$/password/pom.xml" />
         <option value="$PROJECT_DIR$/ftputils/pom.xml" />
+        <option value="$PROJECT_DIR$/thread/pom.xml" />
+        <option value="$PROJECT_DIR$/zookeeper/pom.xml" />
       </list>
     </option>
   </component>

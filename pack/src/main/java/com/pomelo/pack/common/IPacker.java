@@ -5,7 +5,7 @@ import com.pomelo.pack.exception.PackException;
 import java.nio.ByteBuffer;
 
 /**
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Description 标准的包装者接口
  * @Date 2018/12/3 19:05
  **/

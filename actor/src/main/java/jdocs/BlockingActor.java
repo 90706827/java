@@ -17,7 +17,7 @@ import java.util.concurrent.Executors;
 /**
  * @program: java
  * @description:
- * @author: Mr.Jangni
+ * @author: Mr.jimmy
  * @create: 2018-09-08 10:41
  **/
 public class BlockingActor extends AbstractActor {

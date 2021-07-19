@@ -14,7 +14,7 @@ import javax.websocket.server.PathParam;
 /**
  * ClassName UserController
  * Description test
- * Author  Mr.Jangni
+ * Author  Mr.jimmy
  * Date 2018/12/26 10:22
  * Version 1.0
  **/

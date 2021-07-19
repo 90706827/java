@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @ClassName InfoController
  * @Description
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2019/3/13 13:06
  * @Version 1.0
  **/

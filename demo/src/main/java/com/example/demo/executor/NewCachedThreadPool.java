@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 /**
  * @program: java
  * @description: 缓存类线程池
- * @author: Mr.Jangni
+ * @author: Mr.jimmy
  * @create: 2018-09-04 22:17
  **/
 public class NewCachedThreadPool {

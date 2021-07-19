@@ -5,7 +5,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * @ClassName CompletableFutureTest
  * @Description CompletableFuture
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/9/18 17:27
  * @Version 1.0
  **/

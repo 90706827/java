@@ -11,7 +11,7 @@ import static java.util.stream.Collectors.toList;
 /**
  * @ClassName StreamExam
  * @Description Stream
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/9/25 16:45
  * @Version 1.0
  **/

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jangni.shiro.mapper.UserRoleMapper">
-  <resultMap id="BaseResultMap" type="com.jangni.shiro.entity.UserRole">
+<mapper namespace="com.jimmy.shiro.mapper.UserRoleMapper">
+  <resultMap id="BaseResultMap" type="com.jimmy.shiro.entity.UserRole">
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="role_id" jdbcType="INTEGER" property="roleId" />
   </resultMap>
-  <insert id="insert" parameterType="com.jangni.shiro.entity.UserRole">
+  <insert id="insert" parameterType="com.jimmy.shiro.entity.UserRole">
     insert into t_u_user_role (user_id, role_id)
     values (#{userId,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.jangni.shiro.entity.UserRole">
+  <insert id="insertSelective" parameterType="com.jimmy.shiro.entity.UserRole">
     insert into t_u_user_role
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="userId != null">

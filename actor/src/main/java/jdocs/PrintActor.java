@@ -5,7 +5,7 @@ import akka.actor.AbstractActor;
 /**
  * @program: java
  * @description: 打印actor
- * @author: Mr.Jangni
+ * @author: Mr.jimmy
  * @create: 2018-09-08 10:47
  **/
 public class PrintActor extends AbstractActor {

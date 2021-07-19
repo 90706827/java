@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jangni.shiro.mapper.RoleMapper">
-  <resultMap id="BaseResultMap" type="com.jangni.shiro.entity.Role">
+<mapper namespace="com.jimmy.shiro.mapper.RoleMapper">
+  <resultMap id="BaseResultMap" type="com.jimmy.shiro.entity.Role">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="role_name" jdbcType="VARCHAR" property="roleName" />
   </resultMap>
@@ -25,11 +25,11 @@
     delete from t_r_role
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.jangni.shiro.entity.Role">
+  <insert id="insert" parameterType="com.jimmy.shiro.entity.Role">
     insert into t_r_role (id, role_name)
     values (#{id,jdbcType=INTEGER}, #{roleName,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.jangni.shiro.entity.Role">
+  <insert id="insertSelective" parameterType="com.jimmy.shiro.entity.Role">
     insert into t_r_role
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -48,7 +48,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jangni.shiro.entity.Role">
+  <update id="updateByPrimaryKeySelective" parameterType="com.jimmy.shiro.entity.Role">
     update t_r_role
     <set>
       <if test="roleName != null">
@@ -57,7 +57,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.jangni.shiro.entity.Role">
+  <update id="updateByPrimaryKey" parameterType="com.jimmy.shiro.entity.Role">
     update t_r_role
     set role_name = #{roleName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}

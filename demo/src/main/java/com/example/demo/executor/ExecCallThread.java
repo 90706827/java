@@ -7,7 +7,7 @@ import java.util.concurrent.Callable;
 /**
  * ClassName ExecCallThread
  * Description
- * Author Mr.Jangni
+ * Author Mr.jimmy
  * Date 2019/1/13 20:22
  * Version 1.0
  **/

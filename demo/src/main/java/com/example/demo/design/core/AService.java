@@ -3,7 +3,7 @@ package com.example.demo.design.core;
 /**
  * @ClassName AService
  * @Description 普通业务逻辑
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/12/18 9:54
  * @Version 1.0
  **/

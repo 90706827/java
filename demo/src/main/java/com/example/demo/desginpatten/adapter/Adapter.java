@@ -3,7 +3,7 @@ package com.example.demo.desginpatten.adapter;
 /**
  * @ClassName Adapter
  * @Description 适配器
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/11/8 16:00
  * @Version 1.0
  **/

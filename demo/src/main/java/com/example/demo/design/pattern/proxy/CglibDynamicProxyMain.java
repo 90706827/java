@@ -2,7 +2,7 @@ package com.example.demo.design.pattern.proxy;
 
 /**
  * @Description TODO
- * @Author Jangni
+ * @Author jimmy
  * @Date 2018/11/29 23:17
  **/
 public class CglibDynamicProxyMain {

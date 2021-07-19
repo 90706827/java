@@ -8,7 +8,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * @ClassName ThenApplyAsync
  * @Description
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/9/19 11:11
  * @Version 1.0
  **/

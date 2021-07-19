@@ -5,7 +5,7 @@ import org.springframework.core.task.TaskDecorator;
 /**
  * @ClassName MaxWaitTimeoutTaskDecorator
  * @Description Runable 包装器 限制最大执行时间
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/12/18 16:59
  * @Version 1.0
  **/

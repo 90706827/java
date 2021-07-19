@@ -2,7 +2,7 @@ package com.example.demo.design.pattern.proxy;
 
 /**
  * @Description 静态代理-使用
- * @Author Jangni
+ * @Author jimmy
  * @Date 2018/11/29 21:14
  **/
 public class StaticProxyMain {

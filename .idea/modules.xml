@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/doubledatasource/doubledatasource.iml" filepath="$PROJECT_DIR$/doubledatasource/doubledatasource.iml" />
       <module fileurl="file://$PROJECT_DIR$/druid/druid.iml" filepath="$PROJECT_DIR$/druid/druid.iml" />
-      <module fileurl="file://$PROJECT_DIR$/fastdfs/fastdfs.iml" filepath="$PROJECT_DIR$/fastdfs/fastdfs.iml" />
       <module fileurl="file://$PROJECT_DIR$/ftputils/ftputils.iml" filepath="$PROJECT_DIR$/ftputils/ftputils.iml" />
       <module fileurl="file://$PROJECT_DIR$/http/http.iml" filepath="$PROJECT_DIR$/http/http.iml" />
       <module fileurl="file://$PROJECT_DIR$/java.iml" filepath="$PROJECT_DIR$/java.iml" />
@@ -25,7 +24,9 @@
       <module fileurl="file://$PROJECT_DIR$/socket_server/socket_server.iml" filepath="$PROJECT_DIR$/socket_server/socket_server.iml" />
       <module fileurl="file://$PROJECT_DIR$/sofabolt/sofabolt.iml" filepath="$PROJECT_DIR$/sofabolt/sofabolt.iml" />
       <module fileurl="file://$PROJECT_DIR$/solr/solr.iml" filepath="$PROJECT_DIR$/solr/solr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thread/thread.iml" filepath="$PROJECT_DIR$/thread/thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/tomcatjdbc/tomcatjdbc.iml" filepath="$PROJECT_DIR$/tomcatjdbc/tomcatjdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zookeeper/zookeeper.iml" filepath="$PROJECT_DIR$/zookeeper/zookeeper.iml" />
     </modules>
   </component>
 </project>

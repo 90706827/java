@@ -3,7 +3,7 @@
 package com.example.demo.book2.mtpattern.ch1;
 
 /**
-* @Author Mr.Jangni
+* @Author Mr.jimmy
 * @Description 通过start执行的 是新的线程
 * @Date 14:54 2018/12/7
 * @Param   

@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * @Description  静态代理-接口类
- * @Author Jangni
+ * @Author jimmy
  * @Date 2018/11/29 21:08
  **/
 public interface IStaticService {

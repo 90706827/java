@@ -6,7 +6,7 @@ import java.util.concurrent.*;
 /**
  * @ClassName CallableTest
  * @Description Callable
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/9/18 15:55
  * @Version 1.0
  **/

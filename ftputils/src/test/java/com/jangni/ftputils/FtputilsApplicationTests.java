@@ -1,4 +1,4 @@
-package com.jangni.ftputils;
+package com.jimmy.ftputils;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

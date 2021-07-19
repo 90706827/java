@@ -3,7 +3,7 @@ package com.example.demo.design.core;
 /**
  * @ClassName IExecService
  * @Description 异常处理类
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/12/18 13:02
  * @Version 1.0
  **/

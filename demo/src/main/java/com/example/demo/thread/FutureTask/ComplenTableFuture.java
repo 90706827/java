@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * @ClassName ComplenTableFuture
  * @Description
- * @Author Mr.Jangni
+ * @Author Mr.jimmy
  * @Date 2018/9/18 16:49
  * @Version 1.0
  **/

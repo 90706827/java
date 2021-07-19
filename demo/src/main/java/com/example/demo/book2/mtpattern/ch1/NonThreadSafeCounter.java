@@ -3,7 +3,7 @@
 package com.example.demo.book2.mtpattern.ch1;
 
 /**
-* @Author Mr.Jangni
+* @Author Mr.jimmy
 * @Description 非线程安全的计数器。
 * @Date 14:45 2018/12/7
 * @Param
