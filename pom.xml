@@ -2,11 +2,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.8</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.jimmy</groupId>
+    <artifactId>java</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
     <packaging>pom</packaging>
+
+    <name>java</name>
+    <description>Demo project for Spring Boot</description>
+
     <modules>
         <module>actor</module>
         <module>api_template</module>
-        <module>demo</module>
         <module>doubledatasource</module>
         <module>druid</module>
         <module>ftputils</module>
@@ -26,20 +41,6 @@
         <module>solr</module>
         <module>thread</module>
     </modules>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-
-
-    <groupId>com.jimmy</groupId>
-    <artifactId>java</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-
-    <name>java</name>
-    <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -77,5 +78,12 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

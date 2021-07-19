@@ -9,7 +9,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="socket_client" />
         <module name="tomcatjdbc" />
-        <module name="demo" />
         <module name="redis" />
         <module name="logback" />
         <module name="socket_server" />
@@ -36,7 +35,7 @@
     <bytecodeTargetLevel>
       <module name="actor" target="1.8" />
       <module name="api_template" target="1.8" />
-      <module name="demo" target="1.8" />
+      <module name="demo" target="1.5" />
       <module name="doubledatasource" target="1.8" />
       <module name="druid" target="1.8" />
       <module name="fastdfs" target="1.8" />
@@ -52,7 +51,7 @@
       <module name="rabbitmq" target="1.8" />
       <module name="redis" target="1.8" />
       <module name="shiro" target="1.8" />
-      <module name="socket" target="1.8" />
+      <module name="socket" target="8" />
       <module name="socket_client" target="1.8" />
       <module name="socket_server" target="1.8" />
       <module name="sofabolt" target="1.8" />
@@ -71,9 +70,19 @@
       <module name="fastdfs" options="-parameters" />
       <module name="ftputils" options="-parameters" />
       <module name="http" options="-parameters" />
+      <module name="jersey" options="-parameters" />
+      <module name="jpa" options="-parameters" />
+      <module name="kafka" options="-parameters" />
+      <module name="logback" options="-parameters" />
+      <module name="password" options="-parameters" />
+      <module name="rabbitmq" options="-parameters" />
       <module name="redis" options="-parameters" />
+      <module name="shiro" options="-parameters" />
+      <module name="socket" options="-parameters" />
       <module name="socket_client" options="-parameters" />
       <module name="socket_server" options="-parameters" />
+      <module name="sofabolt" options="-parameters" />
+      <module name="solr" options="-parameters" />
       <module name="thread" options="-parameters" />
       <module name="tomcatjdbc" options="-parameters" />
       <module name="zookeeper" options="-parameters" />
