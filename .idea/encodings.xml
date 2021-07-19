@@ -7,10 +7,6 @@
     <file url="file://$PROJECT_DIR$/actor/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api_template" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api_template/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/demo" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/demo/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/pfx/PKCSUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/pfx/PkcsCert.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/doubledatasource" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/doubledatasource/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/druid" charset="UTF-8" />
