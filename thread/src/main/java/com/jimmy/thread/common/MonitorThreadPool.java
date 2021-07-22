@@ -3,28 +3,25 @@ package com.jimmy.thread.common;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @Description 线程打印
  * @Author zhangguoq
  **/
-public abstract class ThreadPoolMonitor {
+public abstract class MonitorThreadPool {
 
-    public static final Logger logger = LoggerFactory.getLogger("task");
-    public static final Logger loggerBase = LoggerFactory.getLogger("base");
+    public static final Logger loggerBase = LoggerFactory.getLogger(MonitorThreadPool.class);
 
     protected ThreadPoolExecutor pool = getThreadPoolExecutor();
 
     private static ThreadPoolExecutor work = new ThreadPoolExecutor(
             1,
             1,
-            30,
+            1000,
             TimeUnit.MILLISECONDS,
             new LinkedBlockingQueue<>(),
-            new MonitorThreadFactory("Monitor-Thread-Pool"));
+            new MonitorThreadFactory("Monitor-Thread"));
 
     public void monitor() {
         work.execute(() -> {
@@ -49,20 +46,20 @@ public abstract class ThreadPoolMonitor {
         }
         loggerBase.info("----------------------------------------------------");
         loggerBase.info("核心线程数:{}", pool.getCorePoolSize());
-        loggerBase.info("线程池数:{}", pool.getPoolSize());
+        loggerBase.info("池中线程数:{}", pool.getPoolSize());
         loggerBase.info("队列任务数:{}", pool.getQueue().size());
         loggerBase.info("----------------------------------------------------");
     }
 
     public void start() {
-        test();
+        task();
         monitor();
     }
 
     /**
-     * 测试
+     * 任务
      */
-    public abstract void test();
+    public abstract void task();
 
     /**
      * 自定义 线程池
