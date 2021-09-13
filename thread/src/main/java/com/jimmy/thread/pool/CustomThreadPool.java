@@ -4,14 +4,15 @@ import com.google.common.base.Stopwatch;
 import com.jimmy.thread.common.MonitorThreadPool;
 import com.jimmy.thread.task.LockObject;
 import com.jimmy.thread.task.ReentrantLockTest;
+import com.jimmy.thread.task.RunnableTask;
 import com.jimmy.thread.task.SynchronizedTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.*;
+import java.util.stream.Collectors;
 
 /**
  * @Description
@@ -24,25 +25,26 @@ public class CustomThreadPool extends MonitorThreadPool {
     @Override
     public ThreadPoolExecutor getThreadPoolExecutor() {
         pool = new ThreadPoolExecutor(
-                100,
-                200,
+                10,
+                20,
                 1000,
                 TimeUnit.MILLISECONDS,
-                new SynchronousQueue<>(),
+                new LinkedBlockingQueue<>(30),
                 new CustomThreadFactory("Task-Thread-"),
                 new CustomRejectedExecutionHandler());
         pool.allowCoreThreadTimeOut(true);
         return pool;
     }
 
-
     @Override
     public void task() {
         Stopwatch stopwatch = Stopwatch.createStarted();
         SynchronizedTest sync = new SynchronizedTest();
         ReentrantLockTest reentrant = new ReentrantLockTest();
+
         for (int i = 1; i <= 10; i++) {
-            pool.execute(new LockObject("线程" + i, reentrant));
+            pool.execute(new RunnableTask(i));
+//            pool.execute(new LockObject("线程" + i, new SynchronizedTest()));
         }
         logger.info("用时：{}", stopwatch.stop().elapsed(TimeUnit.MILLISECONDS));
     }

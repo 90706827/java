@@ -19,15 +19,15 @@ public class CustomRejectedExecutionHandler implements RejectedExecutionHandler 
 
     @Override
     public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
-        CustomThreadPool task = (CustomThreadPool) r;
+
+                new Thread(r).start();
 
         String msg = String.format("Thread pool Wain Info:" +
-                        " Task [%d], Pool Size: %d (active: %d, core: %d, max: %d, largest: %d), Task: %d (completed: %d)," +
+                        " Task, Pool Size: %d (active: %d, core: %d, max: %d, largest: %d), Task: %d (completed: %d)," +
                         " Executor status:(isShutdown:%s, isTerminated:%s, isTerminating:%s)",
-                task, e.getPoolSize(), e.getActiveCount(), e.getCorePoolSize(), e.getMaximumPoolSize(), e.getLargestPoolSize(),
+                e.getPoolSize(), e.getActiveCount(), e.getCorePoolSize(), e.getMaximumPoolSize(), e.getLargestPoolSize(),
                 e.getTaskCount(), e.getCompletedTaskCount(), e.isShutdown(), e.isTerminated(), e.isTerminating());
-        logger.warn(msg);
-
+        logger.error(msg);
     }
 
 }

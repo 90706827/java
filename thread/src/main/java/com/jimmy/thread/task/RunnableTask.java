@@ -20,7 +20,7 @@ public class RunnableTask implements Runnable {
     public void run() {
         logger.info("{} 执行任务：{}", Thread.currentThread().getName(), taskNo);
         try {
-            Thread.sleep(20000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

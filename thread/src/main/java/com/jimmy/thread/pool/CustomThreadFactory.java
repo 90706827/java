@@ -24,7 +24,7 @@ public class CustomThreadFactory implements ThreadFactory {
     public Thread newThread(Runnable r) {
         Thread t = new Thread(r);
         String threadName = name + count.addAndGet(1);
-//        logger.info("创建线程：" + threadName);
+        logger.info("创建线程：" + threadName);
         t.setName(threadName);
         return t;
     }

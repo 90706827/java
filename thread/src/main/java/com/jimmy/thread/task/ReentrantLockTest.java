@@ -21,8 +21,8 @@ public class ReentrantLockTest extends BaseTest {
 
     @Override
     public void method() {
-        lock();
-//        tryLock();
+//        lock();
+        tryLock();
 //        tryLockTime();
 //        lockInterrupt();
     }
@@ -91,7 +91,7 @@ public class ReentrantLockTest extends BaseTest {
                     logger.info("{},释放锁", Thread.currentThread().getName());
                 }
             } else {
-                logger.info("{},重复执行,跳过操作！", Thread.currentThread().getName());
+                logger.info("{},等待超时,跳过操作！", Thread.currentThread().getName());
             }
         } catch (InterruptedException e) {
             logger.info("{},当前线程被中断时抛出异常！", Thread.currentThread().getName());
@@ -104,7 +104,7 @@ public class ReentrantLockTest extends BaseTest {
             logger.info("{},获得锁,开始业务......", Thread.currentThread().getName());
             count++;
             try {
-                Thread.sleep(4000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 new Exception(e);
             }
