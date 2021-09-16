@@ -40,6 +40,7 @@
         <module>sofabolt</module>
         <module>solr</module>
         <module>thread</module>
+        <module>elasticsearch</module>
     </modules>
 
     <properties>
