@@ -1,0 +1,9 @@
+es:
+  host: localhost
+  port: 9200
+  token: elasticsearch_brew
+  charset: UTF-8
+  scheme: http
+  client:
+    connectTimeOut: 5000
+    socketTimeout: 15000

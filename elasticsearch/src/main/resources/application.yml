@@ -1,16 +1,12 @@
 server:
   port: 9201
 spring:
-  data:
-    elasticsearch:
-      repositories:
-        enabled: true
-      client:
-        reactive:
-          endpoints: [http://localhost:9200]
-          socket-timeout: 30000
-          connection-timeout: 30000
-          username: elasticsearch_brew
-          password: 4ZI0VnQkRS-OD20RJ_0a3Q
   application:
     name: es-demo
+#  elasticsearch:
+#    rest:
+#      uris: http://localhost:9200
+#      username: elasticsearch_brew
+#      password: 4ZI0VnQkRS-OD20RJ_0a3Q
+#      read-timeout: 3000
+#      connection-timeout: 3000
