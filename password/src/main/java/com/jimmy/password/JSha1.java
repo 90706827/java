@@ -15,7 +15,7 @@ import java.security.NoSuchAlgorithmException;
 public class JSha1 {
 
     public static void main(String[] args) {
-        System.out.println(getSHA1("12345678"));
+//       logger.info(getSHA1("12345678"));
     }
 
     //对文件进行SHA1摘要

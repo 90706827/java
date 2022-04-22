@@ -30,7 +30,6 @@ public class UserService {
      */
     @Cacheable(value = "user")
     public List<User> findAll() {
-        System.out.println("sql");
         return userRepository.findAll();
     }
 

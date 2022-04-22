@@ -17,13 +17,13 @@ public class JAesDes {
     public static void main(String[] args) throws Exception {
 
         String encrypt = aesEncrypt("AES加密内容", "1234567890abcdef");
-        System.out.println(encrypt);
-        System.out.println(aesDecrypt(Hex.decodeHex(encrypt), "1234567890abcdef"));
+//       logger.info(encrypt);
+//       logger.info(aesDecrypt(Hex.decodeHex(encrypt), "1234567890abcdef"));
 
 
         String dncrypt = desEncrypt("DES加密内容", "12345678");
-        System.out.println(dncrypt);
-        System.out.println(desDecrypt(Hex.decodeHex(dncrypt), "12345678"));
+//       logger.info(dncrypt);
+//       logger.info(desDecrypt(Hex.decodeHex(dncrypt), "12345678"));
     }
 
     /**

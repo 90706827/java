@@ -30,7 +30,7 @@ public class RespFutureCallback implements FutureCallback<HttpResponse> {
             try {
                 InputStream input = resp.getEntity().getContent();
                 String respMsg = CharStreams.toString(new InputStreamReader(input, StandardCharsets.UTF_8));
-                System.out.println(respMsg);
+//               logger.info(respMsg);
                 context.setAttribute("respMsg",respMsg);
             } catch (IOException e) {
                 throw new RuntimeException("请求异常");

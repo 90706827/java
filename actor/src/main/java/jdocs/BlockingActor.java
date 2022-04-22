@@ -30,7 +30,7 @@ public class BlockingActor extends AbstractActor {
                 .match(Integer.class,i->{
                     Future<Integer> future = Futures.future(()->{
                         Thread.sleep(5000);
-                        System.out.println("Receive:"+i);
+                       logger.info("Receive:"+i);
                         return i;
                     },ec);
                 }).build();

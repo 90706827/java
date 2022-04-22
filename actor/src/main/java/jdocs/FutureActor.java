@@ -40,7 +40,7 @@ public class FutureActor {
         Timeout timeout = new Timeout(Duration.create(5, TimeUnit.SECONDS));
         Future<Object> future = Patterns.ask(actor, msg, timeout);
         Car result = (Car) Await.result(future, timeout.duration());
-        System.out.println(result.getName());
+       logger.info(result.getName());
         //#ask-blocking
         //#pipe-to
 //        akka.pattern.Patterns.pipe(future, system.dispatcher()).to(actor);

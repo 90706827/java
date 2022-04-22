@@ -10,7 +10,7 @@ public class EncodingLiteralInterpreter implements Interpreter {
     private static HashMap<String, EncodingLiteralInterpreter> interpreterMap;
 
     static {
-        interpreterMap = new HashMap<>();
+        interpreterMap = new HashMap<String, EncodingLiteralInterpreter>();
     }
 
     private String encoding = "GBK";

@@ -13,7 +13,7 @@ public class PrintActor extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder()
                 .match(String.class,str->{
-                    System.out.println("PrintActor: " + str);
+                   logger.info("PrintActor: " + str);
                 })
                 .build();
     }

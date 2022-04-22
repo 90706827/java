@@ -59,7 +59,7 @@ public class SimplePojoExample extends JdbcProsLoad {
             ResultSet rs = st.executeQuery("select * from user");
             int cnt = 1;
             while (rs.next()) {
-                System.out.println((cnt++) + ". Host:" + rs.getString("Host") +
+               logger.info((cnt++) + ". Host:" + rs.getString("Host") +
                         " User:" + rs.getString("User") + " Password:" + rs.getString("Password"));
             }
             rs.close();

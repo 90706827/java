@@ -30,6 +30,5 @@ public class MyClient {
          * 2、向服务端发起同步调用（四种调用方式中最常用的一种）
          */
         MyResponse response = (MyResponse) client.invokeSync("127.0.0.1:8888", request, 30 * 1000);
-        System.out.println(response);
     }
 }

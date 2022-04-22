@@ -17,6 +17,5 @@ public class CustomerService {
 
     @RabbitHandler
     public void process(String hello) {
-        System.out.println("接收: " + hello);
     }
 }

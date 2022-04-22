@@ -23,7 +23,7 @@ public class MyActor extends AbstractActorWithTimers {
     public Receive createReceive() {
         return receiveBuilder()
                 .match(String.class, msg -> {
-                    System.out.println("String"+msg);
+                   logger.info("String"+msg);
                     Car car = new Car(msg);
                     getSender().tell(car, getSelf());
                 })
@@ -31,7 +31,7 @@ public class MyActor extends AbstractActorWithTimers {
                     if (i < 0) {
                         getSender().tell(new Status.Failure(new ArithmeticException("Negative values not supported")), getSelf());
                     } else {
-                        System.out.println("Integer"+i);
+                       logger.info("Integer"+i);
                         getSender().tell("HELLO", getSelf());
                     }
                 })

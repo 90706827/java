@@ -54,7 +54,7 @@ public class HttpClient {
         try {
             client.close();
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+//           logger.info(e.getMessage());
         }
     }
 
@@ -72,7 +72,7 @@ public class HttpClient {
         Future<HttpResponse> future = httpClient.send(context);
         try {
             HttpResponse response = future.get();
-            System.out.println(response.getStatusLine().getStatusCode());
+//           logger.info(response.getStatusLine().getStatusCode());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

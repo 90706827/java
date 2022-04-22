@@ -18,8 +18,8 @@ public class JMd5 {
 
     public static void main(String[] args) {
 
-        System.out.println(getMD5("12345678"));
-        System.out.println(DigestUtils.md5DigestAsHex("12345678".getBytes()));
+//       logger.info(getMD5("12345678"));
+//       logger.info(DigestUtils.md5DigestAsHex("12345678".getBytes()));
 
     }
 

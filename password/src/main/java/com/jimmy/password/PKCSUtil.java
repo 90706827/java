@@ -60,7 +60,6 @@ public class PKCSUtil {
             	cert = keyStore.getCertificate(keystoreAlias);
             }
         } catch (Exception e) {
-           System.out.println("key store init error :"+e.toString());
            keyStore = null ;
         }
 	}

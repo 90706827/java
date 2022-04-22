@@ -1,0 +1,9 @@
+# zk配置
+curator:
+  retryCount: 3
+  baseSleepTimeMs: 1000
+  connectString: 127.0.0.1:2183,127.0.0.1:2183,127.0.0.1:2184
+  sessionTimeoutMs: 60000
+  connectionTimeoutMs: 5000
+server:
+  port: 8081

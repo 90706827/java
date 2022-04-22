@@ -28,10 +28,10 @@ public class Test {
                 .header("type", "1001")
                 .post(Entity.entity("<xml><root>abcd</root></xml>", "text/xml; charset=utf-8"));
 
-        System.out.println(r);
+//       logger.info(r);
         if (r.getStatus() == 200) {
             String body = r.readEntity(String.class);
-            System.out.println(body);
+//           logger.info(body);
         }
         client.close();
     }

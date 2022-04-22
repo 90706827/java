@@ -23,7 +23,6 @@ public class ProducerService {
         boolean kg = true;
         while (kg) {
             String sendMsg = "hello " + count + new Date();
-            System.out.println("发送: " + sendMsg);
             rabbitTemplate.convertAndSend(QUEUE_NAME, sendMsg);
             count++;
             if (count == 100) {

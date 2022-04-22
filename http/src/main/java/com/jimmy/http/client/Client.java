@@ -38,17 +38,17 @@ public class Client {
 
                 public void completed(final HttpResponse response) {
                     latch.countDown();
-                    System.out.println(httpget.getRequestLine() + "->" + response.getStatusLine());
+//                   logger.info(httpget.getRequestLine() + "->" + response.getStatusLine());
                 }
 
                 public void failed(final Exception ex) {
                     latch.countDown();
-                    System.out.println(httpget.getRequestLine() + "->" + ex);
+//                   logger.info(httpget.getRequestLine() + "->" + ex);
                 }
 
                 public void cancelled() {
                     latch.countDown();
-                    System.out.println(httpget.getRequestLine() + " cancelled");
+//                   logger.info(httpget.getRequestLine() + " cancelled");
                 }
 
             });

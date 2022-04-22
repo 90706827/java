@@ -1,0 +1,29 @@
+{
+  "properties": [
+    {
+      "name": "curator.retryCount",
+      "type": "java.lang.String",
+      "description": "Description for curator.retryCount."
+    },
+    {
+      "name": "curator.baseSleepTimeMs",
+      "type": "java.lang.String",
+      "description": "Description for curator.baseSleepTimeMs."
+    },
+    {
+      "name": "curator.connectString",
+      "type": "java.lang.String",
+      "description": "Description for curator.connectString."
+    },
+    {
+      "name": "curator.sessionTimeoutMs",
+      "type": "java.lang.String",
+      "description": "Description for curator.sessionTimeoutMs."
+    },
+    {
+      "name": "curator.connectionTimeoutMs",
+      "type": "java.lang.String",
+      "description": "Description for curator.connectionTimeoutMs."
+    }
+  ]
+}

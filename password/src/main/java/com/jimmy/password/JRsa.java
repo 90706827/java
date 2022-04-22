@@ -36,10 +36,10 @@ public class JRsa {
         byte[] cryptograph = encrypt(source);
 
         //可以将密文进行base64编码进行传输
-        System.out.println(new String(Base64.encode(cryptograph)));
+//       logger.info(new String(Base64.encode(cryptograph)));
         // 解密密文
         String target = decrypt(cryptograph);
-        System.out.println(target);
+//       logger.info(target);
     }
 
     /**

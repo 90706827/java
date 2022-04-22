@@ -83,7 +83,7 @@ public class ShiroConfig implements Logger{
         //登录成功后跳转页面
         shiroFilterFactoryBean.setSuccessUrl("/index");
 
-        System.out.println("Shiro拦截器工厂类注入成功");
+       logger.info("Shiro拦截器工厂类注入成功");
         return shiroFilterFactoryBean;
     }
 }

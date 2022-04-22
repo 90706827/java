@@ -22,7 +22,7 @@ public class RestResource {
     public void post(String context,
                      @HeaderParam("type") String type,
                      @Suspended AsyncResponse asyncResponse) {
-        System.out.println(context);
+//       logger.info(context);
         asyncResponse.resume("<xml><root><code>00</code><desc>成功</desc></root></xml>");
 
     }

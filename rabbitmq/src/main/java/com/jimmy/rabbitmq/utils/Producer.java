@@ -28,13 +28,12 @@ public class Producer {
 //            String message = "hello world..."; // 需发送的信息
 //            /* 发送消息，使用默认的direct交换器 */
 //            channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
-//            System.out.println("Send message -> " + message);
+//           logger.info("Send message -> " + message);
 
             for(int i=0;i<100;i++){
                 //消息内容
                 String message = "Hello World!"+i;
                 channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
-                System.out.println("[product] Send '"+ message +"'");
 
                 Thread.sleep(i*10);//随着发送的信息越多而间隔越长
             }
@@ -49,8 +48,6 @@ public class Producer {
             if (connection != null) {
                 connection.close();
             }
-
-            System.out.println("Closed the channel and conn.");
         }
 
     }

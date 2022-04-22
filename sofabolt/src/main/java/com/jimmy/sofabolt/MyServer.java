@@ -28,9 +28,7 @@ public class MyServer {
 
     public static void main(String[] args) {
         if (MyServer.start()) {
-            System.out.println("server start success!");
         } else {
-            System.out.println("server start fail!");
         }
     }
 }

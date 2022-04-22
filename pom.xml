@@ -8,7 +8,7 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.8</version>
         <relativePath/> <!-- lookup parent from repository -->
-    </parent>
+    </parent>d
 
     <groupId>com.jimmy</groupId>
     <artifactId>java</artifactId>
@@ -41,6 +41,8 @@
         <module>solr</module>
         <module>thread</module>
         <module>elasticsearch</module>
+        <module>jsoup</module>
+        <module>springbootAsync</module>
     </modules>
 
     <properties>

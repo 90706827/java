@@ -23,7 +23,6 @@ public class Customer {
         channel.queueDeclare(QUEUE_NAME, true, false, false, null);
         //同一时刻服务器只会发一条消息给消费者
         channel.basicQos(1);
-        System.out.println("Waiting for messages.");
 
         /* 定义消费者 */
         Consumer consumer = new DefaultConsumer(channel) {
@@ -32,7 +31,6 @@ public class Customer {
                                        AMQP.BasicProperties properties, byte[] body)
                     throws IOException {
                 String message = new String(body, "UTF-8");
-                System.out.println("Received the message -> " + message);
             }
         };
         // 将消费者绑定到队列，并设置自动确认消息（即无需显示确认，如何设置请慎重考虑）

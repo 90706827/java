@@ -51,7 +51,6 @@ public class LoginController {
     //post登录
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@Param("userName") String userName, @Param("passWord") String passWord) {
-        System.out.println(userName + "|" + passWord);
         //添加用户认证信息
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(userName, passWord);

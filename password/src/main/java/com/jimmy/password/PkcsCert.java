@@ -68,7 +68,7 @@ public class PkcsCert {
 //        String publicStr = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAz19aTFJI2Mk++77TpozRqFPPBrFPKhXg/FKW2dBQb7b5d1J0ex0ULsHBsqQYHWTEbvnEvnf7Ps4MQ6MAHTcE6FN/OA4b67H5xPzK/nEjgfgWRjsQot1IaJJXJ2nbOTqsXRSzfbaGoTptq2RbFK4CfvCK9m3OBT96VW8EuZW1ZwsWro0IwV0oIF8N3gtCK4KPlGYkKjPFrHtspySc+3eEgahqAXxJsfdi26CDiqPKpdsqMGS6bI7UXIZgROZ0Ps8zKEHLqddPg2aAdV0t0hYpdyzrtsF1TjxGN3KLZhwgFQ1KniFuN16yzocAHWX31pIP+hpE2dtu861Aa87ukDPw2wIDAQAB";
 
         String signStr = signString(privateStr, "123123");
-        System.out.println(signVerify(publicStr, "123123", signStr));
+//       logger.info(signVerify(publicStr, "123123", signStr));
 
     }
 
@@ -78,7 +78,7 @@ public class PkcsCert {
             Certificate cert = keyStore.getCertificate(keystoreAlias);
             PublicKey pubkey = cert.getPublicKey(); // 公钥
             pubKey = Hex.encodeHexString(pubkey.getEncoded());
-            System.out.println("公钥：[" + pubKey + "]");
+//           logger.info("公钥：[" + pubKey + "]");
         } catch (KeyStoreException e1) {
             e1.printStackTrace();
         }
@@ -91,7 +91,7 @@ public class PkcsCert {
 
             PrivateKey privateKey = (PrivateKey) keyStore.getKey(keystoreAlias, keystorePassrowd.toCharArray());
             priKey = Hex.encodeHexString(privateKey.getEncoded());
-            System.out.println("私钥：[" + priKey + "]");
+//           logger.info("私钥：[" + priKey + "]");
         } catch (KeyStoreException | NoSuchAlgorithmException | UnrecoverableKeyException e1) {
             e1.printStackTrace();
         }
@@ -116,7 +116,7 @@ public class PkcsCert {
             sign.update(data.getBytes());//设置明文
             byte[] signRstByte = sign.sign();//加密
             signValue = Hex.encodeHexString(signRstByte);
-            System.out.println("密文：[" + signValue + "]");
+//           logger.info("密文：[" + signValue + "]");
         } catch (InvalidKeyException | NoSuchAlgorithmException | SignatureException | InvalidKeySpecException e1) {
             e1.printStackTrace();
         }
@@ -162,7 +162,7 @@ public class PkcsCert {
             sign.update(data.getBytes());//设置明文
             byte[] signRstByte = sign.sign();//加密
             signValue = Hex.encodeHexString(signRstByte);
-            System.out.println("密文：[" + signValue + "]");
+//           logger.info("密文：[" + signValue + "]");
         } catch (InvalidKeyException | NoSuchAlgorithmException | SignatureException e1) {
             e1.printStackTrace();
         }

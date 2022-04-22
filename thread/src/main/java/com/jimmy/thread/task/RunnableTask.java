@@ -1,7 +1,9 @@
 package com.jimmy.thread.task;
 
+import com.jimmy.thread.openSdk.OpenSDK;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpMethod;
 
 /**
  * @Description
@@ -19,10 +21,10 @@ public class RunnableTask implements Runnable {
     @Override
     public void run() {
         logger.info("{} 执行任务：{}", Thread.currentThread().getName(), taskNo);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 }

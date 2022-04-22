@@ -24,9 +24,9 @@ public class TestController {
     @Transactional(rollbackFor = Exception.class)
     @RequestMapping("/test")
     public void test() {
-        System.out.println("begin.....");
+       logger.info("begin.....");
         sysJdbcTemplate.execute("insert into sys_a(id) values(1)");
         busJdbcTemplate.execute("insert into bus_b(id) values(2)");
-        System.out.println("end.....");
+       logger.info("end.....");
     }
 }

@@ -24,8 +24,8 @@ public class UnpackTest {
                 byte[] bytes = pack(transPacker);
                 TransPacker unPacker = new TransPacker();
                 JposMessage respData = (JposMessage)transPacker.unpack(ByteBuffer.wrap(bytes));
-                System.out.println(respData.getFieldString(0));
-                System.out.println(respData.getFieldString(1));
+//               logger.info(respData.getFieldString(0));
+//               logger.info(respData.getFieldString(1));
             } catch (PackException e) {
                 e.printStackTrace();
             } catch (UnsupportedEncodingException e) {

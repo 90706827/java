@@ -75,6 +75,6 @@ public class IdWorker {
     }
 
     public static void main(String[] args) {
-        System.out.println( new IdWorker(15,31).nextId());
+//       logger.info( new IdWorker(15,31).nextId());
     }
 }

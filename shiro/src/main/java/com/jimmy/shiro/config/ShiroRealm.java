@@ -38,7 +38,7 @@ public class ShiroRealm extends AuthorizingRealm implements Logger {
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        System.out.println("————身份认证方法————");
+       logger.info("————身份认证方法————");
         //加这一步的目的是在Post请求的时候会先进认证，然后在到请求
         if (authenticationToken.getPrincipal() == null) {
             return null;

@@ -29,6 +29,8 @@ import org.elasticsearch.search.fetch.subphase.FetchSourceContext;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -40,6 +42,7 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {Application.class}) // 指定启动类
 public class EsAppTest {
+    private static final Logger logger = LoggerFactory.getLogger(EsAppTest.class);
 
     @Autowired
     private RestHighLevelClient client;
@@ -102,7 +105,7 @@ public class EsAppTest {
     public void createIndex(String index) throws IOException {
         CreateIndexRequest request = new CreateIndexRequest(index);
         CreateIndexResponse createIndexResponse = client.indices().create(request, RequestOptions.DEFAULT);
-        System.out.println("createIndex: " + JSON.toJSONString(createIndexResponse));
+       logger.info("createIndex: " + JSON.toJSONString(createIndexResponse));
     }
 
     /**
@@ -115,7 +118,7 @@ public class EsAppTest {
     public boolean existsIndex(String index) throws IOException {
         GetIndexRequest request = new GetIndexRequest(index);
         boolean exists = client.indices().exists(request, RequestOptions.DEFAULT);
-        System.out.println("existsIndex: " + exists);
+       logger.info("existsIndex: " + exists);
         return exists;
     }
 
@@ -131,7 +134,7 @@ public class EsAppTest {
         IndexRequest indexRequest = new IndexRequest(index, type, tests.getId().toString());
         indexRequest.source(JSON.toJSONString(tests), XContentType.JSON);
         IndexResponse indexResponse = client.index(indexRequest, RequestOptions.DEFAULT);
-        System.out.println("add: " + JSON.toJSONString(indexResponse));
+       logger.info("add: " + JSON.toJSONString(indexResponse));
     }
 
     /**
@@ -148,7 +151,7 @@ public class EsAppTest {
         getRequest.fetchSourceContext(new FetchSourceContext(false));
         getRequest.storedFields("_none_");
         boolean exists = client.exists(getRequest, RequestOptions.DEFAULT);
-        System.out.println("exists: " + exists);
+       logger.info("exists: " + exists);
         return exists;
     }
 
@@ -163,7 +166,7 @@ public class EsAppTest {
     public void get(String index, String type, Long id) throws IOException {
         GetRequest getRequest = new GetRequest(index, type, id.toString());
         GetResponse getResponse = client.get(getRequest, RequestOptions.DEFAULT);
-        System.out.println("get: " + JSON.toJSONString(getResponse));
+       logger.info("get: " + JSON.toJSONString(getResponse));
     }
 
     /**
@@ -179,7 +182,7 @@ public class EsAppTest {
         UpdateRequest request = new UpdateRequest(index, type, tests.getId().toString());
         request.doc(JSON.toJSONString(tests), XContentType.JSON);
         UpdateResponse updateResponse = client.update(request, RequestOptions.DEFAULT);
-        System.out.println("update: " + JSON.toJSONString(updateResponse));
+       logger.info("update: " + JSON.toJSONString(updateResponse));
     }
 
     /**
@@ -193,7 +196,7 @@ public class EsAppTest {
     public void delete(String index, String type, Long id) throws IOException {
         DeleteRequest deleteRequest = new DeleteRequest(index, type, id.toString());
         DeleteResponse response = client.delete(deleteRequest, RequestOptions.DEFAULT);
-        System.out.println("delete: " + JSON.toJSONString(response));
+       logger.info("delete: " + JSON.toJSONString(response));
     }
 
 
@@ -218,11 +221,11 @@ public class EsAppTest {
         searchRequest.types(type);
         searchRequest.source(sourceBuilder);
         SearchResponse response = client.search(searchRequest, RequestOptions.DEFAULT);
-        System.out.println("search: " + JSON.toJSONString(response));
+       logger.info("search: " + JSON.toJSONString(response));
         SearchHits hits = response.getHits();
         SearchHit[] searchHits = hits.getHits();
         for (SearchHit hit : searchHits) {
-            System.out.println("search -> " + hit.getSourceAsString());
+           logger.info("search -> " + hit.getSourceAsString());
         }
     }
 
@@ -241,7 +244,7 @@ public class EsAppTest {
             bulkAddRequest.add(indexRequest);
         }
         BulkResponse bulkAddResponse = client.bulk(bulkAddRequest, RequestOptions.DEFAULT);
-        System.out.println("bulkAdd: " + JSON.toJSONString(bulkAddResponse));
+       logger.info("bulkAdd: " + JSON.toJSONString(bulkAddResponse));
         search(INDEX_TEST, TYPE_TEST, "this");
 
         // 批量更新
@@ -254,7 +257,7 @@ public class EsAppTest {
             bulkUpdateRequest.add(updateRequest);
         }
         BulkResponse bulkUpdateResponse = client.bulk(bulkUpdateRequest, RequestOptions.DEFAULT);
-        System.out.println("bulkUpdate: " + JSON.toJSONString(bulkUpdateResponse));
+       logger.info("bulkUpdate: " + JSON.toJSONString(bulkUpdateResponse));
         search(INDEX_TEST, TYPE_TEST, "updated");
 
         // 批量删除
@@ -265,7 +268,7 @@ public class EsAppTest {
             bulkDeleteRequest.add(deleteRequest);
         }
         BulkResponse bulkDeleteResponse = client.bulk(bulkDeleteRequest, RequestOptions.DEFAULT);
-        System.out.println("bulkDelete: " + JSON.toJSONString(bulkDeleteResponse));
+       logger.info("bulkDelete: " + JSON.toJSONString(bulkDeleteResponse));
         search(INDEX_TEST, TYPE_TEST, "this");
     }
 

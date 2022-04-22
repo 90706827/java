@@ -8,6 +8,6 @@ public class KafkaServerHandler {
 
     public void proc(ConsumerRecord<String, String> record) {
         String reqMsg = record.value();
-//        System.out.println("接收到kafka消息：" + reqMsg);
+//       logger.info("接收到kafka消息：" + reqMsg);
     }
 }

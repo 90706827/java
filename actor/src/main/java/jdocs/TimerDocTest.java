@@ -32,7 +32,7 @@ public class TimerDocTest {
         public Receive createReceive() {
             return receiveBuilder()
                     .match(FirstTick.class, message -> {
-                        System.out.println("a");
+                       logger.info("a");
                         // do something useful here
                         getTimers().startPeriodicTimer(TICK_KEY, new Tick(), Duration.ofSeconds(1));
                     })

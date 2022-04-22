@@ -72,6 +72,5 @@ public class MatchActor extends AbstractActor {
 
          Map<String, String> map = new HashMap<String, String>();
          map.put("123","1234");
-        System.out.println(map.containsKey("123"));
     }
 }
