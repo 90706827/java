@@ -1,0 +1,34 @@
+server:
+  # 指定服务端口
+  port: 8080
+  servlet:
+    session:
+      timeout: 30000
+spring:
+  http:
+    # 指定 Jersey 中文编码
+    encoding:
+      force: true
+      charset: utf-8
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    username: root
+    password: Root-1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/homemaking?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&autoReconnect=true
+    hikari:
+      connection-timeout: 30000
+      max-lifetime: 1800000
+      connection-test-query: select 1
+      pool-name: FebsHikariCP
+      maximum-pool-size: 15
+      minimum-idle: 5
+mybatis-plus:
+  configuration:
+#    开启
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    关闭
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+    cache-enabled: true
+  mapper-locations: classpath*:/mapper/**.xml
+  type-aliases-package: com.jimmy.async.entity
