@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * @Description
@@ -144,16 +145,33 @@ public class CompletableFutureTask extends CustomThreadPool {
     public void allOrAny() {
         CompletableFuture<Integer> future1 = CompletableFuture.supplyAsync(() -> {
             logger.info("{} 执行任务-1", Thread.currentThread().getName());
-            sleep();
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            logger.info("{} 执行任务-1-over", Thread.currentThread().getName());
             return 1;
         }, pool);
         CompletableFuture<Integer> future2 = CompletableFuture.supplyAsync(() -> {
             logger.info("{} 执行任务-2", Thread.currentThread().getName());
-            sleep();
+            try {
+                Thread.sleep(20000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            logger.info("{} 执行任务-2-over", Thread.currentThread().getName());
             return 2;
         }, pool);
-        logger.info("执行结果：{}", CompletableFuture.allOf(future1, future2).join());
-        logger.info("执行结果：{}", CompletableFuture.anyOf(future1, future2).join());
+
+        logger.info("{}", "abcd");
+            logger.info("{} 执行结果：{}", Thread.currentThread().getName(), future1.join());
+        logger.info("{}", "abcd");
+            logger.info("{} 执行结果：{}", Thread.currentThread().getName(), future2.join());
+        sleep();
+        logger.info("{}", "abcd");
+//        logger.info("执行结果：{}", CompletableFuture.allOf(future1, future2).join());
+//        logger.info("执行结果：{}", CompletableFuture.anyOf(future1, future2).join());
     }
 
     public void list() {
@@ -172,7 +190,8 @@ public class CompletableFutureTask extends CustomThreadPool {
         CompletableFutureTask task = new CompletableFutureTask();
         Stopwatch stopwatch = Stopwatch.createStarted();
         try {
-            task.thenRun();
+//            task.thenRun();
+            task.allOrAny();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -183,7 +202,7 @@ public class CompletableFutureTask extends CustomThreadPool {
 //        task.thenAccept();
 //        task.handle();
 //        task.exceptionally();
-//        task.allOrAny();
+
 //        task.list();
 
         logger.info("用时：{}", stopwatch.stop().elapsed(TimeUnit.MILLISECONDS));

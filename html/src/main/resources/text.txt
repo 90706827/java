@@ -1,0 +1,2612 @@
+<html lang="en" style="width:100%; height:100%;" class="macos desktop portrait"><head>
+    <meta charset="UTF-8">
+            <title>光环云课堂</title>
+        <link href="/static/home/css/style.css" rel="stylesheet">    <link rel="icon" href="https://img01.aura.cn/wx/manage/defset/2018/2018-09/20180913090401_83647_216x216.png">
+    <script>
+        var cpmpany_id = "45";
+    </script>
+<link href="/static/home/css/style.css" rel="stylesheet"><link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.2/skins/default/aliplayer-min.css"><script type="text/javascript" src="https://g.alicdn.com/de/prismplayer/2.8.2/aliplayer-h5-min.js"></script><script type="text/javascript" charset="utf-8" src="https://player.alicdn.com/aliplayer/presentation/js/aliplayercomponents.min.js"></script><style type="text/css">.aliplayer-danmuku {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+  .aliplayer-danmuku.abp .container {
+    z-index: 0; }
+  .aliplayer-danmuku .danmu {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+
+.ali-danmuku-control {
+  float: right;
+  color: #fff;
+  margin-right: 5px;
+  position: relative;
+  display: table-cell;
+  margin-top: 8px; }
+  .ali-danmuku-control .iconfont {
+    font-size: 35px;
+    cursor: pointer;
+    vertical-align: middle;
+    user-select: none;
+    line-height: initial; }
+    .ali-danmuku-control .iconfont.icon-danmu-close {
+      display: inline-block; }
+  .ali-danmuku-control .player-tooltip.close, .ali-danmuku-control .player-tooltip.open {
+    right: -12px; }
+  @media (min-width: 768px) {
+    .ali-danmuku-control .icon-danmu-close:hover + .player-tooltip {
+      display: block; }
+    .ali-danmuku-control .icon-danmu-open:hover + .player-tooltip {
+      display: block; } }
+  .ali-danmuku-control .danmu-input {
+    position: relative;
+    width: 200px;
+    display: inline-block; }
+    .ali-danmuku-control .danmu-input input {
+      display: inline-block;
+      width: 100%;
+      padding-right: 40px;
+      box-sizing: border-box;
+      padding: 5px 40px 5px 5px;
+      background-color: rgba(130, 132, 138, 0.4);
+      border: 1px solid #c0c4cc;
+      font-size: 14px;
+      color: #fff;
+      border-radius: 3px; }
+      .ali-danmuku-control .danmu-input input:focus {
+        outline: none;
+        border-color: #0f84fd; }
+    .ali-danmuku-control .danmu-input .danmu-input-enter {
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: 1px solid;
+      color: #fff;
+      background-color: #0f84fd;
+      border-color: #0f84fd;
+      font-size: 12px;
+      padding: 6px 7px;
+      display: inline-block;
+      height: 28px;
+      border-radius: 0 3px 3px 0;
+      cursor: pointer; }
+      .ali-danmuku-control .danmu-input .danmu-input-enter:focus {
+        outline: none; }
+      .ali-danmuku-control .danmu-input .danmu-input-enter:hover {
+        background-color: #288df5;
+        border-color: #288df5; }
+</style><style type="text/css">.abp {
+  position: relative; }
+
+.abp .container {
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  border: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.abp .container .cmt {
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  position: absolute;
+  padding: 3px 0 0 0;
+  margin: 0;
+  color: #fff;
+  font-family: SimHei, SimSun, Heiti, "MS Mincho", "Meiryo", "Microsoft YaHei", monospace;
+  font-size: 25px;
+  text-decoration: none;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+  line-height: 100%;
+  letter-spacing: 0;
+  word-break: keep-all;
+  white-space: pre; }
+
+.abp .container .cmt.noshadow {
+  text-shadow: none; }
+
+.abp .container .cmt.rshadow {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; }
+
+/** Aliases for Chinese named fonts because they don't work on *nix **/
+@font-face {
+  font-family: "\9ED1\4F53";
+  src: local("SimHei"); }
+
+@font-face {
+  font-family: "\5B8B\4F53";
+  src: local("SimSun"); }
+
+@font-face {
+  font-family: "\534E\6587\6977\4F53";
+  src: local("SimKai"); }
+
+@font-face {
+  font-family: "\5E7C\5706";
+  src: local("YouYuan"); }
+
+@font-face {
+  font-family: "\5FAE\8F6F\96C5\9ED1";
+  src: local("Microsoft YaHei"); }
+</style><style type="text/css">.bullet-screen {
+  position: absolute;
+  white-space: nowrap;
+  animation: bullet 10s linear infinite; }
+
+@keyframes bullet {
+  from {
+    left: 100%; }
+  to {
+    left: 0;
+    transform: translateX(-100%); } }
+</style><style type="text/css">.memory-play-wrap {
+  position: absolute;
+  right: 10px;
+  bottom: 55px; }
+  .memory-play-wrap .memory-play {
+    padding: 13px 20px;
+    background-color: #191919;
+    background-color: rgba(25, 25, 25, 0.88);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    user-select: none; }
+    .memory-play-wrap .memory-play .icon-close {
+      transition: color .3s;
+      font-size: 14px;
+      cursor: pointer; }
+      @media (min-width: 768px) {
+        .memory-play-wrap .memory-play .icon-close:hover {
+          color: #00c1de; } }
+    .memory-play-wrap .memory-play .play-jump {
+      color: #00c1de;
+      padding: 5px;
+      border-radius: 3px;
+      cursor: pointer; }
+      @media (min-width: 768px) {
+        .memory-play-wrap .memory-play .play-jump:hover {
+          background-color: rgba(255, 255, 255, 0.2); } }
+</style><style type="text/css">.pause-ad {
+  width: 60%;
+  height: 50%;
+  background: #000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: none; }
+  .pause-ad .btn-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #333;
+    width: 2px;
+    height: 15px;
+    padding: 2px 8px;
+    cursor: pointer; }
+    .pause-ad .btn-close i {
+      background-color: #fff;
+      width: 2px;
+      height: 15px;
+      position: absolute; }
+    .pause-ad .btn-close .split-left {
+      transform: rotate(-45deg); }
+    .pause-ad .btn-close .split-right {
+      transform: rotate(45deg); }
+  .pause-ad .ad-text {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background-color: #333;
+    color: #fff;
+    padding: 3px 5px;
+    font-size: 14px; }
+  .pause-ad .ad-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .pause-ad .ad-content img {
+      max-width: 100%;
+      max-height: 100%; }
+</style><style type="text/css">.playlist-component {
+  color: #fff;
+  float: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative; }
+  .playlist-component i {
+    color: #fff;
+    display: inline-block;
+    font-size: 22px;
+    display: block;
+    margin-top: 7px;
+    cursor: pointer; }
+    .playlist-component i + i {
+      margin-left: 3px; }
+    @media (min-width: 768px) {
+      .playlist-component i:hover + .player-tooltip {
+        display: block; } }
+  .playlist-component .player-tooltip.prev {
+    left: -10px; }
+  .playlist-component .player-tooltip.list {
+    left: 5px; }
+  .playlist-component .player-tooltip.next {
+    right: -12px; }
+
+.playlist-content {
+  position: absolute;
+  right: 0;
+  width: 0px;
+  padding-bottom: 48px;
+  box-sizing: border-box;
+  height: 100%;
+  transition: all .38s ease-in-out;
+  overflow: hidden; }
+  .playlist-content .list {
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100%; }
+    .playlist-content .list .video-item {
+      color: #fff;
+      padding: 0px 10px;
+      line-height: 35px;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer; }
+      .playlist-content .list .video-item.active {
+        background-color: #000;
+        color: #00ddff; }
+      @media (min-width: 768px) {
+        .playlist-content .list .video-item:hover {
+          background-color: #000;
+          color: #00ddff; } }
+
+.player-tooltip {
+  position: absolute;
+  display: none;
+  font-size: 12px;
+  color: #fff;
+  line-height: 28px;
+  letter-spacing: 0;
+  text-align: center;
+  background: #3c3c3c;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  height: 28px;
+  top: -48px;
+  padding: 0 5px;
+  white-space: nowrap; }
+
+.playlist-skip-tip {
+  padding: 5px 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 30;
+  line-height: 30px;
+  font-size: 14px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  text-align: center;
+  transform: translate(-50%, -50%); }
+</style><style type="text/css">.preview-hide {
+  display: none !important; }
+
+.preview-vod-component {
+  display: none; }
+  .preview-vod-component .preview-component-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2147483647;
+    box-sizing: border-box;
+    padding: 20px 20px 70px;
+    display: none; }
+    .preview-vod-component .preview-component-layer .preview-close {
+      position: absolute;
+      right: 18px;
+      top: 15px;
+      border-radius: 50%;
+      color: #000;
+      background: white;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 18px;
+      vertical-align: top;
+      color: #333;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 9999999; }
+    .preview-vod-component .preview-component-layer .preview-custom {
+      width: 100%;
+      height: 100%;
+      position: relative; }
+      .preview-vod-component .preview-component-layer .preview-custom .preview-default {
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%; }
+  .preview-vod-component .preview-custom {
+    color: #fff;
+    font-size: 14px; }
+  .preview-vod-component .preview-component-tip {
+    position: absolute;
+    bottom: 50px;
+    left: 25px;
+    border-radius: 15px;
+    background-color: #333;
+    color: #fff;
+    line-height: 26px;
+    font-size: 14px;
+    padding: 0 12px;
+    z-index: 2147483647; }
+  .preview-vod-component .preview-vod-close {
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 5px;
+    font-family: PingFangSC-Regular, sans-serif;
+    font-weight: 200; }
+    .preview-vod-component .preview-vod-close:hover {
+      color: #00c1de; }
+</style><style type="text/css">@font-face {
+  font-family: "iconfont";
+  src: url(data:application/vnd.ms-fontobject;base64,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);
+  /* IE9 */
+  src: url(data:application/vnd.ms-fontobject;base64,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#iefix) format("embedded-opentype"), url("data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAALoAAsAAAAABswAAAKZAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqBLIEoATYCJAMMCwgABCAFhG0HPxv3BciemjwJBBawWJiKrz0ASDwe/hv7dt/MfNW2KmnPdtG6CbVE49AhkkRLp5FIhAwheQn/z+kv/1pWQYEwj7X+Uuyl/nTcdSTtTi8NcwkH30gwCtRYSyHREE3ufj9P1OLQShNpd5+4d/rneReO/SzLZW3rorEmfwww7rwLcKxFEQ2RQLxh7AKXcJhA07wmodOhiRQqVFijAvHU1GVUmAsrCsvVhWrNwiLeqKinV+kQr8Pvx397KSSpZNbEyyeDGur5VflDWJ2tols+IUKAyyvI2IUU4k5t+hpBML6gaRfbS6uKkOaK/T+hXndWd/rHS0SVVd0Gm9CWbsrgqgh+00EB8vtVFGxALmYoJOTctiY+K0kvXH6mrr7SNz/Z6+9Zx5qJtFlNxSWTO6vj1HYuhJefJ9ftXh9abHpfLGqU77bG13rmtKH98PROBBAh724RzHCxLE2XTr/nplZqkQ6eox7Wz9KPuBAIal+/fLw7HX+FxQX8PFYXDpmtiii/QP1UnuDXdSohKNxkuXJR7VqrA9nqbYxMaGpihrB/6Hm8c9K7mlA3SZHUzCGrWyULu4uKln1U1R2gacfw8pYRRhClgW1bAKFvD0nXN2R9R2Rhn1Ax9YuqfgQ0XYmyDVvWY0r9DMsca6DMgalSjzhuLkW1CaxPOTLLmkJpBrPAjEEsHC3mhrGH2RxTgmk9zjkBwqgLQ+A47DgUfEYtrPKwwbnfFomQuheFVeoiyQkGk3GYBijmAJOK8hC/NSeVPp+A6aY4ZKyFU1PPwJiA2T2ICYv2IIftXi/OvTwTmKaL4zgCEAzlAkOgH+ZwUMCv72fBVFyYMSLpaxOxm5G+9vD6Tvf7tkGTNSlHihxF9z5jdEZzenvNKvXnRN+R5xACAAAA") format("woff2"), url(data:application/font-woff;base64,d09GRgABAAAAAARoAAsAAAAABswAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFY8mUkYY21hcAAAAYAAAABWAAABhmkn0RRnbHlmAAAB2AAAAJEAAACsoFCg7WhlYWQAAAJsAAAALwAAADYU+6wjaGhlYQAAApwAAAAeAAAAJAfeA4VobXR4AAACvAAAAAwAAAAMDAEAAGxvY2EAAALIAAAACAAAAAgADgBWbWF4cAAAAtAAAAAeAAAAIAEQADBuYW1lAAAC8AAAAUUAAAJtPlT+fXBvc3QAAAQ4AAAALgAAAD/D5yXjeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkYWCcwMDKwMHUyXSGgYGhH0IzvmYwYuRgYGBiYGVmwAoC0lxTGByeKT9XY27438AQw9zA0AAUZgTJAQDi6gwteJztkMENgDAMAy9p6QOxBRLiwUC8GJ+OUdwUtsDSxYqTl4EJSOIQGezC6DqVWuSJOfIcP0Vu+L3WrTX4XDLdSrhrFH4tMfd3897WoDdbtwH+ADzlDm4AAHicTYu7DcIwGITvt/FDjiIEQnFtRTItBQTmQGIBJskWbOQeUURykyI7pEKGP12uuu8eILDEQB8IgIIXQ7kzvZdYAr9+A9mjgkfLvYZp4DtcI2TEkQ2jhmwOW9Lxsjt3XiCVWSlyKZFTqswpl5E55EyBeXxaO9m6tvKxlKvx97RaZX6JyuzNSxtHN2c0/rNfLF8AAAB4nGNgZGBgAGLxnctexvPbfGXgZmEAgRvvTIQR9P8GFgbmBiCXg4EJJAoAMOgKOgB4nGNgZGBgbvjfwBDDAmQxMLAwMIBpJMAMAEciAm0AAAQAAAAEAAAABAEAAAAAAAAADgBWeJxjYGRgYGBmUAFiEGACYi4gZGD4D+YzAAAMZAFBAAB4nGWPTU7DMBCFX/oHpBKqqGCH5AViASj9EatuWFRq911036ZOmyqJI8et1ANwHo7ACTgC3IA78EgnmzaWx9+8eWNPANzgBx6O3y33kT1cMjtyDRe4F65TfxBukF+Em2jjVbhF/U3YxzOmwm10YXmD17hi9oR3YQ8dfAjXcI1P4Tr1L+EG+Vu4iTv8CrfQ8erCPuZeV7iNRy/2x1YvnF6p5UHFockikzm/gple75KFrdLqnGtbxCZTg6BfSVOdaVvdU+zXQ+ciFVmTqgmrOkmMyq3Z6tAFG+fyUa8XiR6EJuVYY/62xgKOcQWFJQ6MMUIYZIjK6Og7VWb0r7FDwl57Vj3N53RbFNT/c4UBAvTPXFO6stJ5Ok+BPV8bUnV0K27LnpQ0kV7NSRKyQl7WtlRC6gE2ZVeOEXpc0Yk/KGdI/wAJWm7IAAAAeJxjYGKAAC4G7ICZkYmRmZGFgS+xqCi/PCW/PE83Ob+gkqUgJ7GSgQEAYa8HrwAA) format("woff"), url(data:font/ttf;base64,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) format("truetype"), url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiID4KPCEtLQoyMDEzLTktMzA6IENyZWF0ZWQuCi0tPgo8c3ZnPgo8bWV0YWRhdGE+CkNyZWF0ZWQgYnkgaWNvbmZvbnQKPC9tZXRhZGF0YT4KPGRlZnM+Cgo8Zm9udCBpZD0iaWNvbmZvbnQiIGhvcml6LWFkdi14PSIxMDI0IiA+CiAgPGZvbnQtZmFjZQogICAgZm9udC1mYW1pbHk9Imljb25mb250IgogICAgZm9udC13ZWlnaHQ9IjUwMCIKICAgIGZvbnQtc3RyZXRjaD0ibm9ybWFsIgogICAgdW5pdHMtcGVyLWVtPSIxMDI0IgogICAgYXNjZW50PSI4OTYiCiAgICBkZXNjZW50PSItMTI4IgogIC8+CiAgICA8bWlzc2luZy1nbHlwaCAvPgogICAgCiAgICA8Z2x5cGggZ2x5cGgtbmFtZT0iYXJyb3dkb3duLWNvcHkiIHVuaWNvZGU9IiYjNTg5MTU7IiBkPSJNNzI2LjY1MyA0NjYuNjk0aC00MjkuMzA2bDIxNC44NDYtMjA4Ljg1MXoiICBob3Jpei1hZHYteD0iMTAyNCIgLz4KCiAgICAKICAgIDxnbHlwaCBnbHlwaC1uYW1lPSJwbGF5IiB1bmljb2RlPSImIzU5MTc0OyIgZD0iTTUxMiA4NTMuMzMyOTkyQzI1NC43MzMzMTIgODUzLjMzMjk5MiA0Mi42NjU5ODQgNjQxLjI2MzYxNiA0Mi42NjU5ODQgMzg0czIxMi4wNjczMjgtNDY5LjMzMTk2OCA0NjkuMzMxOTY4LTQ2OS4zMzE5NjhjMjU3LjI2NDY0IDAgNDY5LjMzNDAxNiAyMTIuMDY3MzI4IDQ2OS4zMzQwMTYgNDY5LjMzMTk2OCAwIDI1Ny4yNjQ2NC0yMTIuMDY5Mzc2IDQ2OS4zMzQwMTYtNDY5LjMzNDAxNiA0NjkuMzM0MDE2TTUxMi0xMjhDMjI4LjY5Mjk5Mi0xMjggMCAxMDAuNjkyOTkyIDAgMzg0IDAgNjY3LjMwNzAwOCAyMjguNjkyOTkyIDg5NiA1MTIgODk2YzI4My4zMDcwMDggMCA1MTItMjI4LjY5Mjk5MiA1MTItNTEyIDAtMjgzLjMwNzAwOC0yMjguNjkyOTkyLTUxMi01MTItNTEyTTYzMS44ODM3NzYgMzk5Ljg5NzZjMTAuNjE4ODgtNy45NDkzMTIgMTAuNjE4ODgtMjMuODQ2OTEyIDAtMzEuNzk1Mkw0MDUuMjM3NzYgMjE3LjA2NzUyQzM5NC42MTg4OCAyMDkuMTE5MjMyIDM4NCAyMTQuNDE3NDA4IDM4NCAyMjcuNjY1OTJWNTQwLjMzMjAzMmMwIDEzLjI0OTUzNiAxMC42MTk5MDQgMTguNTQ4NzM2IDIxLjIzNzc2IDEwLjYwMDQ0OGwyMjYuNjQ2MDE2LTE1MS4wMzQ4OHoiICBob3Jpei1hZHYteD0iMTAyNSIgLz4KCiAgICAKCgogIDwvZm9udD4KPC9kZWZzPjwvc3ZnPgo=#iconfont) format("svg");
+  /* iOS 4.1- */ }
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-play:before {
+  content: "\E726"; }
+
+.icon-arrowdown:before {
+  content: "\E623"; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+  line-height: 0; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+.progress-component {
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.35);
+  position: absolute;
+  display: none;
+  box-sizing: border-box;
+  bottom: 55px;
+  font-size: 12px;
+  color: #fff;
+  height: 74px; }
+  .progress-component .progress-content {
+    height: 100%;
+    position: relative;
+    padding-right: 45px; }
+  .progress-component .img-wrap {
+    float: left;
+    width: 100px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    height: 100%; }
+    .progress-component .img-wrap img {
+      vertical-align: top;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; }
+  .progress-component .info {
+    float: left;
+    padding-left: 10px;
+    width: 150px; }
+    .progress-component .info .describe {
+      line-height: 18px;
+      margin-top: 8px;
+      height: 36px;
+      overflow: hidden; }
+  .progress-component .pregress-play-btn {
+    display: inline-block;
+    position: absolute;
+    right: 6px;
+    bottom: 0px;
+    font-size: 28px;
+    color: #ca7838;
+    cursor: pointer; }
+  .progress-component .icon-arrowdown {
+    left: -2px;
+    position: absolute;
+    font-size: 31px;
+    color: rgba(0, 0, 0, 0.35);
+    line-height: 6px;
+    top: 100%; }
+</style><style type="text/css">.player-hidden {
+  display: none !important; }
+
+.quality-components {
+  float: right;
+  color: #fff;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 4px; }
+
+.current-quality {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  cursor: pointer; }
+
+.quality-list {
+  position: absolute;
+  bottom: 46px;
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+  .quality-list li {
+    text-align: center;
+    width: 70px;
+    line-height: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer; }
+    .quality-list li.current {
+      color: #00c1de; }
+    .quality-list li + li {
+      border-top: 1px solid rgba(78, 78, 78, 0.3); }
+    .quality-list li:hover {
+      background-color: rgba(0, 0, 0, 0.5); }
+
+.quality-modal {
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 14px;
+  display: none; }
+  .quality-modal span.current-quality-tag {
+    color: #00c1de; }
+</style><style type="text/css">.player-hidden {
+  display: none !important; }
+
+.rate-components {
+  float: right;
+  color: #fff;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 4px; }
+
+.current-rate {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  cursor: pointer; }
+
+.rate-list {
+  position: absolute;
+  bottom: 46px;
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+  .rate-list li {
+    text-align: center;
+    width: 70px;
+    line-height: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer; }
+    .rate-list li.current {
+      color: #00c1de; }
+    .rate-list li + li {
+      border-top: 1px solid rgba(78, 78, 78, 0.3); }
+    .rate-list li:hover {
+      background-color: rgba(0, 0, 0, 0.5); }
+</style><style type="text/css">.aliplayer-rotate-mirror {
+  float: right;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative; }
+  .aliplayer-rotate-mirror i {
+    color: #fff;
+    display: inline-block;
+    font-size: 22px;
+    display: block;
+    margin-top: 7px;
+    cursor: pointer;
+    margin-right: 10px; }
+    .aliplayer-rotate-mirror i.icon-player-switch {
+      font-size: 24px;
+      font-weight: bold; }
+    @media (min-width: 768px) {
+      .aliplayer-rotate-mirror i:hover + .player-tooltip {
+        display: block; } }
+  .aliplayer-rotate-mirror .mirror-option {
+    position: absolute;
+    background-color: #3c3c3c;
+    top: -66px;
+    right: -20px; }
+    .aliplayer-rotate-mirror .mirror-option .mirror-item {
+      font-size: 14px;
+      color: #ebecec;
+      line-height: 30px;
+      white-space: nowrap;
+      padding: 0 15px;
+      cursor: pointer;
+      user-select: none; }
+      .aliplayer-rotate-mirror .mirror-option .mirror-item.active {
+        background-color: rgba(216, 216, 216, 0.1);
+        color: #00c1de; }
+  .aliplayer-rotate-mirror .player-tooltip.counterclockwise {
+    left: -35px; }
+  .aliplayer-rotate-mirror .player-tooltip.clockwise {
+    left: -5px; }
+  .aliplayer-rotate-mirror .player-tooltip.switch {
+    right: 7px; }
+</style><style type="text/css">.start-ad {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #000;
+  position: relative;
+  z-index: 9999; }
+  .start-ad .tip {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    padding: 3px 7px; }
+    .start-ad .tip i {
+      font-style: normal; }
+  .start-ad a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .start-ad a img {
+      max-width: 100%;
+      max-height: 100%; }
+</style><style type="text/css">.video-ad-component {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2147483647;
+  background-color: #000;
+  font-size: 12px; }
+  .video-ad-component #video-ad-content {
+    width: 100%;
+    height: 100%; }
+  .video-ad-component .video-ad-link {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .video-ad-component .video-ad-close {
+    background-color: rgba(59, 59, 59, 0.85);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    line-height: 26px;
+    padding: 0 10px;
+    user-select: none; }
+    .video-ad-component .video-ad-close #video-ad-duration {
+      color: #00c1de;
+      vertical-align: top;
+      font-size: 14px;
+      position: relative;
+      display: inline-block;
+      text-align: right; }
+      .video-ad-component .video-ad-close #video-ad-duration::after {
+        background-color: #fff;
+        position: absolute;
+        content: '';
+        right: -7px;
+        top: 8px;
+        bottom: 8px;
+        width: 1px; }
+    .video-ad-component .video-ad-close label {
+      cursor: pointer;
+      display: inline-block; }
+    .video-ad-component .video-ad-close .icon-close {
+      font-size: 12px;
+      vertical-align: top; }
+      @media (min-width: 768px) {
+        .video-ad-component .video-ad-close .icon-close:hover {
+          color: #00c1de; } }
+    .video-ad-component .video-ad-close .video-ad-close-text {
+      padding: 0 5px 0 10px; }
+  .video-ad-component .video-ad-detail {
+    position: absolute;
+    right: 35px;
+    bottom: 30px;
+    background-color: rgba(0, 222, 255, 0.85);
+    color: #fff;
+    padding: 8px 12px;
+    user-select: none;
+    cursor: pointer;
+    transition: background-color .15s; }
+    @media (min-width: 768px) {
+      .video-ad-component .video-ad-detail:hover {
+        background-color: #00deff; } }
+  .video-ad-component .autoplay-video-ad {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(144, 147, 153, 0.85);
+    transform: translate(-50%, -50%);
+    display: none; }
+    .video-ad-component .autoplay-video-ad i {
+      font-size: 42px;
+      margin-bottom: 7px;
+      display: inline-block;
+      cursor: pointer; }
+      .video-ad-component .autoplay-video-ad i + span {
+        margin-bottom: 5px; }
+    .video-ad-component .autoplay-video-ad span {
+      display: block; }
+
+.controlbar-element-hidden {
+  display: none !important; }
+</style><style type="text/css">@font-face {
+  font-family: "iconfont";
+  src: url(data:application/vnd.ms-fontobject;base64,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);
+  /* IE9*/
+  src: url(data:application/vnd.ms-fontobject;base64,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#iefix) format("embedded-opentype"), url("data:application/x-font-woff;charset=utf-8;base64,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") format("woff"), url(data:font/ttf;base64,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Ly8vRS8vL0YuLi6jAmNKSmMCAmNKSmP+0wFJNjZJAQFJNjZJtQcHUjEHDhIIQQcHYgcSAAACAAD/0wOqAzQAIQBDAAA3IT4BNzU0NjIWHQEOAQchFxYUBiIvAS4BNTQ/ATYyFhQHASEOAQcVFAYiJj0BPgE3IScmNDYyHwEeARUUDwEGIiY0N8YCGio1AREeEQJZRf3NdgoUGQqcBQUKnAoZFAoCJ/2WKjUBER4RAllFAlNdCRMZCp0FBQqdChkTCcABNSpgDxERD2BFWQJ2ChkUCp0FDAUOCJ0KFBkKAUoBNSpgDxERD2BFWQJdChkTCaAFDQUNCZ0KFBkKAAAAEgDeAAEAAAAAAAAAFQAAAAEAAAAAAAEACAAVAAEAAAAAAAIABwAdAAEAAAAAAAMACAAkAAEAAAAAAAQACAAsAAEAAAAAAAUACwA0AAEAAAAAAAYACAA/AAEAAAAAAAoAKwBHAAEAAAAAAAsAEwByAAMAAQQJAAAAKgCFAAMAAQQJAAEAEACvAAMAAQQJAAIADgC/AAMAAQQJAAMAEADNAAMAAQQJAAQAEADdAAMAAQQJAAUAFgDtAAMAAQQJAAYAEAEDAAMAAQQJAAoAVgETAAMAAQQJAAsAJgFpCkNyZWF0ZWQgYnkgaWNvbmZvbnQKaWNvbmZvbnRSZWd1bGFyaWNvbmZvbnRpY29uZm9udFZlcnNpb24gMS4waWNvbmZvbnRHZW5lcmF0ZWQgYnkgc3ZnMnR0ZiBmcm9tIEZvbnRlbGxvIHByb2plY3QuaHR0cDovL2ZvbnRlbGxvLmNvbQAKAEMAcgBlAGEAdABlAGQAIABiAHkAIABpAGMAbwBuAGYAbwBuAHQACgBpAGMAbwBuAGYAbwBuAHQAUgBlAGcAdQBsAGEAcgBpAGMAbwBuAGYAbwBuAHQAaQBjAG8AbgBmAG8AbgB0AFYAZQByAHMAaQBvAG4AIAAxAC4AMABpAGMAbwBuAGYAbwBuAHQARwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABzAHYAZwAyAHQAdABmACAAZgByAG8AbQAgAEYAbwBuAHQAZQBsAGwAbwAgAHAAcgBvAGoAZQBjAHQALgBoAHQAdABwADoALwAvAGYAbwBuAHQAZQBsAGwAbwAuAGMAbwBtAAAAAAIAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAECAQMBBAEFAQYBBwEIAQkBCgELAQwBDQABeAUxbXVsdQhza2lwbmV4dAVjbG9zZQRwbGF5DXNraXAtcHJldmlvdXMRYXJyb3ctcm90YXRlLWxlZnQSYXJyb3ctcm90YXRlLXJpZ2h0EmJvZmFuZ3FpLWRhbm11Z3VhbhFib2ZhbmdxaS1kYW5tdWthaQ5uZWlyb25ncWllaHVhbgAA) format("truetype"), url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiID4KPCEtLQoyMDEzLTktMzA6IENyZWF0ZWQuCi0tPgo8c3ZnPgo8bWV0YWRhdGE+CkNyZWF0ZWQgYnkgaWNvbmZvbnQKPC9tZXRhZGF0YT4KPGRlZnM+Cgo8Zm9udCBpZD0iaWNvbmZvbnQiIGhvcml6LWFkdi14PSIxMDI0IiA+CiAgPGZvbnQtZmFjZQogICAgZm9udC1mYW1pbHk9Imljb25mb250IgogICAgZm9udC13ZWlnaHQ9IjUwMCIKICAgIGZvbnQtc3RyZXRjaD0ibm9ybWFsIgogICAgdW5pdHMtcGVyLWVtPSIxMDI0IgogICAgYXNjZW50PSI4OTYiCiAgICBkZXNjZW50PSItMTI4IgogIC8+CiAgICA8bWlzc2luZy1nbHlwaCAvPgogICAgCiAgICA8Z2x5cGggZ2x5cGgtbmFtZT0ieCIgdW5pY29kZT0ieCIgaG9yaXotYWR2LXg9IjEwMDEiCmQ9Ik0yODEgNTQzcS0yNyAtMSAtNTMgLTFoLTgzcS0xOCAwIC0zNi41IC02dC0zMi41IC0xOC41dC0yMyAtMzJ0LTkgLTQ1LjV2LTc2aDkxMnY0MXEwIDE2IC0wLjUgMzB0LTAuNSAxOHEwIDEzIC01IDI5dC0xNyAyOS41dC0zMS41IDIyLjV0LTQ5LjUgOWgtMTMzdi05N2gtNDM4djk3ek05NTUgMzEwdi01MnEwIC0yMyAwLjUgLTUydDAuNSAtNTh0LTEwLjUgLTQ3LjV0LTI2IC0zMHQtMzMgLTE2dC0zMS41IC00LjVxLTE0IC0xIC0yOS41IC0wLjUKdC0yOS41IDAuNWgtMzJsLTQ1IDEyOGgtNDM5bC00NCAtMTI4aC0yOWgtMzRxLTIwIDAgLTQ1IDFxLTI1IDAgLTQxIDkuNXQtMjUuNSAyM3QtMTMuNSAyOS41dC00IDMwdjE2N2g5MTF6TTE2MyAyNDdxLTEyIDAgLTIxIC04LjV0LTkgLTIxLjV0OSAtMjEuNXQyMSAtOC41cTEzIDAgMjIgOC41dDkgMjEuNXQtOSAyMS41dC0yMiA4LjV6TTMxNiAxMjNxLTggLTI2IC0xNCAtNDhxLTUgLTE5IC0xMC41IC0zN3QtNy41IC0yNXQtMyAtMTV0MSAtMTQuNQp0OS41IC0xMC41dDIxLjUgLTRoMzdoNjdoODFoODBoNjRoMzZxMjMgMCAzNCAxMnQyIDM4cS01IDEzIC05LjUgMzAuNXQtOS41IDM0LjVxLTUgMTkgLTExIDM5aC0zNjh6TTMzNiA0OTh2MjI4cTAgMTEgMi41IDIzdDEwIDIxLjV0MjAuNSAxNS41dDM0IDZoMTg4cTMxIDAgNTEuNSAtMTQuNXQyMC41IC01Mi41di0yMjdoLTMyN3oiIC8+CiAgICAKCiAgICAKICAgIDxnbHlwaCBnbHlwaC1uYW1lPSIxbXVsdSIgdW5pY29kZT0iJiM1ODk0NzsiIGQ9Ik0xMDcuMiA2ODMuMm0tNjcuMiAwYTQuMiA0LjIgMCAxIDAgMTM0LjQgMCA0LjIgNC4yIDAgMSAwLTEzNC40IDBaTTk4MC44IDc1MC40IDI5Ny42IDc1MC40Yy05LjYgMC0xNi04LTE2LTE2bDAtMTAyLjRjMC05LjYgOC0xNiAxNi0xNmw2ODMuMiAwYzkuNiAwIDE2IDggMTYgMTZsMCAxMDIuNEM5OTYuOCA3NDQgOTg4LjggNzUwLjQgOTgwLjggNzUwLjR6TTk2IDM5OC40bS02Ny4yIDBhNC4yIDQuMiAwIDEgMCAxMzQuNCAwIDQuMiA0LjIgMCAxIDAtMTM0LjQgMFpNOTY4IDQ2NS42IDI4NC44IDQ2NS42Yy05LjYgMC0xNi04LTE2LTE2bDAtMTAyLjRjMC05LjYgOC0xNiAxNi0xNmw2ODMuMiAwYzkuNiAwIDE2IDggMTYgMTZsMCAxMDIuNEM5ODQgNDU3LjYgOTc3LjYgNDY1LjYgOTY4IDQ2NS42ek05NiAxMDAuOG0tNjcuMiAwYTQuMiA0LjIgMCAxIDAgMTM0LjQgMCA0LjIgNC4yIDAgMSAwLTEzNC40IDBaTTk2OCAxNjggMjg0LjggMTY4Yy05LjYgMC0xNi04LTE2LTE2bDAtMTAyLjRjMC05LjYgOC0xNiAxNi0xNmw2ODMuMiAwYzkuNiAwIDE2IDggMTYgMTZsMCAxMDIuNEM5ODQgMTYwIDk3Ny42IDE2OCA5NjggMTY4eiIgIGhvcml6LWFkdi14PSIxMDI0IiAvPgoKICAgIAogICAgPGdseXBoIGdseXBoLW5hbWU9InNraXBuZXh0IiB1bmljb2RlPSImIzYwMDYyOyIgZD0iTTY4Mi42NjY2NjcgMTIyLjAyNjY2NyA3NjggMTIyLjAyNjY2NyA3NjggNjM0LjAyNjY2NyA2ODIuNjY2NjY3IDYzNC4wMjY2NjdNMjU2IDEyMi4wMjY2NjcgNjE4LjY2NjY2NyAzNzguMDI2NjY3IDI1NiA2MzQuMDI2NjY3IDI1NiAxMjIuMDI2NjY3WiIgIGhvcml6LWFkdi14PSIxMDI0IiAvPgoKICAgIAogICAgPGdseXBoIGdseXBoLW5hbWU9ImNsb3NlIiB1bmljb2RlPSImIzU4OTAyOyIgZD0iTTg3Ny4yMTYgNDA0LjE5Mk01NzUuMzI4IDM4NS41MDQgOTQ2Ljc4NCA3NTUuMzI4YzE3LjU2OCAxNy41MDQgMTcuNjY0IDQ1LjgyNCAwLjE5MiA2My40MjQtMTcuNTA0IDE3LjYzMi00NS43OTIgMTcuNjY0LTYzLjM2IDAuMTkyTDUxMi4wMzIgNDQ5LjA1NiAxNDMuNzEyIDgxOC43ODRDMTI2LjMwNCA4MzYuMjg4IDk3LjkyIDgzNi4zNTIgODAuMzg0IDgxOC44OCA2Mi44NDggODAxLjM3NiA2Mi44MTYgNzcyLjk5MiA4MC4yODggNzU1LjQyNGwzNjguMjI0LTM2OS42MzJMNzcuMjE2IDE2LjE5MmMtMTcuNTY4LTE3LjUwNC0xNy42NjQtNDUuODI0LTAuMTkyLTYzLjQyNCA4LjczNi04LjggMjAuMjU2LTEzLjIxNiAzMS43NzYtMTMuMjE2IDExLjQyNCAwIDIyLjg0OCA0LjM1MiAzMS41ODQgMTMuMDU2bDM3MS4zNiAzNjkuNjk2IDM3MS42OC0zNzMuMDg4Qzg5Mi4xOTItNTkuNjE2IDkwMy42OC02NCA5MTUuMTY4LTY0YzExLjQ1NiAwIDIyLjkxMiA0LjM4NCAzMS42NDggMTMuMDg4IDE3LjUwNCAxNy41MDQgMTcuNTY4IDQ1LjgyNCAwLjA5NiA2My4zOTJMNTc1LjMyOCAzODUuNTA0IDU3NS4zMjggMzg1LjUwNHpNNTc1LjMyOCAzODUuNTA0IiAgaG9yaXotYWR2LXg9IjEwMjQiIC8+CgogICAgCiAgICA8Z2x5cGggZ2x5cGgtbmFtZT0icGxheSIgdW5pY29kZT0iJiM1ODk0NTsiIGQ9Ik01MTIgODkzLjk4NHEtMTM5LjAwOCAwLTI1Ni41MTItNjguNTEyVDY5LjQ3MiA2MzkuNDU2IDAuOTYgMzgyLjk0NHQ2OC41MTItMjU2LjUxMiAxODYuMDE2LTE4Ni4wMTZUNTEyLTEyOC4wOTZ0MjU2LjUxMiA2OC41MTIgMTg2LjAxNiAxODYuMDE2IDY4LjUxMiAyNTYuNTEyLTY4LjUxMiAyNTYuNTEyLTE4Ni4wMTYgMTg2LjAxNlQ1MTIgODkzLjk4NHogbTIwMC01MjQuOTkybC0yOTEuMDA4LTI0Ny4wMDhxLTYuMDE2LTYuMDE2LTE1LjAwOC02LjAxNi04IDAtMTQuNDk2IDUuNTA0dC02LjQ5NiAxNC40OTZWNjMwLjk3NnEwIDggNi40OTYgMTMuNTA0dDE1LjAwOCA1LjUwNCAxNC40OTYtNi4wMTZsMjkxLjAwOC0yNDcuMDA4cTYuMDE2LTYuMDE2IDYuMDE2LTE0LjAxNnQtNi4wMTYtMTQuMDE2eiIgIGhvcml6LWFkdi14PSIxMDI0IiAvPgoKICAgIAogICAgPGdseXBoIGdseXBoLW5hbWU9InNraXAtcHJldmlvdXMiIHVuaWNvZGU9IiYjNTkwOTE7IiBkPSJNMjU2IDY0MGg4NS4zMzMzMzN2LTUxMkgyNTZ6TTQwNS4zMzMzMzMgMzg0bDM2Mi42NjY2NjctMjU2VjY0MHoiICBob3Jpei1hZHYteD0iMTAyNCIgLz4KCiAgICAKICAgIDxnbHlwaCBnbHlwaC1uYW1lPSJhcnJvdy1yb3RhdGUtbGVmdCIgdW5pY29kZT0iJiM1ODk2ODsiIGQ9Ik05Ni40IDc3OS4xbDgwLjYtODAuNmM4MC43IDgxLjMgMTkyLjUgMTMxLjggMzE2LjEgMTMyIDI0Ni4yIDAuNSA0NDcuMy0xOTkuNyA0NDcuNy00NDUuOUM5NDEuMiAxMzcuNSA3NDEtNjMgNDk0LTYzYy0xMzEuOSAwLTI1MC40IDU3LjEtMzMyLjIgMTQ4LTM3LjIgNDEuNC03LjkgMTA3LjQgNDcuOCAxMDcuOSAxOC41IDAuMiAzNi4yLTcuNSA0OC41LTIxLjIgNTguMS02NC41IDE0Mi4zLTEwNS4xIDIzNS45LTEwNS4xIDE3Ni4xIDAgMzE4LjggMTQzLjUgMzE3LjMgMzIwLTEuNSAxNzYuMi0xNDUuMSAzMTYuNi0zMjEuNCAzMTQuNC04Ni42LTEuMS0xNjQuOC0zNi45LTIyMS40LTk0LjFsNzkuNi03OS42YzExLjgtMTEuOCAzLjQtMzEuOS0xMy4yLTMxLjlIODMuMmMtMTAuMyAwLTE4LjcgOC4zLTE4LjcgMTguN1Y3NjUuOWMwIDE2LjYgMjAuMSAyNSAzMS45IDEzLjJ6IiAgaG9yaXotYWR2LXg9IjEwMjQiIC8+CgogICAgCiAgICA8Z2x5cGggZ2x5cGgtbmFtZT0iYXJyb3ctcm90YXRlLXJpZ2h0IiB1bmljb2RlPSImIzU4OTY5OyIgZD0iTTk0MC44IDc2NS45di0yNTEuOGMwLTEwLjQtOC40LTE4LjctMTguNy0xOC43SDY3MC40Yy0xNi42IDAtMjUgMjAuMS0xMy4yIDMxLjlsNzkuNiA3OS42Yy01Ni42IDU3LjItMTM0LjggOTMtMjIxLjQgOTQuMS0xNzYuMyAyLjItMzE5LjktMTM4LjItMzIxLjQtMzE0LjQtMS41LTE3Ni41IDE0MS4yLTMyMCAzMTcuMy0zMjAgOTMuNiAwIDE3Ny44IDQwLjYgMjM1LjkgMTA1LjEgMTIuMyAxMy43IDMwIDIxLjQgNDguNSAyMS4yIDU1LjctMC41IDg1LTY2LjUgNDcuOC0xMDcuOS04MS44LTkwLjktMjAwLjMtMTQ4LTMzMi4yLTE0OC0yNDcgMC00NDcuMiAyMDAuNS00NDYuOCA0NDcuNkM2NC45IDYzMC44IDI2NiA4MzEgNTEyLjIgODMwLjVjMTIzLjYtMC4yIDIzNS40LTUwLjcgMzE2LjEtMTMybDgwLjYgODAuNmMxMS44IDExLjggMzEuOSAzLjQgMzEuOS0xMy4yeiIgIGhvcml6LWFkdi14PSIxMDI0IiAvPgoKICAgIAogICAgPGdseXBoIGdseXBoLW5hbWU9ImJvZmFuZ3FpLWRhbm11Z3VhbiIgdW5pY29kZT0iJiM1OTAzMDsiIGQ9Ik01NTguNTQ1NDU1IDE3NC41NDU0NTVIMTU1LjkyNzI3M0MxMjMuMzQ1NDU1IDE3NC41NDU0NTUgOTMuMDkwOTA5IDIwNC44IDkzLjA5MDkwOSAyMzcuMzgxODE4VjU3Ny4xNjM2MzZDOTMuMDkwOTA5IDYwOS43NDU0NTUgMTIzLjM0NTQ1NSA2NDAgMTU1LjkyNzI3MyA2NDBoNTcyLjUwOTA5MWMzMi41ODE4MTggMCA2Mi44MzYzNjQtMzAuMjU0NTQ1IDYyLjgzNjM2My02Mi44MzYzNjRWNTQ2LjkwOTA5MWMwLTEzLjk2MzYzNiA5LjMwOTA5MS0yMy4yNzI3MjcgMjMuMjcyNzI4LTIzLjI3MjcyN3MyMy4yNzI3MjcgOS4zMDkwOTEgMjMuMjcyNzI3IDIzLjI3MjcyN3YzMC4yNTQ1NDVjMCA1OC4xODE4MTgtNTEuMiAxMDkuMzgxODE4LTEwOS4zODE4MTggMTA5LjM4MTgxOUgxNTUuOTI3MjczQzk3Ljc0NTQ1NSA2ODYuNTQ1NDU1IDQ2LjU0NTQ1NSA2MzUuMzQ1NDU1IDQ2LjU0NTQ1NSA1NzcuMTYzNjM2di0zMzkuNzgxODE4QzQ2LjU0NTQ1NSAxNzkuMiA5Ny43NDU0NTUgMTI4IDE1NS45MjcyNzMgMTI4SDU1OC41NDU0NTVjMTMuOTYzNjM2IDAgMjMuMjcyNzI3IDkuMzA5MDkxIDIzLjI3MjcyNyAyMy4yNzI3MjdzLTkuMzA5MDkxIDIzLjI3MjcyNy0yMy4yNzI3MjcgMjMuMjcyNzI4ek0zMjUuODE4MTgyIDU0Ni45MDkwOTFoNDYuNTQ1NDU0di00Ni41NDU0NTVoLTQ2LjU0NTQ1NHpNNDE4LjkwOTA5MSA1NDYuOTA5MDkxaDE4Ni4xODE4MTh2LTQ2LjU0NTQ1NWgtMTg2LjE4MTgxOHpNMTg2LjE4MTgxOCA0MzAuNTQ1NDU1aDQ2LjU0NTQ1NXYtNDYuNTQ1NDU1SDE4Ni4xODE4MTh6TTI3OS4yNzI3MjcgNDMwLjU0NTQ1NWgxODYuMTgxODE4di00Ni41NDU0NTVoLTE4Ni4xODE4MTh6TTI3OS4yNzI3MjcgMzE0LjE4MTgxOGg0Ni41NDU0NTV2LTQ2LjU0NTQ1NGgtNDYuNTQ1NDU1ek0zNzIuMzYzNjM2IDMxNC4xODE4MThoMTg2LjE4MTgxOXYtNDYuNTQ1NDU0aC0xODYuMTgxODE5ek04MDIuOTA5MDkxIDQzMC41NDU0NTVjLTk1LjQxODE4MiAwLTE3NC41NDU0NTUtNzkuMTI3MjczLTE3NC41NDU0NTUtMTc0LjU0NTQ1NXM3OS4xMjcyNzMtMTc0LjU0NTQ1NSAxNzQuNTQ1NDU1LTE3NC41NDU0NTUgMTc0LjU0NTQ1NSA3OS4xMjcyNzMgMTc0LjU0NTQ1NCAxNzQuNTQ1NDU1LTc5LjEyNzI3MyAxNzQuNTQ1NDU1LTE3NC41NDU0NTQgMTc0LjU0NTQ1NXogbTAtMzAyLjU0NTQ1NWMtNjkuODE4MTgyIDAtMTI4IDU4LjE4MTgxOC0xMjggMTI4IDAgMjMuMjcyNzI3IDYuOTgxODE4IDQ0LjIxODE4MiAxNi4yOTA5MDkgNjIuODM2MzY0bDE3NC41NDU0NTUtMTc0LjU0NTQ1NWMtMTguNjE4MTgyLTkuMzA5MDkxLTM5LjU2MzYzNi0xNi4yOTA5MDktNjIuODM2MzY0LTE2LjI5MDkwOXogbTk3Ljc0NTQ1NCA0Ni41NDU0NTVMNzIxLjQ1NDU0NSAzNTMuNzQ1NDU1YzIzLjI3MjcyNyAxOC42MTgxODIgNTEuMiAzMC4yNTQ1NDUgODEuNDU0NTQ2IDMwLjI1NDU0NSA2OS44MTgxODIgMCAxMjgtNTguMTgxODE4IDEyOC0xMjggMC0zMC4yNTQ1NDUtMTEuNjM2MzY0LTYwLjUwOTA5MS0zMC4yNTQ1NDYtODEuNDU0NTQ1eiIgIGhvcml6LWFkdi14PSIxMDI0IiAvPgoKICAgIAogICAgPGdseXBoIGdseXBoLW5hbWU9ImJvZmFuZ3FpLWRhbm11a2FpIiB1bmljb2RlPSImIzU5MDMxOyIgZD0iTTU1OC41NDU0NTUgMTc0LjU0NTQ1NUgxNTUuOTI3MjczQzEyMy4zNDU0NTUgMTc0LjU0NTQ1NSA5My4wOTA5MDkgMjA0LjggOTMuMDkwOTA5IDIzNy4zODE4MThWNTc3LjE2MzYzNkM5My4wOTA5MDkgNjA5Ljc0NTQ1NSAxMjMuMzQ1NDU1IDY0MCAxNTUuOTI3MjczIDY0MGg1NzIuNTA5MDkxYzMyLjU4MTgxOCAwIDYyLjgzNjM2NC0zMC4yNTQ1NDUgNjIuODM2MzYzLTYyLjgzNjM2NFY1NDYuOTA5MDkxYzAtMTMuOTYzNjM2IDkuMzA5MDkxLTIzLjI3MjcyNyAyMy4yNzI3MjgtMjMuMjcyNzI3czIzLjI3MjcyNyA5LjMwOTA5MSAyMy4yNzI3MjcgMjMuMjcyNzI3djMwLjI1NDU0NWMwIDU4LjE4MTgxOC01MS4yIDEwOS4zODE4MTgtMTA5LjM4MTgxOCAxMDkuMzgxODE5SDE1NS45MjcyNzNDOTcuNzQ1NDU1IDY4Ni41NDU0NTUgNDYuNTQ1NDU1IDYzNS4zNDU0NTUgNDYuNTQ1NDU1IDU3Ny4xNjM2MzZ2LTMzOS43ODE4MThDNDYuNTQ1NDU1IDE3OS4yIDk3Ljc0NTQ1NSAxMjggMTU1LjkyNzI3MyAxMjhINTU4LjU0NTQ1NWMxMy45NjM2MzYgMCAyMy4yNzI3MjcgOS4zMDkwOTEgMjMuMjcyNzI3IDIzLjI3MjcyN3MtOS4zMDkwOTEgMjMuMjcyNzI3LTIzLjI3MjcyNyAyMy4yNzI3Mjh6TTMyNS44MTgxODIgNTQ2LjkwOTA5MWg0Ni41NDU0NTR2LTQ2LjU0NTQ1NWgtNDYuNTQ1NDU0ek00MTguOTA5MDkxIDU0Ni45MDkwOTFoMTg2LjE4MTgxOHYtNDYuNTQ1NDU1aC0xODYuMTgxODE4ek0xODYuMTgxODE4IDQzMC41NDU0NTVoNDYuNTQ1NDU1di00Ni41NDU0NTVIMTg2LjE4MTgxOHpNMjc5LjI3MjcyNyA0MzAuNTQ1NDU1aDE4Ni4xODE4MTh2LTQ2LjU0NTQ1NWgtMTg2LjE4MTgxOHpNMzcyLjM2MzYzNiAzMTQuMTgxODE4aDE4Ni4xODE4MTl2LTQ2LjU0NTQ1NGgtMTg2LjE4MTgxOXpNMjc5LjI3MjcyNyAzMTQuMTgxODE4aDQ2LjU0NTQ1NXYtNDYuNTQ1NDU0aC00Ni41NDU0NTV6TTgwMi45MDkwOTEgNDMwLjU0NTQ1NWMtOTUuNDE4MTgyIDAtMTc0LjU0NTQ1NS03OS4xMjcyNzMtMTc0LjU0NTQ1NS0xNzQuNTQ1NDU1czc5LjEyNzI3My0xNzQuNTQ1NDU1IDE3NC41NDU0NTUtMTc0LjU0NTQ1NSAxNzQuNTQ1NDU1IDc5LjEyNzI3MyAxNzQuNTQ1NDU0IDE3NC41NDU0NTUtNzkuMTI3MjczIDE3NC41NDU0NTUtMTc0LjU0NTQ1NCAxNzQuNTQ1NDU1eiBtMC0zMDIuNTQ1NDU1Yy02OS44MTgxODIgMC0xMjggNTguMTgxODE4LTEyOCAxMjhzNTguMTgxODE4IDEyOCAxMjggMTI4IDEyOC01OC4xODE4MTggMTI4LTEyOC01OC4xODE4MTgtMTI4LTEyOC0xMjh6TTkwMC42NTQ1NDUgMzA5LjUyNzI3M2MtOS4zMDkwOTEgOS4zMDkwOTEtMjMuMjcyNzI3IDkuMzA5MDkxLTMyLjU4MTgxOCAwbC04MS40NTQ1NDUtODEuNDU0NTQ2LTQ4Ljg3MjcyNyA0OC44NzI3MjhjLTkuMzA5MDkxIDkuMzA5MDkxLTIzLjI3MjcyNyA5LjMwOTA5MS0zMi41ODE4MTkgMC05LjMwOTA5MS05LjMwOTA5MS05LjMwOTA5MS0yMy4yNzI3MjcgMC0zMi41ODE4MTlsNjUuMTYzNjM3LTY1LjE2MzYzNmM5LjMwOTA5MS05LjMwOTA5MSAyMy4yNzI3MjctOS4zMDkwOTEgMzIuNTgxODE4IDBsOTcuNzQ1NDU0IDk3Ljc0NTQ1NWM5LjMwOTA5MSA5LjMwOTA5MSA5LjMwOTA5MSAyMy4yNzI3MjcgMCAzMi41ODE4MTh6IiAgaG9yaXotYWR2LXg9IjEwMjQiIC8+CgogICAgCiAgICA8Z2x5cGggZ2x5cGgtbmFtZT0ibmVpcm9uZ3FpZWh1YW4iIHVuaWNvZGU9IiYjNTkyNjU7IiBkPSJNMTk4LjQgMTkyaDUzNy42YzU0LjQgMCA5NiA0MS42IDk2IDk2djk2YzAgMTkuMiAxMi44IDMyIDMyIDMyczMyLTEyLjggMzItMzJ2LTk2YzAtODkuNi03MC40LTE2MC0xNjAtMTYwaC01NjMuMmwxMTguNC0xMTguNGMxMi44LTEyLjggMTIuOC0zMiAwLTQ0LjgtMTIuOC0xMi44LTMyLTEyLjgtNDQuOCAwbC0xNTYuOCAxNTYuOGMtNi40IDYuNC05LjYgMTYtOS42IDIyLjQgMCA5LjYgMy4yIDE2IDkuNiAyMi40bDE1Ni44IDE1Ni44YzEyLjggMTIuOCAzMiAxMi44IDQ0LjggMCAxMi44LTEyLjggMTIuOC0zMiAwLTQ0LjhsLTkyLjgtODYuNHogbTY0My4yIDQxNmgtNjE3LjZjLTU0LjQgMC05Ni00MS42LTk2LTk2di05NmMwLTE5LjItMTIuOC0zMi0zMi0zMnMtMzIgMTIuOC0zMiAzMnY5NmMwIDg5LjYgNzAuNCAxNjAgMTYwIDE2MGg1OTUuMmwtOTIuOCA5Mi44Yy0xMi44IDEyLjgtMTIuOCAzMiAwIDQ0LjggMTIuOCAxMi44IDMyIDEyLjggNDQuOCAwbDE1Ni44LTE2MGM2LjQtNi40IDkuNi0xNiA5LjYtMjIuNCAwLTkuNi0zLjItMTYtOS42LTIyLjRsLTE1Ni44LTE1Ni44Yy0xMi44LTEyLjgtMzItMTIuOC00NC44IDAtMTIuOCAxMi44LTEyLjggMzIgMCA0NC44bDExNS4yIDExNS4yeiIgIGhvcml6LWFkdi14PSIxMDI0IiAvPgoKICAgIAoKCiAgPC9mb250Pgo8L2RlZnM+PC9zdmc+Cg==#iconfont) format("svg");
+  /* iOS 4.1- */ }
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-list:before {
+  content: "\E643"; }
+
+.icon-skipnext:before {
+  content: "\EA9E"; }
+
+.icon-skip-previous:before {
+  content: "\E6D3"; }
+
+.icon-close:before {
+  content: "\E616"; }
+
+.icon-player-rotate-left:before {
+  content: "\E658"; }
+
+.icon-player-rotate-right:before {
+  content: "\E659"; }
+
+.icon-player-switch:before {
+  content: "\E781"; }
+
+.icon-danmu-close:before {
+  content: "\E696"; }
+
+.icon-danmu-open:before {
+  content: "\E697"; }
+
+.icon-player-play:before {
+  content: "\E641"; }
+</style><style type="text/css">.aliplayer-danmuku {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+  .aliplayer-danmuku.abp .container {
+    z-index: 0; }
+  .aliplayer-danmuku .danmu {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+
+.ali-danmuku-control {
+  float: right;
+  color: #fff;
+  margin-right: 5px;
+  position: relative;
+  display: table-cell;
+  margin-top: 8px; }
+  .ali-danmuku-control .iconfont {
+    font-size: 35px;
+    cursor: pointer;
+    vertical-align: middle;
+    user-select: none;
+    line-height: initial; }
+    .ali-danmuku-control .iconfont.icon-danmu-close {
+      display: inline-block; }
+  .ali-danmuku-control .player-tooltip.close, .ali-danmuku-control .player-tooltip.open {
+    right: -12px; }
+  @media (min-width: 768px) {
+    .ali-danmuku-control .icon-danmu-close:hover + .player-tooltip {
+      display: block; }
+    .ali-danmuku-control .icon-danmu-open:hover + .player-tooltip {
+      display: block; } }
+  .ali-danmuku-control .danmu-input {
+    position: relative;
+    width: 200px;
+    display: inline-block; }
+    .ali-danmuku-control .danmu-input input {
+      display: inline-block;
+      width: 100%;
+      padding-right: 40px;
+      box-sizing: border-box;
+      padding: 5px 40px 5px 5px;
+      background-color: rgba(130, 132, 138, 0.4);
+      border: 1px solid #c0c4cc;
+      font-size: 14px;
+      color: #fff;
+      border-radius: 3px; }
+      .ali-danmuku-control .danmu-input input:focus {
+        outline: none;
+        border-color: #0f84fd; }
+    .ali-danmuku-control .danmu-input .danmu-input-enter {
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: 1px solid;
+      color: #fff;
+      background-color: #0f84fd;
+      border-color: #0f84fd;
+      font-size: 12px;
+      padding: 6px 7px;
+      display: inline-block;
+      height: 28px;
+      border-radius: 0 3px 3px 0;
+      cursor: pointer; }
+      .ali-danmuku-control .danmu-input .danmu-input-enter:focus {
+        outline: none; }
+      .ali-danmuku-control .danmu-input .danmu-input-enter:hover {
+        background-color: #288df5;
+        border-color: #288df5; }
+</style><style type="text/css">.abp {
+  position: relative; }
+
+.abp .container {
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  border: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.abp .container .cmt {
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  position: absolute;
+  padding: 3px 0 0 0;
+  margin: 0;
+  color: #fff;
+  font-family: SimHei, SimSun, Heiti, "MS Mincho", "Meiryo", "Microsoft YaHei", monospace;
+  font-size: 25px;
+  text-decoration: none;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+  line-height: 100%;
+  letter-spacing: 0;
+  word-break: keep-all;
+  white-space: pre; }
+
+.abp .container .cmt.noshadow {
+  text-shadow: none; }
+
+.abp .container .cmt.rshadow {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; }
+
+/** Aliases for Chinese named fonts because they don't work on *nix **/
+@font-face {
+  font-family: "\9ED1\4F53";
+  src: local("SimHei"); }
+
+@font-face {
+  font-family: "\5B8B\4F53";
+  src: local("SimSun"); }
+
+@font-face {
+  font-family: "\534E\6587\6977\4F53";
+  src: local("SimKai"); }
+
+@font-face {
+  font-family: "\5E7C\5706";
+  src: local("YouYuan"); }
+
+@font-face {
+  font-family: "\5FAE\8F6F\96C5\9ED1";
+  src: local("Microsoft YaHei"); }
+</style><style type="text/css">.bullet-screen {
+  position: absolute;
+  white-space: nowrap;
+  animation: bullet 10s linear infinite; }
+
+@keyframes bullet {
+  from {
+    left: 100%; }
+  to {
+    left: 0;
+    transform: translateX(-100%); } }
+</style><style type="text/css">.memory-play-wrap {
+  position: absolute;
+  right: 10px;
+  bottom: 55px; }
+  .memory-play-wrap .memory-play {
+    padding: 13px 20px;
+    background-color: #191919;
+    background-color: rgba(25, 25, 25, 0.88);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    user-select: none; }
+    .memory-play-wrap .memory-play .icon-close {
+      transition: color .3s;
+      font-size: 14px;
+      cursor: pointer; }
+      @media (min-width: 768px) {
+        .memory-play-wrap .memory-play .icon-close:hover {
+          color: #00c1de; } }
+    .memory-play-wrap .memory-play .play-jump {
+      color: #00c1de;
+      padding: 5px;
+      border-radius: 3px;
+      cursor: pointer; }
+      @media (min-width: 768px) {
+        .memory-play-wrap .memory-play .play-jump:hover {
+          background-color: rgba(255, 255, 255, 0.2); } }
+</style><style type="text/css">.pause-ad {
+  width: 60%;
+  height: 50%;
+  background: #000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: none; }
+  .pause-ad .btn-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #333;
+    width: 2px;
+    height: 15px;
+    padding: 2px 8px;
+    cursor: pointer; }
+    .pause-ad .btn-close i {
+      background-color: #fff;
+      width: 2px;
+      height: 15px;
+      position: absolute; }
+    .pause-ad .btn-close .split-left {
+      transform: rotate(-45deg); }
+    .pause-ad .btn-close .split-right {
+      transform: rotate(45deg); }
+  .pause-ad .ad-text {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background-color: #333;
+    color: #fff;
+    padding: 3px 5px;
+    font-size: 14px; }
+  .pause-ad .ad-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .pause-ad .ad-content img {
+      max-width: 100%;
+      max-height: 100%; }
+</style><style type="text/css">.playlist-component {
+  color: #fff;
+  float: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative; }
+  .playlist-component i {
+    color: #fff;
+    display: inline-block;
+    font-size: 22px;
+    display: block;
+    margin-top: 7px;
+    cursor: pointer; }
+    .playlist-component i + i {
+      margin-left: 3px; }
+    @media (min-width: 768px) {
+      .playlist-component i:hover + .player-tooltip {
+        display: block; } }
+  .playlist-component .player-tooltip.prev {
+    left: -10px; }
+  .playlist-component .player-tooltip.list {
+    left: 5px; }
+  .playlist-component .player-tooltip.next {
+    right: -12px; }
+
+.playlist-content {
+  position: absolute;
+  right: 0;
+  width: 0px;
+  padding-bottom: 48px;
+  box-sizing: border-box;
+  height: 100%;
+  transition: all .38s ease-in-out;
+  overflow: hidden; }
+  .playlist-content .list {
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100%; }
+    .playlist-content .list .video-item {
+      color: #fff;
+      padding: 0px 10px;
+      line-height: 35px;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer; }
+      .playlist-content .list .video-item.active {
+        background-color: #000;
+        color: #00ddff; }
+      @media (min-width: 768px) {
+        .playlist-content .list .video-item:hover {
+          background-color: #000;
+          color: #00ddff; } }
+
+.player-tooltip {
+  position: absolute;
+  display: none;
+  font-size: 12px;
+  color: #fff;
+  line-height: 28px;
+  letter-spacing: 0;
+  text-align: center;
+  background: #3c3c3c;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  height: 28px;
+  top: -48px;
+  padding: 0 5px;
+  white-space: nowrap; }
+
+.playlist-skip-tip {
+  padding: 5px 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 30;
+  line-height: 30px;
+  font-size: 14px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  text-align: center;
+  transform: translate(-50%, -50%); }
+</style><style type="text/css">.preview-hide {
+  display: none !important; }
+
+.preview-vod-component {
+  display: none; }
+  .preview-vod-component .preview-component-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2147483647;
+    box-sizing: border-box;
+    padding: 20px 20px 70px;
+    display: none; }
+    .preview-vod-component .preview-component-layer .preview-close {
+      position: absolute;
+      right: 18px;
+      top: 15px;
+      border-radius: 50%;
+      color: #000;
+      background: white;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 18px;
+      vertical-align: top;
+      color: #333;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 9999999; }
+    .preview-vod-component .preview-component-layer .preview-custom {
+      width: 100%;
+      height: 100%;
+      position: relative; }
+      .preview-vod-component .preview-component-layer .preview-custom .preview-default {
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%; }
+  .preview-vod-component .preview-custom {
+    color: #fff;
+    font-size: 14px; }
+  .preview-vod-component .preview-component-tip {
+    position: absolute;
+    bottom: 50px;
+    left: 25px;
+    border-radius: 15px;
+    background-color: #333;
+    color: #fff;
+    line-height: 26px;
+    font-size: 14px;
+    padding: 0 12px;
+    z-index: 2147483647; }
+  .preview-vod-component .preview-vod-close {
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 5px;
+    font-family: PingFangSC-Regular, sans-serif;
+    font-weight: 200; }
+    .preview-vod-component .preview-vod-close:hover {
+      color: #00c1de; }
+</style><style type="text/css">@font-face {
+  font-family: "iconfont";
+  src: url(data:application/vnd.ms-fontobject;base64,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);
+  /* IE9 */
+  src: url(data:application/vnd.ms-fontobject;base64,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#iefix) format("embedded-opentype"), url("data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAALoAAsAAAAABswAAAKZAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqBLIEoATYCJAMMCwgABCAFhG0HPxv3BciemjwJBBawWJiKrz0ASDwe/hv7dt/MfNW2KmnPdtG6CbVE49AhkkRLp5FIhAwheQn/z+kv/1pWQYEwj7X+Uuyl/nTcdSTtTi8NcwkH30gwCtRYSyHREE3ufj9P1OLQShNpd5+4d/rneReO/SzLZW3rorEmfwww7rwLcKxFEQ2RQLxh7AKXcJhA07wmodOhiRQqVFijAvHU1GVUmAsrCsvVhWrNwiLeqKinV+kQr8Pvx397KSSpZNbEyyeDGur5VflDWJ2tols+IUKAyyvI2IUU4k5t+hpBML6gaRfbS6uKkOaK/T+hXndWd/rHS0SVVd0Gm9CWbsrgqgh+00EB8vtVFGxALmYoJOTctiY+K0kvXH6mrr7SNz/Z6+9Zx5qJtFlNxSWTO6vj1HYuhJefJ9ftXh9abHpfLGqU77bG13rmtKH98PROBBAh724RzHCxLE2XTr/nplZqkQ6eox7Wz9KPuBAIal+/fLw7HX+FxQX8PFYXDpmtiii/QP1UnuDXdSohKNxkuXJR7VqrA9nqbYxMaGpihrB/6Hm8c9K7mlA3SZHUzCGrWyULu4uKln1U1R2gacfw8pYRRhClgW1bAKFvD0nXN2R9R2Rhn1Ax9YuqfgQ0XYmyDVvWY0r9DMsca6DMgalSjzhuLkW1CaxPOTLLmkJpBrPAjEEsHC3mhrGH2RxTgmk9zjkBwqgLQ+A47DgUfEYtrPKwwbnfFomQuheFVeoiyQkGk3GYBijmAJOK8hC/NSeVPp+A6aY4ZKyFU1PPwJiA2T2ICYv2IIftXi/OvTwTmKaL4zgCEAzlAkOgH+ZwUMCv72fBVFyYMSLpaxOxm5G+9vD6Tvf7tkGTNSlHihxF9z5jdEZzenvNKvXnRN+R5xACAAAA") format("woff2"), url(data:application/font-woff;base64,d09GRgABAAAAAARoAAsAAAAABswAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFY8mUkYY21hcAAAAYAAAABWAAABhmkn0RRnbHlmAAAB2AAAAJEAAACsoFCg7WhlYWQAAAJsAAAALwAAADYU+6wjaGhlYQAAApwAAAAeAAAAJAfeA4VobXR4AAACvAAAAAwAAAAMDAEAAGxvY2EAAALIAAAACAAAAAgADgBWbWF4cAAAAtAAAAAeAAAAIAEQADBuYW1lAAAC8AAAAUUAAAJtPlT+fXBvc3QAAAQ4AAAALgAAAD/D5yXjeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkYWCcwMDKwMHUyXSGgYGhH0IzvmYwYuRgYGBiYGVmwAoC0lxTGByeKT9XY27438AQw9zA0AAUZgTJAQDi6gwteJztkMENgDAMAy9p6QOxBRLiwUC8GJ+OUdwUtsDSxYqTl4EJSOIQGezC6DqVWuSJOfIcP0Vu+L3WrTX4XDLdSrhrFH4tMfd3897WoDdbtwH+ADzlDm4AAHicTYu7DcIwGITvt/FDjiIEQnFtRTItBQTmQGIBJskWbOQeUURykyI7pEKGP12uuu8eILDEQB8IgIIXQ7kzvZdYAr9+A9mjgkfLvYZp4DtcI2TEkQ2jhmwOW9Lxsjt3XiCVWSlyKZFTqswpl5E55EyBeXxaO9m6tvKxlKvx97RaZX6JyuzNSxtHN2c0/rNfLF8AAAB4nGNgZGBgAGLxnctexvPbfGXgZmEAgRvvTIQR9P8GFgbmBiCXg4EJJAoAMOgKOgB4nGNgZGBgbvjfwBDDAmQxMLAwMIBpJMAMAEciAm0AAAQAAAAEAAAABAEAAAAAAAAADgBWeJxjYGRgYGBmUAFiEGACYi4gZGD4D+YzAAAMZAFBAAB4nGWPTU7DMBCFX/oHpBKqqGCH5AViASj9EatuWFRq911036ZOmyqJI8et1ANwHo7ACTgC3IA78EgnmzaWx9+8eWNPANzgBx6O3y33kT1cMjtyDRe4F65TfxBukF+Em2jjVbhF/U3YxzOmwm10YXmD17hi9oR3YQ8dfAjXcI1P4Tr1L+EG+Vu4iTv8CrfQ8erCPuZeV7iNRy/2x1YvnF6p5UHFockikzm/gple75KFrdLqnGtbxCZTg6BfSVOdaVvdU+zXQ+ciFVmTqgmrOkmMyq3Z6tAFG+fyUa8XiR6EJuVYY/62xgKOcQWFJQ6MMUIYZIjK6Og7VWb0r7FDwl57Vj3N53RbFNT/c4UBAvTPXFO6stJ5Ok+BPV8bUnV0K27LnpQ0kV7NSRKyQl7WtlRC6gE2ZVeOEXpc0Yk/KGdI/wAJWm7IAAAAeJxjYGKAAC4G7ICZkYmRmZGFgS+xqCi/PCW/PE83Ob+gkqUgJ7GSgQEAYa8HrwAA) format("woff"), url(data:font/ttf;base64,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) format("truetype"), url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiID4KPCEtLQoyMDEzLTktMzA6IENyZWF0ZWQuCi0tPgo8c3ZnPgo8bWV0YWRhdGE+CkNyZWF0ZWQgYnkgaWNvbmZvbnQKPC9tZXRhZGF0YT4KPGRlZnM+Cgo8Zm9udCBpZD0iaWNvbmZvbnQiIGhvcml6LWFkdi14PSIxMDI0IiA+CiAgPGZvbnQtZmFjZQogICAgZm9udC1mYW1pbHk9Imljb25mb250IgogICAgZm9udC13ZWlnaHQ9IjUwMCIKICAgIGZvbnQtc3RyZXRjaD0ibm9ybWFsIgogICAgdW5pdHMtcGVyLWVtPSIxMDI0IgogICAgYXNjZW50PSI4OTYiCiAgICBkZXNjZW50PSItMTI4IgogIC8+CiAgICA8bWlzc2luZy1nbHlwaCAvPgogICAgCiAgICA8Z2x5cGggZ2x5cGgtbmFtZT0iYXJyb3dkb3duLWNvcHkiIHVuaWNvZGU9IiYjNTg5MTU7IiBkPSJNNzI2LjY1MyA0NjYuNjk0aC00MjkuMzA2bDIxNC44NDYtMjA4Ljg1MXoiICBob3Jpei1hZHYteD0iMTAyNCIgLz4KCiAgICAKICAgIDxnbHlwaCBnbHlwaC1uYW1lPSJwbGF5IiB1bmljb2RlPSImIzU5MTc0OyIgZD0iTTUxMiA4NTMuMzMyOTkyQzI1NC43MzMzMTIgODUzLjMzMjk5MiA0Mi42NjU5ODQgNjQxLjI2MzYxNiA0Mi42NjU5ODQgMzg0czIxMi4wNjczMjgtNDY5LjMzMTk2OCA0NjkuMzMxOTY4LTQ2OS4zMzE5NjhjMjU3LjI2NDY0IDAgNDY5LjMzNDAxNiAyMTIuMDY3MzI4IDQ2OS4zMzQwMTYgNDY5LjMzMTk2OCAwIDI1Ny4yNjQ2NC0yMTIuMDY5Mzc2IDQ2OS4zMzQwMTYtNDY5LjMzNDAxNiA0NjkuMzM0MDE2TTUxMi0xMjhDMjI4LjY5Mjk5Mi0xMjggMCAxMDAuNjkyOTkyIDAgMzg0IDAgNjY3LjMwNzAwOCAyMjguNjkyOTkyIDg5NiA1MTIgODk2YzI4My4zMDcwMDggMCA1MTItMjI4LjY5Mjk5MiA1MTItNTEyIDAtMjgzLjMwNzAwOC0yMjguNjkyOTkyLTUxMi01MTItNTEyTTYzMS44ODM3NzYgMzk5Ljg5NzZjMTAuNjE4ODgtNy45NDkzMTIgMTAuNjE4ODgtMjMuODQ2OTEyIDAtMzEuNzk1Mkw0MDUuMjM3NzYgMjE3LjA2NzUyQzM5NC42MTg4OCAyMDkuMTE5MjMyIDM4NCAyMTQuNDE3NDA4IDM4NCAyMjcuNjY1OTJWNTQwLjMzMjAzMmMwIDEzLjI0OTUzNiAxMC42MTk5MDQgMTguNTQ4NzM2IDIxLjIzNzc2IDEwLjYwMDQ0OGwyMjYuNjQ2MDE2LTE1MS4wMzQ4OHoiICBob3Jpei1hZHYteD0iMTAyNSIgLz4KCiAgICAKCgogIDwvZm9udD4KPC9kZWZzPjwvc3ZnPgo=#iconfont) format("svg");
+  /* iOS 4.1- */ }
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-play:before {
+  content: "\E726"; }
+
+.icon-arrowdown:before {
+  content: "\E623"; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+  line-height: 0; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+.progress-component {
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.35);
+  position: absolute;
+  display: none;
+  box-sizing: border-box;
+  bottom: 55px;
+  font-size: 12px;
+  color: #fff;
+  height: 74px; }
+  .progress-component .progress-content {
+    height: 100%;
+    position: relative;
+    padding-right: 45px; }
+  .progress-component .img-wrap {
+    float: left;
+    width: 100px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    height: 100%; }
+    .progress-component .img-wrap img {
+      vertical-align: top;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; }
+  .progress-component .info {
+    float: left;
+    padding-left: 10px;
+    width: 150px; }
+    .progress-component .info .describe {
+      line-height: 18px;
+      margin-top: 8px;
+      height: 36px;
+      overflow: hidden; }
+  .progress-component .pregress-play-btn {
+    display: inline-block;
+    position: absolute;
+    right: 6px;
+    bottom: 0px;
+    font-size: 28px;
+    color: #ca7838;
+    cursor: pointer; }
+  .progress-component .icon-arrowdown {
+    left: -2px;
+    position: absolute;
+    font-size: 31px;
+    color: rgba(0, 0, 0, 0.35);
+    line-height: 6px;
+    top: 100%; }
+</style><style type="text/css">.player-hidden {
+  display: none !important; }
+
+.quality-components {
+  float: right;
+  color: #fff;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 4px; }
+
+.current-quality {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  cursor: pointer; }
+
+.quality-list {
+  position: absolute;
+  bottom: 46px;
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+  .quality-list li {
+    text-align: center;
+    width: 70px;
+    line-height: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer; }
+    .quality-list li.current {
+      color: #00c1de; }
+    .quality-list li + li {
+      border-top: 1px solid rgba(78, 78, 78, 0.3); }
+    .quality-list li:hover {
+      background-color: rgba(0, 0, 0, 0.5); }
+
+.quality-modal {
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 14px;
+  display: none; }
+  .quality-modal span.current-quality-tag {
+    color: #00c1de; }
+</style><style type="text/css">.player-hidden {
+  display: none !important; }
+
+.rate-components {
+  float: right;
+  color: #fff;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 4px; }
+
+.current-rate {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  cursor: pointer; }
+
+.rate-list {
+  position: absolute;
+  bottom: 46px;
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+  .rate-list li {
+    text-align: center;
+    width: 70px;
+    line-height: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer; }
+    .rate-list li.current {
+      color: #00c1de; }
+    .rate-list li + li {
+      border-top: 1px solid rgba(78, 78, 78, 0.3); }
+    .rate-list li:hover {
+      background-color: rgba(0, 0, 0, 0.5); }
+</style><style type="text/css">.aliplayer-rotate-mirror {
+  float: right;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative; }
+  .aliplayer-rotate-mirror i {
+    color: #fff;
+    display: inline-block;
+    font-size: 22px;
+    display: block;
+    margin-top: 7px;
+    cursor: pointer;
+    margin-right: 10px; }
+    .aliplayer-rotate-mirror i.icon-player-switch {
+      font-size: 24px;
+      font-weight: bold; }
+    @media (min-width: 768px) {
+      .aliplayer-rotate-mirror i:hover + .player-tooltip {
+        display: block; } }
+  .aliplayer-rotate-mirror .mirror-option {
+    position: absolute;
+    background-color: #3c3c3c;
+    top: -66px;
+    right: -20px; }
+    .aliplayer-rotate-mirror .mirror-option .mirror-item {
+      font-size: 14px;
+      color: #ebecec;
+      line-height: 30px;
+      white-space: nowrap;
+      padding: 0 15px;
+      cursor: pointer;
+      user-select: none; }
+      .aliplayer-rotate-mirror .mirror-option .mirror-item.active {
+        background-color: rgba(216, 216, 216, 0.1);
+        color: #00c1de; }
+  .aliplayer-rotate-mirror .player-tooltip.counterclockwise {
+    left: -35px; }
+  .aliplayer-rotate-mirror .player-tooltip.clockwise {
+    left: -5px; }
+  .aliplayer-rotate-mirror .player-tooltip.switch {
+    right: 7px; }
+</style><style type="text/css">.start-ad {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #000;
+  position: relative;
+  z-index: 9999; }
+  .start-ad .tip {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    padding: 3px 7px; }
+    .start-ad .tip i {
+      font-style: normal; }
+  .start-ad a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .start-ad a img {
+      max-width: 100%;
+      max-height: 100%; }
+</style><style type="text/css">.video-ad-component {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2147483647;
+  background-color: #000;
+  font-size: 12px; }
+  .video-ad-component #video-ad-content {
+    width: 100%;
+    height: 100%; }
+  .video-ad-component .video-ad-link {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .video-ad-component .video-ad-close {
+    background-color: rgba(59, 59, 59, 0.85);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    line-height: 26px;
+    padding: 0 10px;
+    user-select: none; }
+    .video-ad-component .video-ad-close #video-ad-duration {
+      color: #00c1de;
+      vertical-align: top;
+      font-size: 14px;
+      position: relative;
+      display: inline-block;
+      text-align: right; }
+      .video-ad-component .video-ad-close #video-ad-duration::after {
+        background-color: #fff;
+        position: absolute;
+        content: '';
+        right: -7px;
+        top: 8px;
+        bottom: 8px;
+        width: 1px; }
+    .video-ad-component .video-ad-close label {
+      cursor: pointer;
+      display: inline-block; }
+    .video-ad-component .video-ad-close .icon-close {
+      font-size: 12px;
+      vertical-align: top; }
+      @media (min-width: 768px) {
+        .video-ad-component .video-ad-close .icon-close:hover {
+          color: #00c1de; } }
+    .video-ad-component .video-ad-close .video-ad-close-text {
+      padding: 0 5px 0 10px; }
+  .video-ad-component .video-ad-detail {
+    position: absolute;
+    right: 35px;
+    bottom: 30px;
+    background-color: rgba(0, 222, 255, 0.85);
+    color: #fff;
+    padding: 8px 12px;
+    user-select: none;
+    cursor: pointer;
+    transition: background-color .15s; }
+    @media (min-width: 768px) {
+      .video-ad-component .video-ad-detail:hover {
+        background-color: #00deff; } }
+  .video-ad-component .autoplay-video-ad {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(144, 147, 153, 0.85);
+    transform: translate(-50%, -50%);
+    display: none; }
+    .video-ad-component .autoplay-video-ad i {
+      font-size: 42px;
+      margin-bottom: 7px;
+      display: inline-block;
+      cursor: pointer; }
+      .video-ad-component .autoplay-video-ad i + span {
+        margin-bottom: 5px; }
+    .video-ad-component .autoplay-video-ad span {
+      display: block; }
+
+.controlbar-element-hidden {
+  display: none !important; }
+</style><style type="text/css">@font-face {
+  font-family: "iconfont";
+  src: url(data:application/vnd.ms-fontobject;base64,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);
+  /* IE9*/
+  src: url(data:application/vnd.ms-fontobject;base64,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#iefix) format("embedded-opentype"), url("data:application/x-font-woff;charset=utf-8;base64,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") format("woff"), url(data:font/ttf;base64,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Ly8vRS8vL0YuLi6jAmNKSmMCAmNKSmP+0wFJNjZJAQFJNjZJtQcHUjEHDhIIQQcHYgcSAAACAAD/0wOqAzQAIQBDAAA3IT4BNzU0NjIWHQEOAQchFxYUBiIvAS4BNTQ/ATYyFhQHASEOAQcVFAYiJj0BPgE3IScmNDYyHwEeARUUDwEGIiY0N8YCGio1AREeEQJZRf3NdgoUGQqcBQUKnAoZFAoCJ/2WKjUBER4RAllFAlNdCRMZCp0FBQqdChkTCcABNSpgDxERD2BFWQJ2ChkUCp0FDAUOCJ0KFBkKAUoBNSpgDxERD2BFWQJdChkTCaAFDQUNCZ0KFBkKAAAAEgDeAAEAAAAAAAAAFQAAAAEAAAAAAAEACAAVAAEAAAAAAAIABwAdAAEAAAAAAAMACAAkAAEAAAAAAAQACAAsAAEAAAAAAAUACwA0AAEAAAAAAAYACAA/AAEAAAAAAAoAKwBHAAEAAAAAAAsAEwByAAMAAQQJAAAAKgCFAAMAAQQJAAEAEACvAAMAAQQJAAIADgC/AAMAAQQJAAMAEADNAAMAAQQJAAQAEADdAAMAAQQJAAUAFgDtAAMAAQQJAAYAEAEDAAMAAQQJAAoAVgETAAMAAQQJAAsAJgFpCkNyZWF0ZWQgYnkgaWNvbmZvbnQKaWNvbmZvbnRSZWd1bGFyaWNvbmZvbnRpY29uZm9udFZlcnNpb24gMS4waWNvbmZvbnRHZW5lcmF0ZWQgYnkgc3ZnMnR0ZiBmcm9tIEZvbnRlbGxvIHByb2plY3QuaHR0cDovL2ZvbnRlbGxvLmNvbQAKAEMAcgBlAGEAdABlAGQAIABiAHkAIABpAGMAbwBuAGYAbwBuAHQACgBpAGMAbwBuAGYAbwBuAHQAUgBlAGcAdQBsAGEAcgBpAGMAbwBuAGYAbwBuAHQAaQBjAG8AbgBmAG8AbgB0AFYAZQByAHMAaQBvAG4AIAAxAC4AMABpAGMAbwBuAGYAbwBuAHQARwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABzAHYAZwAyAHQAdABmACAAZgByAG8AbQAgAEYAbwBuAHQAZQBsAGwAbwAgAHAAcgBvAGoAZQBjAHQALgBoAHQAdABwADoALwAvAGYAbwBuAHQAZQBsAGwAbwAuAGMAbwBtAAAAAAIAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAECAQMBBAEFAQYBBwEIAQkBCgELAQwBDQABeAUxbXVsdQhza2lwbmV4dAVjbG9zZQRwbGF5DXNraXAtcHJldmlvdXMRYXJyb3ctcm90YXRlLWxlZnQSYXJyb3ctcm90YXRlLXJpZ2h0EmJvZmFuZ3FpLWRhbm11Z3VhbhFib2ZhbmdxaS1kYW5tdWthaQ5uZWlyb25ncWllaHVhbgAA) format("truetype"), url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiID4KPCEtLQoyMDEzLTktMzA6IENyZWF0ZWQuCi0tPgo8c3ZnPgo8bWV0YWRhdGE+CkNyZWF0ZWQgYnkgaWNvbmZvbnQKPC9tZXRhZGF0YT4KPGRlZnM+Cgo8Zm9udCBpZD0iaWNvbmZvbnQiIGhvcml6LWFkdi14PSIxMDI0IiA+CiAgPGZvbnQtZmFjZQogICAgZm9udC1mYW1pbHk9Imljb25mb250IgogICAgZm9udC13ZWlnaHQ9IjUwMCIKICAgIGZvbnQtc3RyZXRjaD0ibm9ybWFsIgogICAgdW5pdHMtcGVyLWVtPSIxMDI0IgogICAgYXNjZW50PSI4OTYiCiAgICBkZXNjZW50PSItMTI4IgogIC8+CiAgICA8bWlzc2luZy1nbHlwaCAvPgogICAgCiAgICA8Z2x5cGggZ2x5cGgtbmFtZT0ieCIgdW5pY29kZT0ieCIgaG9yaXotYWR2LXg9IjEwMDEiCmQ9Ik0yODEgNTQzcS0yNyAtMSAtNTMgLTFoLTgzcS0xOCAwIC0zNi41IC02dC0zMi41IC0xOC41dC0yMyAtMzJ0LTkgLTQ1LjV2LTc2aDkxMnY0MXEwIDE2IC0wLjUgMzB0LTAuNSAxOHEwIDEzIC01IDI5dC0xNyAyOS41dC0zMS41IDIyLjV0LTQ5LjUgOWgtMTMzdi05N2gtNDM4djk3ek05NTUgMzEwdi01MnEwIC0yMyAwLjUgLTUydDAuNSAtNTh0LTEwLjUgLTQ3LjV0LTI2IC0zMHQtMzMgLTE2dC0zMS41IC00LjVxLTE0IC0xIC0yOS41IC0wLjUKdC0yOS41IDAuNWgtMzJsLTQ1IDEyOGgtNDM5bC00NCAtMTI4aC0yOWgtMzRxLTIwIDAgLTQ1IDFxLTI1IDAgLTQxIDkuNXQtMjUuNSAyM3QtMTMuNSAyOS41dC00IDMwdjE2N2g5MTF6TTE2MyAyNDdxLTEyIDAgLTIxIC04LjV0LTkgLTIxLjV0OSAtMjEuNXQyMSAtOC41cTEzIDAgMjIgOC41dDkgMjEuNXQtOSAyMS41dC0yMiA4LjV6TTMxNiAxMjNxLTggLTI2IC0xNCAtNDhxLTUgLTE5IC0xMC41IC0zN3QtNy41IC0yNXQtMyAtMTV0MSAtMTQuNQp0OS41IC0xMC41dDIxLjUgLTRoMzdoNjdoODFoODBoNjRoMzZxMjMgMCAzNCAxMnQyIDM4cS01IDEzIC05LjUgMzAuNXQtOS41IDM0LjVxLTUgMTkgLTExIDM5aC0zNjh6TTMzNiA0OTh2MjI4cTAgMTEgMi41IDIzdDEwIDIxLjV0MjAuNSAxNS41dDM0IDZoMTg4cTMxIDAgNTEuNSAtMTQuNXQyMC41IC01Mi41di0yMjdoLTMyN3oiIC8+CiAgICAKCiAgICAKICAgIDxnbHlwaCBnbHlwaC1uYW1lPSIxbXVsdSIgdW5pY29kZT0iJiM1ODk0NzsiIGQ9Ik0xMDcuMiA2ODMuMm0tNjcuMiAwYTQuMiA0LjIgMCAxIDAgMTM0LjQgMCA0LjIgNC4yIDAgMSAwLTEzNC40IDBaTTk4MC44IDc1MC40IDI5Ny42IDc1MC40Yy05LjYgMC0xNi04LTE2LTE2bDAtMTAyLjRjMC05LjYgOC0xNiAxNi0xNmw2ODMuMiAwYzkuNiAwIDE2IDggMTYgMTZsMCAxMDIuNEM5OTYuOCA3NDQgOTg4LjggNzUwLjQgOTgwLjggNzUwLjR6TTk2IDM5OC40bS02Ny4yIDBhNC4yIDQuMiAwIDEgMCAxMzQuNCAwIDQuMiA0LjIgMCAxIDAtMTM0LjQgMFpNOTY4IDQ2NS42IDI4NC44IDQ2NS42Yy05LjYgMC0xNi04LTE2LTE2bDAtMTAyLjRjMC05LjYgOC0xNiAxNi0xNmw2ODMuMiAwYzkuNiAwIDE2IDggMTYgMTZsMCAxMDIuNEM5ODQgNDU3LjYgOTc3LjYgNDY1LjYgOTY4IDQ2NS42ek05NiAxMDAuOG0tNjcuMiAwYTQuMiA0LjIgMCAxIDAgMTM0LjQgMCA0LjIgNC4yIDAgMSAwLTEzNC40IDBaTTk2OCAxNjggMjg0LjggMTY4Yy05LjYgMC0xNi04LTE2LTE2bDAtMTAyLjRjMC05LjYgOC0xNiAxNi0xNmw2ODMuMiAwYzkuNiAwIDE2IDggMTYgMTZsMCAxMDIuNEM5ODQgMTYwIDk3Ny42IDE2OCA5NjggMTY4eiIgIGhvcml6LWFkdi14PSIxMDI0IiAvPgoKICAgIAogICAgPGdseXBoIGdseXBoLW5hbWU9InNraXBuZXh0IiB1bmljb2RlPSImIzYwMDYyOyIgZD0iTTY4Mi42NjY2NjcgMTIyLjAyNjY2NyA3NjggMTIyLjAyNjY2NyA3NjggNjM0LjAyNjY2NyA2ODIuNjY2NjY3IDYzNC4wMjY2NjdNMjU2IDEyMi4wMjY2NjcgNjE4LjY2NjY2NyAzNzguMDI2NjY3IDI1NiA2MzQuMDI2NjY3IDI1NiAxMjIuMDI2NjY3WiIgIGhvcml6LWFkdi14PSIxMDI0IiAvPgoKICAgIAogICAgPGdseXBoIGdseXBoLW5hbWU9ImNsb3NlIiB1bmljb2RlPSImIzU4OTAyOyIgZD0iTTg3Ny4yMTYgNDA0LjE5Mk01NzUuMzI4IDM4NS41MDQgOTQ2Ljc4NCA3NTUuMzI4YzE3LjU2OCAxNy41MDQgMTcuNjY0IDQ1LjgyNCAwLjE5MiA2My40MjQtMTcuNTA0IDE3LjYzMi00NS43OTIgMTcuNjY0LTYzLjM2IDAuMTkyTDUxMi4wMzIgNDQ5LjA1NiAxNDMuNzEyIDgxOC43ODRDMTI2LjMwNCA4MzYuMjg4IDk3LjkyIDgzNi4zNTIgODAuMzg0IDgxOC44OCA2Mi44NDggODAxLjM3NiA2Mi44MTYgNzcyLjk5MiA4MC4yODggNzU1LjQyNGwzNjguMjI0LTM2OS42MzJMNzcuMjE2IDE2LjE5MmMtMTcuNTY4LTE3LjUwNC0xNy42NjQtNDUuODI0LTAuMTkyLTYzLjQyNCA4LjczNi04LjggMjAuMjU2LTEzLjIxNiAzMS43NzYtMTMuMjE2IDExLjQyNCAwIDIyLjg0OCA0LjM1MiAzMS41ODQgMTMuMDU2bDM3MS4zNiAzNjkuNjk2IDM3MS42OC0zNzMuMDg4Qzg5Mi4xOTItNTkuNjE2IDkwMy42OC02NCA5MTUuMTY4LTY0YzExLjQ1NiAwIDIyLjkxMiA0LjM4NCAzMS42NDggMTMuMDg4IDE3LjUwNCAxNy41MDQgMTcuNTY4IDQ1LjgyNCAwLjA5NiA2My4zOTJMNTc1LjMyOCAzODUuNTA0IDU3NS4zMjggMzg1LjUwNHpNNTc1LjMyOCAzODUuNTA0IiAgaG9yaXotYWR2LXg9IjEwMjQiIC8+CgogICAgCiAgICA8Z2x5cGggZ2x5cGgtbmFtZT0icGxheSIgdW5pY29kZT0iJiM1ODk0NTsiIGQ9Ik01MTIgODkzLjk4NHEtMTM5LjAwOCAwLTI1Ni41MTItNjguNTEyVDY5LjQ3MiA2MzkuNDU2IDAuOTYgMzgyLjk0NHQ2OC41MTItMjU2LjUxMiAxODYuMDE2LTE4Ni4wMTZUNTEyLTEyOC4wOTZ0MjU2LjUxMiA2OC41MTIgMTg2LjAxNiAxODYuMDE2IDY4LjUxMiAyNTYuNTEyLTY4LjUxMiAyNTYuNTEyLTE4Ni4wMTYgMTg2LjAxNlQ1MTIgODkzLjk4NHogbTIwMC01MjQuOTkybC0yOTEuMDA4LTI0Ny4wMDhxLTYuMDE2LTYuMDE2LTE1LjAwOC02LjAxNi04IDAtMTQuNDk2IDUuNTA0dC02LjQ5NiAxNC40OTZWNjMwLjk3NnEwIDggNi40OTYgMTMuNTA0dDE1LjAwOCA1LjUwNCAxNC40OTYtNi4wMTZsMjkxLjAwOC0yNDcuMDA4cTYuMDE2LTYuMDE2IDYuMDE2LTE0LjAxNnQtNi4wMTYtMTQuMDE2eiIgIGhvcml6LWFkdi14PSIxMDI0IiAvPgoKICAgIAogICAgPGdseXBoIGdseXBoLW5hbWU9InNraXAtcHJldmlvdXMiIHVuaWNvZGU9IiYjNTkwOTE7IiBkPSJNMjU2IDY0MGg4NS4zMzMzMzN2LTUxMkgyNTZ6TTQwNS4zMzMzMzMgMzg0bDM2Mi42NjY2NjctMjU2VjY0MHoiICBob3Jpei1hZHYteD0iMTAyNCIgLz4KCiAgICAKICAgIDxnbHlwaCBnbHlwaC1uYW1lPSJhcnJvdy1yb3RhdGUtbGVmdCIgdW5pY29kZT0iJiM1ODk2ODsiIGQ9Ik05Ni40IDc3OS4xbDgwLjYtODAuNmM4MC43IDgxLjMgMTkyLjUgMTMxLjggMzE2LjEgMTMyIDI0Ni4yIDAuNSA0NDcuMy0xOTkuNyA0NDcuNy00NDUuOUM5NDEuMiAxMzcuNSA3NDEtNjMgNDk0LTYzYy0xMzEuOSAwLTI1MC40IDU3LjEtMzMyLjIgMTQ4LTM3LjIgNDEuNC03LjkgMTA3LjQgNDcuOCAxMDcuOSAxOC41IDAuMiAzNi4yLTcuNSA0OC41LTIxLjIgNTguMS02NC41IDE0Mi4zLTEwNS4xIDIzNS45LTEwNS4xIDE3Ni4xIDAgMzE4LjggMTQzLjUgMzE3LjMgMzIwLTEuNSAxNzYuMi0xNDUuMSAzMTYuNi0zMjEuNCAzMTQuNC04Ni42LTEuMS0xNjQuOC0zNi45LTIyMS40LTk0LjFsNzkuNi03OS42YzExLjgtMTEuOCAzLjQtMzEuOS0xMy4yLTMxLjlIODMuMmMtMTAuMyAwLTE4LjcgOC4zLTE4LjcgMTguN1Y3NjUuOWMwIDE2LjYgMjAuMSAyNSAzMS45IDEzLjJ6IiAgaG9yaXotYWR2LXg9IjEwMjQiIC8+CgogICAgCiAgICA8Z2x5cGggZ2x5cGgtbmFtZT0iYXJyb3ctcm90YXRlLXJpZ2h0IiB1bmljb2RlPSImIzU4OTY5OyIgZD0iTTk0MC44IDc2NS45di0yNTEuOGMwLTEwLjQtOC40LTE4LjctMTguNy0xOC43SDY3MC40Yy0xNi42IDAtMjUgMjAuMS0xMy4yIDMxLjlsNzkuNiA3OS42Yy01Ni42IDU3LjItMTM0LjggOTMtMjIxLjQgOTQuMS0xNzYuMyAyLjItMzE5LjktMTM4LjItMzIxLjQtMzE0LjQtMS41LTE3Ni41IDE0MS4yLTMyMCAzMTcuMy0zMjAgOTMuNiAwIDE3Ny44IDQwLjYgMjM1LjkgMTA1LjEgMTIuMyAxMy43IDMwIDIxLjQgNDguNSAyMS4yIDU1LjctMC41IDg1LTY2LjUgNDcuOC0xMDcuOS04MS44LTkwLjktMjAwLjMtMTQ4LTMzMi4yLTE0OC0yNDcgMC00NDcuMiAyMDAuNS00NDYuOCA0NDcuNkM2NC45IDYzMC44IDI2NiA4MzEgNTEyLjIgODMwLjVjMTIzLjYtMC4yIDIzNS40LTUwLjcgMzE2LjEtMTMybDgwLjYgODAuNmMxMS44IDExLjggMzEuOSAzLjQgMzEuOS0xMy4yeiIgIGhvcml6LWFkdi14PSIxMDI0IiAvPgoKICAgIAogICAgPGdseXBoIGdseXBoLW5hbWU9ImJvZmFuZ3FpLWRhbm11Z3VhbiIgdW5pY29kZT0iJiM1OTAzMDsiIGQ9Ik01NTguNTQ1NDU1IDE3NC41NDU0NTVIMTU1LjkyNzI3M0MxMjMuMzQ1NDU1IDE3NC41NDU0NTUgOTMuMDkwOTA5IDIwNC44IDkzLjA5MDkwOSAyMzcuMzgxODE4VjU3Ny4xNjM2MzZDOTMuMDkwOTA5IDYwOS43NDU0NTUgMTIzLjM0NTQ1NSA2NDAgMTU1LjkyNzI3MyA2NDBoNTcyLjUwOTA5MWMzMi41ODE4MTggMCA2Mi44MzYzNjQtMzAuMjU0NTQ1IDYyLjgzNjM2My02Mi44MzYzNjRWNTQ2LjkwOTA5MWMwLTEzLjk2MzYzNiA5LjMwOTA5MS0yMy4yNzI3MjcgMjMuMjcyNzI4LTIzLjI3MjcyN3MyMy4yNzI3MjcgOS4zMDkwOTEgMjMuMjcyNzI3IDIzLjI3MjcyN3YzMC4yNTQ1NDVjMCA1OC4xODE4MTgtNTEuMiAxMDkuMzgxODE4LTEwOS4zODE4MTggMTA5LjM4MTgxOUgxNTUuOTI3MjczQzk3Ljc0NTQ1NSA2ODYuNTQ1NDU1IDQ2LjU0NTQ1NSA2MzUuMzQ1NDU1IDQ2LjU0NTQ1NSA1NzcuMTYzNjM2di0zMzkuNzgxODE4QzQ2LjU0NTQ1NSAxNzkuMiA5Ny43NDU0NTUgMTI4IDE1NS45MjcyNzMgMTI4SDU1OC41NDU0NTVjMTMuOTYzNjM2IDAgMjMuMjcyNzI3IDkuMzA5MDkxIDIzLjI3MjcyNyAyMy4yNzI3MjdzLTkuMzA5MDkxIDIzLjI3MjcyNy0yMy4yNzI3MjcgMjMuMjcyNzI4ek0zMjUuODE4MTgyIDU0Ni45MDkwOTFoNDYuNTQ1NDU0di00Ni41NDU0NTVoLTQ2LjU0NTQ1NHpNNDE4LjkwOTA5MSA1NDYuOTA5MDkxaDE4Ni4xODE4MTh2LTQ2LjU0NTQ1NWgtMTg2LjE4MTgxOHpNMTg2LjE4MTgxOCA0MzAuNTQ1NDU1aDQ2LjU0NTQ1NXYtNDYuNTQ1NDU1SDE4Ni4xODE4MTh6TTI3OS4yNzI3MjcgNDMwLjU0NTQ1NWgxODYuMTgxODE4di00Ni41NDU0NTVoLTE4Ni4xODE4MTh6TTI3OS4yNzI3MjcgMzE0LjE4MTgxOGg0Ni41NDU0NTV2LTQ2LjU0NTQ1NGgtNDYuNTQ1NDU1ek0zNzIuMzYzNjM2IDMxNC4xODE4MThoMTg2LjE4MTgxOXYtNDYuNTQ1NDU0aC0xODYuMTgxODE5ek04MDIuOTA5MDkxIDQzMC41NDU0NTVjLTk1LjQxODE4MiAwLTE3NC41NDU0NTUtNzkuMTI3MjczLTE3NC41NDU0NTUtMTc0LjU0NTQ1NXM3OS4xMjcyNzMtMTc0LjU0NTQ1NSAxNzQuNTQ1NDU1LTE3NC41NDU0NTUgMTc0LjU0NTQ1NSA3OS4xMjcyNzMgMTc0LjU0NTQ1NCAxNzQuNTQ1NDU1LTc5LjEyNzI3MyAxNzQuNTQ1NDU1LTE3NC41NDU0NTQgMTc0LjU0NTQ1NXogbTAtMzAyLjU0NTQ1NWMtNjkuODE4MTgyIDAtMTI4IDU4LjE4MTgxOC0xMjggMTI4IDAgMjMuMjcyNzI3IDYuOTgxODE4IDQ0LjIxODE4MiAxNi4yOTA5MDkgNjIuODM2MzY0bDE3NC41NDU0NTUtMTc0LjU0NTQ1NWMtMTguNjE4MTgyLTkuMzA5MDkxLTM5LjU2MzYzNi0xNi4yOTA5MDktNjIuODM2MzY0LTE2LjI5MDkwOXogbTk3Ljc0NTQ1NCA0Ni41NDU0NTVMNzIxLjQ1NDU0NSAzNTMuNzQ1NDU1YzIzLjI3MjcyNyAxOC42MTgxODIgNTEuMiAzMC4yNTQ1NDUgODEuNDU0NTQ2IDMwLjI1NDU0NSA2OS44MTgxODIgMCAxMjgtNTguMTgxODE4IDEyOC0xMjggMC0zMC4yNTQ1NDUtMTEuNjM2MzY0LTYwLjUwOTA5MS0zMC4yNTQ1NDYtODEuNDU0NTQ1eiIgIGhvcml6LWFkdi14PSIxMDI0IiAvPgoKICAgIAogICAgPGdseXBoIGdseXBoLW5hbWU9ImJvZmFuZ3FpLWRhbm11a2FpIiB1bmljb2RlPSImIzU5MDMxOyIgZD0iTTU1OC41NDU0NTUgMTc0LjU0NTQ1NUgxNTUuOTI3MjczQzEyMy4zNDU0NTUgMTc0LjU0NTQ1NSA5My4wOTA5MDkgMjA0LjggOTMuMDkwOTA5IDIzNy4zODE4MThWNTc3LjE2MzYzNkM5My4wOTA5MDkgNjA5Ljc0NTQ1NSAxMjMuMzQ1NDU1IDY0MCAxNTUuOTI3MjczIDY0MGg1NzIuNTA5MDkxYzMyLjU4MTgxOCAwIDYyLjgzNjM2NC0zMC4yNTQ1NDUgNjIuODM2MzYzLTYyLjgzNjM2NFY1NDYuOTA5MDkxYzAtMTMuOTYzNjM2IDkuMzA5MDkxLTIzLjI3MjcyNyAyMy4yNzI3MjgtMjMuMjcyNzI3czIzLjI3MjcyNyA5LjMwOTA5MSAyMy4yNzI3MjcgMjMuMjcyNzI3djMwLjI1NDU0NWMwIDU4LjE4MTgxOC01MS4yIDEwOS4zODE4MTgtMTA5LjM4MTgxOCAxMDkuMzgxODE5SDE1NS45MjcyNzNDOTcuNzQ1NDU1IDY4Ni41NDU0NTUgNDYuNTQ1NDU1IDYzNS4zNDU0NTUgNDYuNTQ1NDU1IDU3Ny4xNjM2MzZ2LTMzOS43ODE4MThDNDYuNTQ1NDU1IDE3OS4yIDk3Ljc0NTQ1NSAxMjggMTU1LjkyNzI3MyAxMjhINTU4LjU0NTQ1NWMxMy45NjM2MzYgMCAyMy4yNzI3MjcgOS4zMDkwOTEgMjMuMjcyNzI3IDIzLjI3MjcyN3MtOS4zMDkwOTEgMjMuMjcyNzI3LTIzLjI3MjcyNyAyMy4yNzI3Mjh6TTMyNS44MTgxODIgNTQ2LjkwOTA5MWg0Ni41NDU0NTR2LTQ2LjU0NTQ1NWgtNDYuNTQ1NDU0ek00MTguOTA5MDkxIDU0Ni45MDkwOTFoMTg2LjE4MTgxOHYtNDYuNTQ1NDU1aC0xODYuMTgxODE4ek0xODYuMTgxODE4IDQzMC41NDU0NTVoNDYuNTQ1NDU1di00Ni41NDU0NTVIMTg2LjE4MTgxOHpNMjc5LjI3MjcyNyA0MzAuNTQ1NDU1aDE4Ni4xODE4MTh2LTQ2LjU0NTQ1NWgtMTg2LjE4MTgxOHpNMzcyLjM2MzYzNiAzMTQuMTgxODE4aDE4Ni4xODE4MTl2LTQ2LjU0NTQ1NGgtMTg2LjE4MTgxOXpNMjc5LjI3MjcyNyAzMTQuMTgxODE4aDQ2LjU0NTQ1NXYtNDYuNTQ1NDU0aC00Ni41NDU0NTV6TTgwMi45MDkwOTEgNDMwLjU0NTQ1NWMtOTUuNDE4MTgyIDAtMTc0LjU0NTQ1NS03OS4xMjcyNzMtMTc0LjU0NTQ1NS0xNzQuNTQ1NDU1czc5LjEyNzI3My0xNzQuNTQ1NDU1IDE3NC41NDU0NTUtMTc0LjU0NTQ1NSAxNzQuNTQ1NDU1IDc5LjEyNzI3MyAxNzQuNTQ1NDU0IDE3NC41NDU0NTUtNzkuMTI3MjczIDE3NC41NDU0NTUtMTc0LjU0NTQ1NCAxNzQuNTQ1NDU1eiBtMC0zMDIuNTQ1NDU1Yy02OS44MTgxODIgMC0xMjggNTguMTgxODE4LTEyOCAxMjhzNTguMTgxODE4IDEyOCAxMjggMTI4IDEyOC01OC4xODE4MTggMTI4LTEyOC01OC4xODE4MTgtMTI4LTEyOC0xMjh6TTkwMC42NTQ1NDUgMzA5LjUyNzI3M2MtOS4zMDkwOTEgOS4zMDkwOTEtMjMuMjcyNzI3IDkuMzA5MDkxLTMyLjU4MTgxOCAwbC04MS40NTQ1NDUtODEuNDU0NTQ2LTQ4Ljg3MjcyNyA0OC44NzI3MjhjLTkuMzA5MDkxIDkuMzA5MDkxLTIzLjI3MjcyNyA5LjMwOTA5MS0zMi41ODE4MTkgMC05LjMwOTA5MS05LjMwOTA5MS05LjMwOTA5MS0yMy4yNzI3MjcgMC0zMi41ODE4MTlsNjUuMTYzNjM3LTY1LjE2MzYzNmM5LjMwOTA5MS05LjMwOTA5MSAyMy4yNzI3MjctOS4zMDkwOTEgMzIuNTgxODE4IDBsOTcuNzQ1NDU0IDk3Ljc0NTQ1NWM5LjMwOTA5MSA5LjMwOTA5MSA5LjMwOTA5MSAyMy4yNzI3MjcgMCAzMi41ODE4MTh6IiAgaG9yaXotYWR2LXg9IjEwMjQiIC8+CgogICAgCiAgICA8Z2x5cGggZ2x5cGgtbmFtZT0ibmVpcm9uZ3FpZWh1YW4iIHVuaWNvZGU9IiYjNTkyNjU7IiBkPSJNMTk4LjQgMTkyaDUzNy42YzU0LjQgMCA5NiA0MS42IDk2IDk2djk2YzAgMTkuMiAxMi44IDMyIDMyIDMyczMyLTEyLjggMzItMzJ2LTk2YzAtODkuNi03MC40LTE2MC0xNjAtMTYwaC01NjMuMmwxMTguNC0xMTguNGMxMi44LTEyLjggMTIuOC0zMiAwLTQ0LjgtMTIuOC0xMi44LTMyLTEyLjgtNDQuOCAwbC0xNTYuOCAxNTYuOGMtNi40IDYuNC05LjYgMTYtOS42IDIyLjQgMCA5LjYgMy4yIDE2IDkuNiAyMi40bDE1Ni44IDE1Ni44YzEyLjggMTIuOCAzMiAxMi44IDQ0LjggMCAxMi44LTEyLjggMTIuOC0zMiAwLTQ0LjhsLTkyLjgtODYuNHogbTY0My4yIDQxNmgtNjE3LjZjLTU0LjQgMC05Ni00MS42LTk2LTk2di05NmMwLTE5LjItMTIuOC0zMi0zMi0zMnMtMzIgMTIuOC0zMiAzMnY5NmMwIDg5LjYgNzAuNCAxNjAgMTYwIDE2MGg1OTUuMmwtOTIuOCA5Mi44Yy0xMi44IDEyLjgtMTIuOCAzMiAwIDQ0LjggMTIuOCAxMi44IDMyIDEyLjggNDQuOCAwbDE1Ni44LTE2MGM2LjQtNi40IDkuNi0xNiA5LjYtMjIuNCAwLTkuNi0zLjItMTYtOS42LTIyLjRsLTE1Ni44LTE1Ni44Yy0xMi44LTEyLjgtMzItMTIuOC00NC44IDAtMTIuOCAxMi44LTEyLjggMzIgMCA0NC44bDExNS4yIDExNS4yeiIgIGhvcml6LWFkdi14PSIxMDI0IiAvPgoKICAgIAoKCiAgPC9mb250Pgo8L2RlZnM+PC9zdmc+Cg==#iconfont) format("svg");
+  /* iOS 4.1- */ }
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-list:before {
+  content: "\E643"; }
+
+.icon-skipnext:before {
+  content: "\EA9E"; }
+
+.icon-skip-previous:before {
+  content: "\E6D3"; }
+
+.icon-close:before {
+  content: "\E616"; }
+
+.icon-player-rotate-left:before {
+  content: "\E658"; }
+
+.icon-player-rotate-right:before {
+  content: "\E659"; }
+
+.icon-player-switch:before {
+  content: "\E781"; }
+
+.icon-danmu-close:before {
+  content: "\E696"; }
+
+.icon-danmu-open:before {
+  content: "\E697"; }
+
+.icon-player-play:before {
+  content: "\E641"; }
+</style><link rel="stylesheet" href="https://yun.aura.cn/static/tools/layer/theme/default/layer.css?v=3.1.0" id="layuicss-layer"></head>
+
+
+
+
+<body style="background:#f2f2f2; " oncontextmenu="window.event.returnValue=false">
+<!--头部↓↓↓↓↓↓-->
+    <div class="fmy_head_wrap">
+    <div class="fmy_head_wrap_i">
+        <div class="fmy_head_logo_wrap">
+            <a href="/" target="_self">
+                <img src="https://img01.aura.cn/wx/manage/defset/2018/2018-09/20180913090302_47484_118x40.jpg" alt="" style="display: block; margin-left: 20px;">
+            </a>
+        </div>
+                    <ul class="fmy_nav_txt">
+                <a href="/" target="_self">
+                        <li class="">首页</li>
+                    </a>                <a href="/Lesson/index.html" target="_self">
+                    <li class="">课程中心</li>
+                </a>
+                <a href="/live/lists.html" target="_self">
+                    <li class="">直播中心</li>
+                </a>
+                <a></a>
+                                    <!--<a href="/Lesson/weike.html" target="_self">
+                        <li class="">光环微课</li>
+                    </a>
+                    -->
+                <a href="/Tiku/index.html" target="_self">
+                        <li class="">题库</li>
+                    </a>
+                                    <a href="/Teacher/index.html" target="_self">
+                        <li class="">名师</li>
+                    </a>
+                                                        <a href="/Qa/index.html" target="_self">
+                        <li class="">问答</li>
+                    </a>
+                                </ul>        <div class="fmy_head_person" style="display:none;">
+            <span>登录</span>
+            <span>注册</span>
+        </div>
+                    <div class="fmy_right_right">
+                <a href="/User/myLessons.html">
+                    <div class="shopping_car" style="border: 1px solid #f25051;">
+                        <div class="shopping_car_img"><img style="margin-top: 1px; display: block; margin-left: 20px;" src="/static/home/images/myke.png" alt=""></div>
+                        <span style="color: #f25051;">我的课程</span>
+                    </div>
+                </a>
+            </div>        <div class="fmy_right_right">
+                            <!--
+                <a href="/Shop/cart.html" target="_self">
+                    <div class="shopping_car">
+                        <div class="shopping_car_img"><img src="/static/home/images/shopping.png" alt=""></div>
+                        <span>购物车</span>
+                        <div class="shopping_background" id="shopnums"></div>
+                    </div>
+                </a>
+                -->        </div>
+
+        <div id="logged" class="fmy_head_person">
+                <div class="fmy_head_dled" id="avater">
+                    <img src="https://img01.aura.cn/wx/manage/avater/2018/2018-03/20180312151828_7833_130x130.jpeg" alt="" style="display: block; margin-left: 20px;">
+                </div>
+                <div class="fmy_head_name">吴红云</div>
+            </div>
+                    <div class="fmy_right_right showmyapp" style="float: right;margin-right: 23px;position: relative;">
+            <a href="#" class="">
+                <div class="shopping_car" style="border: 1px solid #f25051;border-radius:5px;">
+                    <span style="color: #f25051;">下载APP</span>
+                </div>
+            </a>
+            <div style="border: 1px solid #BBBBBB;border-radius:6px;position: absolute;top: 40px;left: -28px;background-color: white;padding: 10px;width: 122px;font-size: 3px;display: none;z-index: 1;" class="myapp">
+                <img src="https://img01.aura.cn/wx/manage/kc/2022/2022-12/20221221095459_19994_334x334.png" width="120px" height="120px" style="display: block; margin-left: 20px;">
+                <div style="width: 100%;text-align: center;">
+                    <span>扫码下载客户端</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fmy_right_right showapplet" style="float: right;margin-right: 2px;position: relative;">
+            <a href="#">
+                <div class="shopping_car" style="border: 1px solid #f25051;border-radius:5px;padding: 4px 10px;">
+                    <span style="color: #f25051;">关注公众号</span>
+                </div>
+            </a>
+            <div style="border: 1px solid #BBBBBB;border-radius:6px;position: absolute;top: 40px;left: -25px;background-color: white;padding: 10px;width: 122px;font-size: 3px;display: none;z-index: 1;" class="applet">
+                <img src="https://img01.aura.cn/wx/manage/kc/2022/2022-12/20221221093537_65308_430x430.jpg" width="120px" height="120px" style="display: block; margin-left: 20px;">
+                <div style="width: 100%;text-align: center;">
+                    <span>关注公众号</span>
+                </div>
+            </div>
+        </div>
+        <ol class="fmy_head_menu" style="display:none;">
+            <a href="/User/myLessons.html" target="_self">
+                <li>我的课程</li>
+            </a>
+            <a href="/User/myNews.html" target="_self">
+                <li>我的消息<div class="shopping_background" style="margin-top: 5px;" id="newNums">4</div></li>
+            </a>
+            <a href="/User/myNews/type/3.html" target="_self">
+                <li>论文消息<div class="shopping_background" style="margin-top: 5px; display: none;" id="paperNums"></div></li>
+            </a>
+            <a href="/User/myInfo.html" target="_self">
+                <li>个人设置</li>
+            </a>
+                        <a href="/Login/loginOut.html">
+                <li>退出</li>
+            </a>
+        </ol>
+    </div>
+</div>
+<script src="/static/tools/js/jquery2.2.4.min.js"></script>
+<script>
+    $(function () {
+        $('#logged').mouseover(function () {
+            $('.fmy_head_menu').show();
+        });
+        $('#logged').mouseout(function () {
+            $('.fmy_head_menu').hide();
+        });
+        $('.fmy_head_menu').mouseover(function () {
+            $('.fmy_head_menu').show();
+        });
+        $('.fmy_head_menu').mouseout(function () {
+            $('.fmy_head_menu').hide();
+        });
+        $('.showmyapp').mouseover(function () {
+            $('.myapp').show();
+        });
+        $('.showmyapp').mouseout(function () {
+            $('.myapp').hide();
+        });
+        $('.showapplet').mouseover(function () {
+            $('.applet').show();
+        });
+        $('.showapplet').mouseout(function () {
+            $('.applet').hide();
+        });
+
+        var is_login = "331580";
+        //获取购物车数量
+        if (is_login) {
+            $.ajax({
+                url: " /Shop/shopNums.html",
+                type: 'post',
+                datatype: 'json',
+                success: function (data) {
+                    if (data.status == 1) {
+                        if (data.news != 0) {
+                            $('#newNums').empty().append(data.news);
+                        } else {
+                            $("#newNums").css("display", "none");
+                        }
+                        if (data.nums != 0) {
+                            $('#paperNums').empty().append(data.nums);
+                        } else {
+                            $("#paperNums").css("display", "none");
+                        }
+                    } else {
+                        $("#paperNums").css("display", "none");
+                        $("#newNums").css("display", "none");
+                    }
+                }
+            })
+        } else {
+            $("#paperNums").css("display", "none");
+            $("#shopnums").css("display", "none");
+            $("#newNums").css("display", "none");
+        }
+    })
+</script>
+
+<!--内容开始↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+<div class="stxq_mbx">
+    <ul>
+        <a href="/" target="_self">
+            <li>首页</li>
+        </a>
+        <a href="/Test/index/tid/6319612.html" target="_self">
+            <li>试题详情</li>
+        </a>
+        <a href="#">
+            <li class="current">答案解析</li>
+        </a>
+    </ul>
+</div>
+<div class="stxq_banner">
+    <h3>中项第三版官方教材思考题</h3>
+    <ol class="jxxq_ts">
+        <li>总题数：32</li>
+        <li>答题数：32</li>
+        <li>正题：0</li>
+        <li>错题：32</li>
+        <li>未答：0</li>
+    </ol>
+    <ul>
+        <a href="#short_anchor" target="_self">
+                <li class="typer">简答题32道</li>
+            </a>    </ul>
+</div>
+<div class="st_content">
+    <div class="st_content_left" style="min-height: 449px;">
+        <!--单选开始↓↓↓↓↓↓↓↓↓↓-->
+                <!--单选结束↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+        <!--多选开始↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+                <!--多选结束↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+        <!--判断开始↓↓↓↓↓↓↓↓↓↓-->
+                <!--判断结束↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+        <!--填空开始↓↓↓↓↓↓↓↓↓↓-->
+                <!--填空结束↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+        <!--简答开始↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+        <div class="st_jianda" id="short_anchor">
+                <h4 class="st_content_tit">
+                    <div class="st_content_line"></div>
+                    <em>简答题</em>
+                    （每题<span>2</span>分，共<span>32</span>道题）
+                </h4>
+                <div class="st_content_txt" id="137206">
+                        <div class="st_content_txt_tm">
+                            <span>1、</span>
+                            <em>[简答]</em>
+                            请简述OSI七层参考模型。                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123<br></p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>国际标准化组织(ISO)和国际电报电话咨询委员会(CCITT)联合制定的开放系统互连参考模型(Open System Interconnect,OSI),其目的是为异构计算机互连提供一个共同的基础和标准框架，并为保持相关标准的一致性和兼容性提供共同的参考。OSI采用了分层的结构化技术，从下到上共分为七层。
+● 物理层。物理层包括物理连网媒介，如电缆连线连接器。该层的协议产生并检测电压以便发送和接收携带数据的信号。物理层的具体标准有RS-232、V.35、RJ-45、FDDI。
+●数据链路层。数据链路层控制网络层与物理层之间的通信。它的主要功能是将从网络层接收到的数据分割成特定的可被物理层传输的帧。数据链路层常见的协议有IEEE 802.3/2、HDLC、PPP、ATM。
+● 网络层。网络层的主要功能是将网络地址(如IP地址)翻译成对应的物理地址(如网卡地址),并决定如何将数据从发送方路由到接收方。在TCP/IP协议中，网络层的具体协议有IP、ICMP、IGMP、IPX、ARP等。
+●传输层。传输层主要负责确保数据可靠、顺序、无错地从A点传输到B点。如提供建立、维护和拆除传送连接的功能；选择网络层提供最合适的服务；在系统之间提供可靠的、透明的数据传送，提供端到端的错误恢复和流量控制。在TCP/IP协议中，传输层的具体协议有TCP、UDP、SPX。
+● 会话层。会话层负责在网络中的两节点之间建立和维持通信，以及提供交互会话的管理功能，如三种数据流方向的控制，即一路交互、两路交替和两路同时会话模式。常见的协议有RPC、SQL、NFS。
+●表示层。表示层如同应用程序和网络之间的翻译官，将数据按照网络能理解的方案进行格式化，这种格式化也因所使用网络的类型不同而不同。表示层管理数据的解密与加密、数据转换、格式化和文本压缩。表示层常见的协议有JPEG、ASCII、GIF、DES、MPEG。
+●应用层。应用层负责对软件提供接口以使程序能使用网络服务，如事务处理程序、文件传送协议和网络管理等。在TCP/IP协议中，常见的协议有HTTP、Telnet、FTP、SMTP。</div>
+                        <div class="jxxq_jx_txt">解析：国际标准化组织(ISO)和国际电报电话咨询委员会(CCITT)联合制定的开放系统互连参考模型(Open System Interconnect,OSI),其目的是为异构计算机互连提供一个共同的基础和标准框架，并为保持相关标准的一致性和兼容性提供共同的参考。OSI采用了分层的结构化技术，从下到上共分为七层。
+● 物理层。物理层包括物理连网媒介，如电缆连线连接器。该层的协议产生并检测电压以便发送和接收携带数据的信号。物理层的具体标准有RS-232、V.35、RJ-45、FDDI。
+●数据链路层。数据链路层控制网络层与物理层之间的通信。它的主要功能是将从网络层接收到的数据分割成特定的可被物理层传输的帧。数据链路层常见的协议有IEEE 802.3/2、HDLC、PPP、ATM。
+● 网络层。网络层的主要功能是将网络地址(如IP地址)翻译成对应的物理地址(如网卡地址),并决定如何将数据从发送方路由到接收方。在TCP/IP协议中，网络层的具体协议有IP、ICMP、IGMP、IPX、ARP等。
+●传输层。传输层主要负责确保数据可靠、顺序、无错地从A点传输到B点。如提供建立、维护和拆除传送连接的功能；选择网络层提供最合适的服务；在系统之间提供可靠的、透明的数据传送，提供端到端的错误恢复和流量控制。在TCP/IP协议中，传输层的具体协议有TCP、UDP、SPX。
+● 会话层。会话层负责在网络中的两节点之间建立和维持通信，以及提供交互会话的管理功能，如三种数据流方向的控制，即一路交互、两路交替和两路同时会话模式。常见的协议有RPC、SQL、NFS。
+●表示层。表示层如同应用程序和网络之间的翻译官，将数据按照网络能理解的方案进行格式化，这种格式化也因所使用网络的类型不同而不同。表示层管理数据的解密与加密、数据转换、格式化和文本压缩。表示层常见的协议有JPEG、ASCII、GIF、DES、MPEG。
+●应用层。应用层负责对软件提供接口以使程序能使用网络服务，如事务处理程序、文件传送协议和网络管理等。在TCP/IP协议中，常见的协议有HTTP、Telnet、FTP、SMTP。</div>
+                    </div><div class="st_content_txt" id="137207">
+                        <div class="st_content_txt_tm">
+                            <span>2、</span>
+                            <em>[简答]</em>
+                            请简述常见的网络安全技术                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>网络安全技术主要包括：防火墙、入侵检测与防护、VPN、安全扫描、网络蜜罐技术、用户和实体行为分析技术等。
+1)防火墙。防火墙是建立在内外网络边界上的过滤机制，内部网络被认为是安全和可信赖的，而外部网络被认为是不安全和不可信赖的。
+2)入侵检测与防护。 入侵检测与防护技术主要有两种：入侵检测系统(Intrusion Detection System,IDS)和入侵防护系统(Intrusion Prevention System,IPS)。
+入侵检测系统(IDS)注重网络安全状况的监管，通过监视网络或系统资源，寻找违反安全策略的行为或攻击迹象并发出报警。因此绝大多数IDS 系统都是被动的。
+入侵防护系统(IPS)倾向于提供主动防护，注重对入侵行为的控制。其设计宗旨是预先对 入侵活动和攻击性网络流量进行拦截，避免造成损失。
+3)虚拟专用网络(Virtual Private Network,VPN) 。VPN是依靠ISP(Internet服务提供商)和其他NSP(网络服务提供商),在公用网络中建立专用的、安全的数据通信通道的技术。
+4)安全扫描。安全扫描包括漏洞扫描、端口扫描、密码类扫描(发现弱口令密码)等。
+5)网络蜜罐技术。蜜罐(Honeypot)技术是一种主动防御技术，是入侵检测技术的一个重要发展方向，也是一个“诱捕”攻击者的陷阱。</div>
+                        <div class="jxxq_jx_txt">解析：网络安全技术主要包括：防火墙、入侵检测与防护、VPN、安全扫描、网络蜜罐技术、用户和实体行为分析技术等。
+1)防火墙。防火墙是建立在内外网络边界上的过滤机制，内部网络被认为是安全和可信赖的，而外部网络被认为是不安全和不可信赖的。
+2)入侵检测与防护。 入侵检测与防护技术主要有两种：入侵检测系统(Intrusion Detection System,IDS)和入侵防护系统(Intrusion Prevention System,IPS)。
+入侵检测系统(IDS)注重网络安全状况的监管，通过监视网络或系统资源，寻找违反安全策略的行为或攻击迹象并发出报警。因此绝大多数IDS 系统都是被动的。
+入侵防护系统(IPS)倾向于提供主动防护，注重对入侵行为的控制。其设计宗旨是预先对 入侵活动和攻击性网络流量进行拦截，避免造成损失。
+3)虚拟专用网络(Virtual Private Network,VPN) 。VPN是依靠ISP(Internet服务提供商)和其他NSP(网络服务提供商),在公用网络中建立专用的、安全的数据通信通道的技术。
+4)安全扫描。安全扫描包括漏洞扫描、端口扫描、密码类扫描(发现弱口令密码)等。
+5)网络蜜罐技术。蜜罐(Honeypot)技术是一种主动防御技术，是入侵检测技术的一个重要发展方向，也是一个“诱捕”攻击者的陷阱。</div>
+                    </div><div class="st_content_txt" id="137208">
+                        <div class="st_content_txt_tm">
+                            <span>3、</span>
+                            <em>[简答]</em>
+                            请简述OSI七层参考模型。                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>国际标准化组织(ISO)和国际电报电话咨询委员会(CCITT)联合制定的开放系统互连参考模型(Open System Interconnect,OSI),其目的是为异构计算机互连提供一个共同的基础和标准框架，并为保持相关标准的一致性和兼容性提供共同的参考。OSI采用了分层的结构化技术，从下到上共分为七层。
+● 物理层。物理层包括物理连网媒介，如电缆连线连接器。该层的协议产生并检测电压以便发送和接收携带数据的信号。物理层的具体标准有RS-232、V.35、RJ-45、FDDI。
+●数据链路层。数据链路层控制网络层与物理层之间的通信。它的主要功能是将从网络层接收到的数据分割成特定的可被物理层传输的帧。数据链路层常见的协议有IEEE 802.3/2、HDLC、PPP、ATM。
+● 网络层。网络层的主要功能是将网络地址(如IP地址)翻译成对应的物理地址(如网卡地址),并决定如何将数据从发送方路由到接收方。在TCP/IP协议中，网络层的具体协议有IP、ICMP、IGMP、IPX、ARP等。
+●传输层。传输层主要负责确保数据可靠、顺序、无错地从A点传输到B点。如提供建立、维护和拆除传送连接的功能；选择网络层提供最合适的服务；在系统之间提供可靠的、透明的数据传送，提供端到端的错误恢复和流量控制。在TCP/IP协议中，传输层的具体协议有TCP、UDP、SPX。
+● 会话层。会话层负责在网络中的两节点之间建立和维持通信，以及提供交互会话的管理功能，如三种数据流方向的控制，即一路交互、两路交替和两路同时会话模式。常见的协议有RPC、SQL、NFS。
+●表示层。表示层如同应用程序和网络之间的翻译官，将数据按照网络能理解的方案进行格式化，这种格式化也因所使用网络的类型不同而不同。表示层管理数据的解密与加密、数据转换、格式化和文本压缩。表示层常见的协议有JPEG、ASCII、GIF、DES、MPEG。
+●应用层。应用层负责对软件提供接口以使程序能使用网络服务，如事务处理程序、文件传送协议和网络管理等。在TCP/IP协议中，常见的协议有HTTP、Telnet、FTP、SMTP。</div>
+                        <div class="jxxq_jx_txt">解析：国际标准化组织(ISO)和国际电报电话咨询委员会(CCITT)联合制定的开放系统互连参考模型(Open System Interconnect,OSI),其目的是为异构计算机互连提供一个共同的基础和标准框架，并为保持相关标准的一致性和兼容性提供共同的参考。OSI采用了分层的结构化技术，从下到上共分为七层。
+● 物理层。物理层包括物理连网媒介，如电缆连线连接器。该层的协议产生并检测电压以便发送和接收携带数据的信号。物理层的具体标准有RS-232、V.35、RJ-45、FDDI。
+●数据链路层。数据链路层控制网络层与物理层之间的通信。它的主要功能是将从网络层接收到的数据分割成特定的可被物理层传输的帧。数据链路层常见的协议有IEEE 802.3/2、HDLC、PPP、ATM。
+● 网络层。网络层的主要功能是将网络地址(如IP地址)翻译成对应的物理地址(如网卡地址),并决定如何将数据从发送方路由到接收方。在TCP/IP协议中，网络层的具体协议有IP、ICMP、IGMP、IPX、ARP等。
+●传输层。传输层主要负责确保数据可靠、顺序、无错地从A点传输到B点。如提供建立、维护和拆除传送连接的功能；选择网络层提供最合适的服务；在系统之间提供可靠的、透明的数据传送，提供端到端的错误恢复和流量控制。在TCP/IP协议中，传输层的具体协议有TCP、UDP、SPX。
+● 会话层。会话层负责在网络中的两节点之间建立和维持通信，以及提供交互会话的管理功能，如三种数据流方向的控制，即一路交互、两路交替和两路同时会话模式。常见的协议有RPC、SQL、NFS。
+●表示层。表示层如同应用程序和网络之间的翻译官，将数据按照网络能理解的方案进行格式化，这种格式化也因所使用网络的类型不同而不同。表示层管理数据的解密与加密、数据转换、格式化和文本压缩。表示层常见的协议有JPEG、ASCII、GIF、DES、MPEG。
+●应用层。应用层负责对软件提供接口以使程序能使用网络服务，如事务处理程序、文件传送协议和网络管理等。在TCP/IP协议中，常见的协议有HTTP、Telnet、FTP、SMTP。</div>
+                    </div><div class="st_content_txt" id="137209">
+                        <div class="st_content_txt_tm">
+                            <span>4、</span>
+                            <em>[简答]</em>
+                            请简述常见的网络安全技术                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>网络安全技术主要包括：防火墙、入侵检测与防护、VPN、安全扫描、网络蜜罐技术、用户和实体行为分析技术等。
+1)防火墙。防火墙是建立在内外网络边界上的过滤机制，内部网络被认为是安全和可信赖的，而外部网络被认为是不安全和不可信赖的。
+2)入侵检测与防护。 入侵检测与防护技术主要有两种：入侵检测系统(Intrusion Detection System,IDS)和入侵防护系统(Intrusion Prevention System,IPS)。
+入侵检测系统(IDS)注重网络安全状况的监管，通过监视网络或系统资源，寻找违反安全策略的行为或攻击迹象并发出报警。因此绝大多数IDS 系统都是被动的。
+入侵防护系统(IPS)倾向于提供主动防护，注重对入侵行为的控制。其设计宗旨是预先对 入侵活动和攻击性网络流量进行拦截，避免造成损失。
+3)虚拟专用网络(Virtual Private Network,VPN) 。VPN是依靠ISP(Internet服务提供商)和其他NSP(网络服务提供商),在公用网络中建立专用的、安全的数据通信通道的技术。
+4)安全扫描。安全扫描包括漏洞扫描、端口扫描、密码类扫描(发现弱口令密码)等。
+5)网络蜜罐技术。蜜罐(Honeypot)技术是一种主动防御技术，是入侵检测技术的一个重要发展方向，也是一个“诱捕”攻击者的陷阱。</div>
+                        <div class="jxxq_jx_txt">解析：网络安全技术主要包括：防火墙、入侵检测与防护、VPN、安全扫描、网络蜜罐技术、用户和实体行为分析技术等。
+1)防火墙。防火墙是建立在内外网络边界上的过滤机制，内部网络被认为是安全和可信赖的，而外部网络被认为是不安全和不可信赖的。
+2)入侵检测与防护。 入侵检测与防护技术主要有两种：入侵检测系统(Intrusion Detection System,IDS)和入侵防护系统(Intrusion Prevention System,IPS)。
+入侵检测系统(IDS)注重网络安全状况的监管，通过监视网络或系统资源，寻找违反安全策略的行为或攻击迹象并发出报警。因此绝大多数IDS 系统都是被动的。
+入侵防护系统(IPS)倾向于提供主动防护，注重对入侵行为的控制。其设计宗旨是预先对 入侵活动和攻击性网络流量进行拦截，避免造成损失。
+3)虚拟专用网络(Virtual Private Network,VPN) 。VPN是依靠ISP(Internet服务提供商)和其他NSP(网络服务提供商),在公用网络中建立专用的、安全的数据通信通道的技术。
+4)安全扫描。安全扫描包括漏洞扫描、端口扫描、密码类扫描(发现弱口令密码)等。
+5)网络蜜罐技术。蜜罐(Honeypot)技术是一种主动防御技术，是入侵检测技术的一个重要发展方向，也是一个“诱捕”攻击者的陷阱。</div>
+                    </div><div class="st_content_txt" id="137210">
+                        <div class="st_content_txt_tm">
+                            <span>5、</span>
+                            <em>[简答]</em>
+                            非关系型数据库是什么,其基本特征是什么?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>数据库根据存储方式可以分为关系型数据库(SQL)和非关系型数据库(NoSQL)。
+非关系型数据库是分布式的、非关系型的、不保证遵循ACID原则的数据存储系统。
+NoSQL数据存储不需要固定的表结构，通常也不存在连接操作。在大数据存取上具备关系型数据库无法比拟的性能优势。非关系型数据库的主要特征包括：
+● 非结构化的存储；
+● 基于多维关系模型；
+● 具有特定的使用场景。</div>
+                        <div class="jxxq_jx_txt">解析：数据库根据存储方式可以分为关系型数据库(SQL)和非关系型数据库(NoSQL)。
+非关系型数据库是分布式的、非关系型的、不保证遵循ACID原则的数据存储系统。
+NoSQL数据存储不需要固定的表结构，通常也不存在连接操作。在大数据存取上具备关系型数据库无法比拟的性能优势。非关系型数据库的主要特征包括：
+● 非结构化的存储；
+● 基于多维关系模型；
+● 具有特定的使用场景。</div>
+                    </div><div class="st_content_txt" id="137211">
+                        <div class="st_content_txt_tm">
+                            <span>6、</span>
+                            <em>[简答]</em>
+                            请简述射频识别 (Radio Frequency Identification,RFID) 技术。                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>射频识别技术(Radio Frequency Identification,RFID)是物联网中使用的一种传感器技术，
+在物联网发展中备受关注。RFID可通过无线电信号识别特定目标并读写相关数据，而无须识别 系统与特定目标之间建立机械或光学接触。RFID是一种简单的无线系统，由一个询问器(或阅读器)和很多应答器(或标签)组成。标签由耦合元件及芯片组成，每个标签具有扩展词条唯一的电子编码，附着在物体上标识目标对象，它通过天线将射频信息传递给阅读器，阅读器就是读取信息的设备。RFID技术让物品能够“开口说话”。这就赋予了物联网一个特性——可跟踪性，即可以随时掌握物品的准确位置及其周边环境。</div>
+                        <div class="jxxq_jx_txt">解析：射频识别技术(Radio Frequency Identification,RFID)是物联网中使用的一种传感器技术，
+在物联网发展中备受关注。RFID可通过无线电信号识别特定目标并读写相关数据，而无须识别 系统与特定目标之间建立机械或光学接触。RFID是一种简单的无线系统，由一个询问器(或阅读器)和很多应答器(或标签)组成。标签由耦合元件及芯片组成，每个标签具有扩展词条唯一的电子编码，附着在物体上标识目标对象，它通过天线将射频信息传递给阅读器，阅读器就是读取信息的设备。RFID技术让物品能够“开口说话”。这就赋予了物联网一个特性——可跟踪性，即可以随时掌握物品的准确位置及其周边环境。</div>
+                    </div><div class="st_content_txt" id="137212">
+                        <div class="st_content_txt_tm">
+                            <span>7、</span>
+                            <em>[简答]</em>
+                            请概述云计算的主要服务模式有哪些。                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>按照云计算服务提供的资源层次，可以分为基础设施即服务(Infrastructure as a Service, IaaS)、平台即服务(Platform as a Service,PaaS)和软件即服务(Software as a Service,SaaS) 三种服务类型。
+(1)IaaS。IaaS 向用户提供计算机能力、存储空间等基础设施方面的服务。
+(2)PaaS。PaaS向用户提供虚拟的操作系统、数据库管理系统、Web应用等平台化的服务。 (3)SaaS。SaaS向用户提供应用软件(如CRM、办公软件等)、组件、工作流等虚拟化软件的服务。</div>
+                        <div class="jxxq_jx_txt">解析：按照云计算服务提供的资源层次，可以分为基础设施即服务(Infrastructure as a Service, IaaS)、平台即服务(Platform as a Service,PaaS)和软件即服务(Software as a Service,SaaS) 三种服务类型。
+(1)IaaS。IaaS 向用户提供计算机能力、存储空间等基础设施方面的服务。
+(2)PaaS。PaaS向用户提供虚拟的操作系统、数据库管理系统、Web应用等平台化的服务。 (3)SaaS。SaaS向用户提供应用软件(如CRM、办公软件等)、组件、工作流等虚拟化软件的服务。</div>
+                    </div><div class="st_content_txt" id="137213">
+                        <div class="st_content_txt_tm">
+                            <span>8、</span>
+                            <em>[简答]</em>
+                            请简述大数据相关的分布式数据处理技术。                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>从总体上说，大数据技术架构主要包含大数据获取技术、分布式数据处理技术和大数据管理技术，以及大数据应用和服务技术。
+分布式数据处理技术：
+分布式计算是随着分布式系统的发展而兴起的，其核心是将任务分解成许多小的部分，分配给多台计算机进行处理，通过并行工作的机制，达到节约整体计算时间，提高计算效率的目的。目前，主流的分布式计算系统有 Hadoop、Spark 和 Storm。Hadoop 常用于离线的、复杂的大数据处理，Spark常用于离线的、快速的大数据处理，而 Storm常用于在线的、实时的大数据处理。
+大数据分析技术主要指改进已有数据挖掘和机器学习技术；开发数据网络挖掘、特异群组挖掘、图挖掘等新型数据挖掘技术；创新基于对象的数据连接、相似性连接等大数据融合技术；突破用户兴趣分析、网络行为分析、情感语义分析等面向领域的大数据挖掘技术。
+大数据挖掘就是从大量、不完全、有噪声、模糊、随机的实际应用数据中，提取隐含在其中的、人们事先不知道的、但又是潜在有用的信息和知识的过程。目前，大数据的挖掘技术也是一个新型的研究课题，国内外研究者从网络挖掘、特异群组挖掘、图挖掘等新型数据挖掘技术展开，重点突破基于对象的数据连接、相似性连接、可视化分析、预测性分析、语义引擎等大数据融合技术，以及用户兴趣分析、网络行为分析、情感语义分析等面向领域的大数据挖掘技术。</div>
+                        <div class="jxxq_jx_txt">解析：从总体上说，大数据技术架构主要包含大数据获取技术、分布式数据处理技术和大数据管理技术，以及大数据应用和服务技术。
+分布式数据处理技术：
+分布式计算是随着分布式系统的发展而兴起的，其核心是将任务分解成许多小的部分，分配给多台计算机进行处理，通过并行工作的机制，达到节约整体计算时间，提高计算效率的目的。目前，主流的分布式计算系统有 Hadoop、Spark 和 Storm。Hadoop 常用于离线的、复杂的大数据处理，Spark常用于离线的、快速的大数据处理，而 Storm常用于在线的、实时的大数据处理。
+大数据分析技术主要指改进已有数据挖掘和机器学习技术；开发数据网络挖掘、特异群组挖掘、图挖掘等新型数据挖掘技术；创新基于对象的数据连接、相似性连接等大数据融合技术；突破用户兴趣分析、网络行为分析、情感语义分析等面向领域的大数据挖掘技术。
+大数据挖掘就是从大量、不完全、有噪声、模糊、随机的实际应用数据中，提取隐含在其中的、人们事先不知道的、但又是潜在有用的信息和知识的过程。目前，大数据的挖掘技术也是一个新型的研究课题，国内外研究者从网络挖掘、特异群组挖掘、图挖掘等新型数据挖掘技术展开，重点突破基于对象的数据连接、相似性连接、可视化分析、预测性分析、语义引擎等大数据融合技术，以及用户兴趣分析、网络行为分析、情感语义分析等面向领域的大数据挖掘技术。</div>
+                    </div><div class="st_content_txt" id="137214">
+                        <div class="st_content_txt_tm">
+                            <span>9、</span>
+                            <em>[简答]</em>
+                            请简述区块链的共识机制。                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>在区块链的典型应用---数字货币中，面临着一系列相关的安全和管理问题，例如：如何防止诈骗?区块数据传输到各个分布式节点的先后次序如何控制?如何应对传输过程中数据丢失问题?节点如何处理错误或伪造的信息?如何保障节点之间信息更新和同步的一致性?这些问题就是所谓的区块链共识问题。
+区块链共识问题需要通过区块链的共识机制来解决。在互联网世界中，共识主要是计算机和软件程序协作一致的基本保障，是分布式系统节点或程序运行的基本依据。共识算法能保证分布式的计算机或软件程序协作一致，对外系统的输入输出做出正确的响应。
+区块链的共识机制的思想是：在没有中心点总体协调情况下，当某个记账节点提议区块数据增加或减少，并把该提议广播给所有的参与节点，所有节点要根据一定的规则和机制，对这一提议是否能够达成一致进行计算和处理。
+目前，常用的共识机制主要有PoW、PoS、DPoS、Paxos、PBFT等。根据区块链不同应用场景中各种共识机制的特性，共识机制的分析可基于以下几个维度：
+● 合规监管。合规监管指是否支持超级权限节点对全网节点和数据进行监管。
+● 性能效率。性能效率指交易达成共识被确认的效率。
+● 资源消耗。资源消耗指共识过程中耗费的CPU、网络输入输出、存储等资源。
+● 容错性。容错性指防攻击、防欺诈的能力。</div>
+                        <div class="jxxq_jx_txt">解析：在区块链的典型应用---数字货币中，面临着一系列相关的安全和管理问题，例如：如何防止诈骗?区块数据传输到各个分布式节点的先后次序如何控制?如何应对传输过程中数据丢失问题?节点如何处理错误或伪造的信息?如何保障节点之间信息更新和同步的一致性?这些问题就是所谓的区块链共识问题。
+区块链共识问题需要通过区块链的共识机制来解决。在互联网世界中，共识主要是计算机和软件程序协作一致的基本保障，是分布式系统节点或程序运行的基本依据。共识算法能保证分布式的计算机或软件程序协作一致，对外系统的输入输出做出正确的响应。
+区块链的共识机制的思想是：在没有中心点总体协调情况下，当某个记账节点提议区块数据增加或减少，并把该提议广播给所有的参与节点，所有节点要根据一定的规则和机制，对这一提议是否能够达成一致进行计算和处理。
+目前，常用的共识机制主要有PoW、PoS、DPoS、Paxos、PBFT等。根据区块链不同应用场景中各种共识机制的特性，共识机制的分析可基于以下几个维度：
+● 合规监管。合规监管指是否支持超级权限节点对全网节点和数据进行监管。
+● 性能效率。性能效率指交易达成共识被确认的效率。
+● 资源消耗。资源消耗指共识过程中耗费的CPU、网络输入输出、存储等资源。
+● 容错性。容错性指防攻击、防欺诈的能力。</div>
+                    </div><div class="st_content_txt" id="137215">
+                        <div class="st_content_txt_tm">
+                            <span>10、</span>
+                            <em>[简答]</em>
+                            什么是深度学习?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>人工智能的关键技术主要涉及机器学习、自然语言处理、专家系统等技术。
+机器学习是一种自动将模型与数据匹配，并通过训练模型对数据进行“学习”的技术。神经网络是机器学习的一种形式，该技术出现在 20世纪60年代，并用于分类型应用程序。它根据输入、输出、变量权重或将输入与输出关联的“特征”来分析问题。它类似于神经元处理信号的方式。
+深度学习是通过多等级的特征和变量来预测结果的神经网络模型，得益于当前计算机架构更快的处理速度，这类模型有能力应对成千上万个特征。与早期的统计分析形式不同，深度学习模型中的每个特征通常对于人类观察者而言意义不大，这导致的结果就是该模型的使用难度很大且难以解释。深度学习模型使用一种称为反向传播的技术，通过模型进行预测或对输出进行分类。强化学习是机器学习的另外一种方式，指机器学习系统制订了目标而且迈向目标的每一步都会得到某种形式的奖励。</div>
+                        <div class="jxxq_jx_txt">解析：人工智能的关键技术主要涉及机器学习、自然语言处理、专家系统等技术。
+机器学习是一种自动将模型与数据匹配，并通过训练模型对数据进行“学习”的技术。神经网络是机器学习的一种形式，该技术出现在 20世纪60年代，并用于分类型应用程序。它根据输入、输出、变量权重或将输入与输出关联的“特征”来分析问题。它类似于神经元处理信号的方式。
+深度学习是通过多等级的特征和变量来预测结果的神经网络模型，得益于当前计算机架构更快的处理速度，这类模型有能力应对成千上万个特征。与早期的统计分析形式不同，深度学习模型中的每个特征通常对于人类观察者而言意义不大，这导致的结果就是该模型的使用难度很大且难以解释。深度学习模型使用一种称为反向传播的技术，通过模型进行预测或对输出进行分类。强化学习是机器学习的另外一种方式，指机器学习系统制订了目标而且迈向目标的每一步都会得到某种形式的奖励。</div>
+                    </div><div class="st_content_txt" id="137216">
+                        <div class="st_content_txt_tm">
+                            <span>11、</span>
+                            <em>[简答]</em>
+                            请简述当前信息技术的发展趋势。                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>2021年12月，国家发布了《“十四五”国家信息化规划》,该规划明确指出，“十四五”时期，信息化进入加快数字化发展、建设数字中国的新阶段，为未来信息技术的发展指明了方向。
+(1)泛在智能的网络连接设施将是网络技术的发展重点。
+(2)大数据技术将继续成为未来发展主流。
+(3)新一代信息技术的持续创新将会成为国家战略。
+(4)从信息化技术转向数字化技术，将是未来国家、社会、产业数字化转型的重要支撑。
+(5)新一代信息技术将继续深入与产业结合，引领产业数字化转型发展。
+(6)新一代信息技术的发展，将有效支撑社会治理现代化的发展。
+(7)新一代信息技术的融合发展，将会打造协同高效的数字政府服务体系。
+(8)信息技术发展落脚点将更加聚焦“以信息技术健全基本公共服务体系，改善人民生活品质，让人民群众共享信息化发展成果”。
+(9)提升信息技术的国际竞争力，积极参与全球网络空间治理体系改革。
+(10)信息技术有序发展的治理体系是基础。
+综上，未来的信息技术将继续成为引领产业发展的重要引擎，加快建设宽带、泛在、融合、安全的信息网络基础设施，推动新一代移动通信、下一代互联网核心设备和智能终端的研发及产业化，促进物联网、云计算的研发和示范应用，发展集成电路、新型显示、高端软件、高端服务器等核心基础产业，提升软件服务、网络增值服务等信息服务能力，加快重要基础设施智能化改造、大力发展数字虚拟等技术，将会是未来技术的主要发展方向。</div>
+                        <div class="jxxq_jx_txt">解析：2021年12月，国家发布了《“十四五”国家信息化规划》,该规划明确指出，“十四五”时期，信息化进入加快数字化发展、建设数字中国的新阶段，为未来信息技术的发展指明了方向。
+(1)泛在智能的网络连接设施将是网络技术的发展重点。
+(2)大数据技术将继续成为未来发展主流。
+(3)新一代信息技术的持续创新将会成为国家战略。
+(4)从信息化技术转向数字化技术，将是未来国家、社会、产业数字化转型的重要支撑。
+(5)新一代信息技术将继续深入与产业结合，引领产业数字化转型发展。
+(6)新一代信息技术的发展，将有效支撑社会治理现代化的发展。
+(7)新一代信息技术的融合发展，将会打造协同高效的数字政府服务体系。
+(8)信息技术发展落脚点将更加聚焦“以信息技术健全基本公共服务体系，改善人民生活品质，让人民群众共享信息化发展成果”。
+(9)提升信息技术的国际竞争力，积极参与全球网络空间治理体系改革。
+(10)信息技术有序发展的治理体系是基础。
+综上，未来的信息技术将继续成为引领产业发展的重要引擎，加快建设宽带、泛在、融合、安全的信息网络基础设施，推动新一代移动通信、下一代互联网核心设备和智能终端的研发及产业化，促进物联网、云计算的研发和示范应用，发展集成电路、新型显示、高端软件、高端服务器等核心基础产业，提升软件服务、网络增值服务等信息服务能力，加快重要基础设施智能化改造、大力发展数字虚拟等技术，将会是未来技术的主要发展方向。</div>
+                    </div><div class="st_content_txt" id="137217">
+                        <div class="st_content_txt_tm">
+                            <span>12、</span>
+                            <em>[简答]</em>
+                            请简述IT 服务发展现状和趋势。                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>IT 服务发展现状和趋势：
+1、产业规模持续增长。
+2、传统服务加速转型升级。
+3、新模式新业态不断涌现。
+4、自主创新能力进一步加强。
+5、复合型人才需求旺盛。
+6、发展与安全长期共存。</div>
+                        <div class="jxxq_jx_txt">解析：IT 服务发展现状和趋势：
+1、产业规模持续增长。
+2、传统服务加速转型升级。
+3、新模式新业态不断涌现。
+4、自主创新能力进一步加强。
+5、复合型人才需求旺盛。
+6、发展与安全长期共存。</div>
+                    </div><div class="st_content_txt" id="137218">
+                        <div class="st_content_txt_tm">
+                            <span>13、</span>
+                            <em>[简答]</em>
+                            请简述ITSS中定义的IT服务基本原理。                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>ITSS 给出了IT服务的基本原理，由能力要素、生存周期要素、管理要素组成，如图所示。<img src="https://img01.aura.cn/wx/ueditor/2024/2024-05/20240524114152_53897_396x432.png" title="图片1.png" alt="图片1.png" style="display: block; margin-left: 20px;">能力要素由人员(People)、过程(Process)、技术(Technology)和资源(Resource)组成，简称PPTR。
+IT服务生命周期由四个阶段组成，分别是战略规划(Strategy &amp; planning)、设计实现(Design &amp; implementation)、运营提升(Operation &amp; promotion)、退役终止(Retirement &amp; termination),简称为SDOR。为了保证每个生命周期阶段及其过程的实施，需要通过监督提供保障，通过管理提供支撑。</div>
+                        <div class="jxxq_jx_txt">解析：ITSS 给出了IT服务的基本原理，由能力要素、生存周期要素、管理要素组成，如图所示。<img src="https://img01.aura.cn/wx/ueditor/2024/2024-05/20240524114203_43836_396x432.png" title="图片1.png" alt="图片1.png" style="display: block; margin-left: 20px;">能力要素由人员(People)、过程(Process)、技术(Technology)和资源(Resource)组成，简称PPTR。
+IT服务生命周期由四个阶段组成，分别是战略规划(Strategy &amp; planning)、设计实现(Design &amp; implementation)、运营提升(Operation &amp; promotion)、退役终止(Retirement &amp; termination),简称为SDOR。为了保证每个生命周期阶段及其过程的实施，需要通过监督提供保障，通过管理提供支撑。</div>
+                    </div><div class="st_content_txt" id="137219">
+                        <div class="st_content_txt_tm">
+                            <span>14、</span>
+                            <em>[简答]</em>
+                            云原生架构原则有哪些，请简述?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>关于云原生架构原则，立足不同的价值视角或技术方向等有所不同，常见的原则主要包括：
+1、服务化原则。
+2、弹性原则。
+3、可观测原则。
+4、韧性原则。
+5、所有过程自动化原则。
+6、零信任原则。
+7、架构持续演进原则</div>
+                        <div class="jxxq_jx_txt">解析：关于云原生架构原则，立足不同的价值视角或技术方向等有所不同，常见的原则主要包括：
+1、服务化原则。
+2、弹性原则。
+3、可观测原则。
+4、韧性原则。
+5、所有过程自动化原则。
+6、零信任原则。
+7、架构持续演进原则</div>
+                    </div><div class="st_content_txt" id="137220">
+                        <div class="st_content_txt_tm">
+                            <span>15、</span>
+                            <em>[简答]</em>
+                            常用的数据架构设计原则有哪些，请简述?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>数据架构的设计原则是在遵循架构设计通用原则的情况下，有数据架构自身的特殊考虑。
+基本原则包括：
+1.数据分层原则。
+2.数据处理效率原则。
+3.数据一致性原则。
+4.数据架构可扩展性原则。
+5.服务于业务原则。</div>
+                        <div class="jxxq_jx_txt">解析：数据架构的设计原则是在遵循架构设计通用原则的情况下，有数据架构自身的特殊考虑。
+基本原则包括：
+1.数据分层原则。
+2.数据处理效率原则。
+3.数据一致性原则。
+4.数据架构可扩展性原则。
+5.服务于业务原则。</div>
+                    </div><div class="st_content_txt" id="137221">
+                        <div class="st_content_txt_tm">
+                            <span>16、</span>
+                            <em>[简答]</em>
+                            开展软件测试的时候，可用的方法都有哪些?各自的优缺点是什么?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>1)静态测试
+静态测试是指被测试程序不在机器上运行，只依靠分析或检查源程序的语句、结构、过程等来检查程序是否有错误，即通过对软件的需求规格说明书、设计说明书以及源程序做结构分析和流程图分析，从而找出错误。静态测试包括对文档的静态测试和对代码的静态测试。对文档的静态测试主要以检查单的形式进行，而对代码的静态测试一般采用桌前检查(Desk Checking)、代码走查和代码审查的方式。经验表明，使用这种方法能够有效地发现30%-70%的逻辑设计和编码错误。
+2)动态测试
+动态测试是指在计算机上实际运行程序进行软件测试，对得到的运行结果与预期的结果进行比较分析，同时分析运行效率和健壮性能等。一般采用白盒测试和黑盒测试方法。
+白盒测试也称为结构测试，主要用于软件单元测试中。它的主要思想是，将程序看作一个透明的白盒，测试人员完全清楚程序的结构和处理算法，按照程序内部逻辑结构设计测试用例，检测程序中的主要执行通路是否都能按设计规格说明书的设定进行。白盒测试方法是从程序结构方面出发对测试用例进行设计，主要用于检查各个逻辑结构是否合理，对应的模块独立路径是否正常，以及内部结构是否有效，包括控制流测试、数据流测试和程序变异测试等。另外，使用静态测试的方法也可以实现白盒测试。例如，使用人工检查代码的方法来检查代码的逻辑问题，也属于白盒测试的范畴。白盒测试方法中，最常用的技术是逻辑覆盖，即使用测试数据运行被测程序，考查对程序逻辑的覆盖程度，主要的覆盖标准有语句覆盖、判定覆盖、条件覆盖、条件/判定覆盖、条件组合覆盖、修正的条件/判定覆盖和路径覆盖等。
+黑盒测试也称为功能测试，它是通过测试来检测每个功能能否正常使用。黑盒测试将程序看作一个不透明的黑盒，完全不考虑(或不了解)程序的内部结构和处理算法，根据需求规格说明书设计测试实例，并检查程序的功能是否能够按照规范说明准确无误地运行。对于黑盒测试行为必须加以量化才能够有效地保证软件的质量。黑盒测试根据SRS所规定的功能来设计测试用例，一般包括等价类划分、边界值分析、判定表、因果图、状态图、随机测试、猜错法和正交试验法等。</div>
+                        <div class="jxxq_jx_txt">解析：1)静态测试
+静态测试是指被测试程序不在机器上运行，只依靠分析或检查源程序的语句、结构、过程等来检查程序是否有错误，即通过对软件的需求规格说明书、设计说明书以及源程序做结构分析和流程图分析，从而找出错误。静态测试包括对文档的静态测试和对代码的静态测试。对文档的静态测试主要以检查单的形式进行，而对代码的静态测试一般采用桌前检查(Desk Checking)、代码走查和代码审查的方式。经验表明，使用这种方法能够有效地发现30%-70%的逻辑设计和编码错误。
+2)动态测试
+动态测试是指在计算机上实际运行程序进行软件测试，对得到的运行结果与预期的结果进行比较分析，同时分析运行效率和健壮性能等。一般采用白盒测试和黑盒测试方法。
+白盒测试也称为结构测试，主要用于软件单元测试中。它的主要思想是，将程序看作一个透明的白盒，测试人员完全清楚程序的结构和处理算法，按照程序内部逻辑结构设计测试用例，检测程序中的主要执行通路是否都能按设计规格说明书的设定进行。白盒测试方法是从程序结构方面出发对测试用例进行设计，主要用于检查各个逻辑结构是否合理，对应的模块独立路径是否正常，以及内部结构是否有效，包括控制流测试、数据流测试和程序变异测试等。另外，使用静态测试的方法也可以实现白盒测试。例如，使用人工检查代码的方法来检查代码的逻辑问题，也属于白盒测试的范畴。白盒测试方法中，最常用的技术是逻辑覆盖，即使用测试数据运行被测程序，考查对程序逻辑的覆盖程度，主要的覆盖标准有语句覆盖、判定覆盖、条件覆盖、条件/判定覆盖、条件组合覆盖、修正的条件/判定覆盖和路径覆盖等。
+黑盒测试也称为功能测试，它是通过测试来检测每个功能能否正常使用。黑盒测试将程序看作一个不透明的黑盒，完全不考虑(或不了解)程序的内部结构和处理算法，根据需求规格说明书设计测试实例，并检查程序的功能是否能够按照规范说明准确无误地运行。对于黑盒测试行为必须加以量化才能够有效地保证软件的质量。黑盒测试根据SRS所规定的功能来设计测试用例，一般包括等价类划分、边界值分析、判定表、因果图、状态图、随机测试、猜错法和正交试验法等。</div>
+                    </div><div class="st_content_txt" id="137222">
+                        <div class="st_content_txt_tm">
+                            <span>17、</span>
+                            <em>[简答]</em>
+                            软件过程能力成熟度 (CSMM)中，3级的结果特征和行为特征都包括哪些?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span><img src="https://img01.aura.cn/wx/ueditor/2024/2024-05/20240524114315_34273_565x610.png" title="图片12.png" alt="图片12.png" style="display: block; margin-left: 20px;">《软件过程能力成熟度模型》(CSMM)
+3级：组织改进级
+结果特征：
+在组织范围内能够稳定地实现预期的项目目标。
+行为特征：
+●在2级充分实施的基础之上进行持续改进。
+●依据组织的业务目标、管理要求以及外部监管需求，建立并持续改进组织标准过程和过程资产。
+●项目根据自身特征，依据组织标准过程和过程资产，实现项目目标，并贡献过程资产。</div>
+                        <div class="jxxq_jx_txt">解析：<img src="https://img01.aura.cn/wx/ueditor/2024/2024-05/20240524114324_14121_565x610.png" title="图片12.png" alt="图片12.png" style="display: block; margin-left: 20px;">《软件过程能力成熟度模型》(CSMM)
+3级：组织改进级
+结果特征：
+在组织范围内能够稳定地实现预期的项目目标。
+行为特征：
+●在2级充分实施的基础之上进行持续改进。
+●依据组织的业务目标、管理要求以及外部监管需求，建立并持续改进组织标准过程和过程资产。
+●项目根据自身特征，依据组织标准过程和过程资产，实现项目目标，并贡献过程资产。</div>
+                    </div><div class="st_content_txt" id="137223">
+                        <div class="st_content_txt_tm">
+                            <span>18、</span>
+                            <em>[简答]</em>
+                            常见的数据预处理方法有哪些?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>一般而言，需要进行预处理的数据主要包括数据缺失、数据异常、数据不一致、数据重复、数据格式不符等情况，针对不同问题需要采用不同的数据处理方法。
+1.缺失数据的预处理
+数据缺失产生的原因主要分为环境原因和人为原因，需要针对不同的原因采取不同的数据预处理方法，常见的方法有删除缺失值、均值填补法、热卡填补法等。
+缺失数据预处理的其他方法还有最近距离决定填补法、回归填补法、多重填补法、K-最近邻法、有序最近邻法、基于贝叶斯的方法等。
+2.异常数据的预处理
+对于异常数据或有噪声的数据，如超过明确取值范围的数据、离群点数据，可以采用分箱法和回归法来进行处理。
+3.不一致数据的预处理
+不一致数据是指具有逻辑错误或者数据类型不一致的数据，如年龄与生日数据不符。这一类数据的清洗可以使用人工修改，也可以借助工具来找到违反限制的数据，如知道数据的函数依赖关系，可以通过函数关系修改属性值。但是大部分的不一致情况都需要进行数据变换，即定义一系列的变换纠正数据，有一些商业工具可以提供数据变换的功能，例如数据迁移工具和ETL工具等。
+4.重复数据的预处理
+数据本身存在的或数据清洗后可能会产生的重复值。重复值的存在会影响后续模型训练的质量，造成计算及存储浪费。去除重复值的操作一般最后进行，可以使用 Excel、VBA(Visual Basic 宏语言)、Python等工具处理。
+5.格式不符数据的预处理
+一般人工收集或者应用系统用户填写的数据，容易存在格式问题。一般需要将不同类型的数据内容清洗成统一类型的文件和统一格式，如将TXT、CSV、Excel、HTML以及PDF清洗成统一的 Excel文件，将显示不一致的时间、日期、数值或者内容中有空格、单引号、双引号等情况进行格式的统一调整。</div>
+                        <div class="jxxq_jx_txt">解析：一般而言，需要进行预处理的数据主要包括数据缺失、数据异常、数据不一致、数据重复、数据格式不符等情况，针对不同问题需要采用不同的数据处理方法。
+1.缺失数据的预处理
+数据缺失产生的原因主要分为环境原因和人为原因，需要针对不同的原因采取不同的数据预处理方法，常见的方法有删除缺失值、均值填补法、热卡填补法等。
+缺失数据预处理的其他方法还有最近距离决定填补法、回归填补法、多重填补法、K-最近邻法、有序最近邻法、基于贝叶斯的方法等。
+2.异常数据的预处理
+对于异常数据或有噪声的数据，如超过明确取值范围的数据、离群点数据，可以采用分箱法和回归法来进行处理。
+3.不一致数据的预处理
+不一致数据是指具有逻辑错误或者数据类型不一致的数据，如年龄与生日数据不符。这一类数据的清洗可以使用人工修改，也可以借助工具来找到违反限制的数据，如知道数据的函数依赖关系，可以通过函数关系修改属性值。但是大部分的不一致情况都需要进行数据变换，即定义一系列的变换纠正数据，有一些商业工具可以提供数据变换的功能，例如数据迁移工具和ETL工具等。
+4.重复数据的预处理
+数据本身存在的或数据清洗后可能会产生的重复值。重复值的存在会影响后续模型训练的质量，造成计算及存储浪费。去除重复值的操作一般最后进行，可以使用 Excel、VBA(Visual Basic 宏语言)、Python等工具处理。
+5.格式不符数据的预处理
+一般人工收集或者应用系统用户填写的数据，容易存在格式问题。一般需要将不同类型的数据内容清洗成统一类型的文件和统一格式，如将TXT、CSV、Excel、HTML以及PDF清洗成统一的 Excel文件，将显示不一致的时间、日期、数值或者内容中有空格、单引号、双引号等情况进行格式的统一调整。</div>
+                    </div><div class="st_content_txt" id="137224">
+                        <div class="st_content_txt_tm">
+                            <span>19、</span>
+                            <em>[简答]</em>
+                            数据的标准化包含哪些主要阶段?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>数据标准化阶段的具体过程包括确定数据需求、制定数据标准、批准数据标准和实施数据标准。
+
+(1)确定数据需求。本阶段将产生数据需求及相关的元数据、域值等文件。在确定数据需求时应考虑现行法规、政策，以及现行的数据标准。
+(2)制定数据标准。本阶段要处理“确定数据需求”阶段提出的数据需求。如果现有的数据标准不能满足该数据需求，可以建议制定新的数据标准，也可建议修改或者封存已有的数据标准。推荐的、新的或修改的数据标准记录在数据字典中。这个阶段将产生供审查和批准的成套建议。
+(3)批准数据标准。本阶段的数据管理机构对提交的数据标准建议、现行数据标准的修改或封存建议进行审查。一经批准，该数据标准将扩充或修改数据模型。
+(4)实施数据标准。本阶段涉及在各信息系统中实施和改进已批准的数据标准。</div>
+                        <div class="jxxq_jx_txt">解析：数据标准化阶段的具体过程包括确定数据需求、制定数据标准、批准数据标准和实施数据标准。
+
+(1)确定数据需求。本阶段将产生数据需求及相关的元数据、域值等文件。在确定数据需求时应考虑现行法规、政策，以及现行的数据标准。
+(2)制定数据标准。本阶段要处理“确定数据需求”阶段提出的数据需求。如果现有的数据标准不能满足该数据需求，可以建议制定新的数据标准，也可建议修改或者封存已有的数据标准。推荐的、新的或修改的数据标准记录在数据字典中。这个阶段将产生供审查和批准的成套建议。
+(3)批准数据标准。本阶段的数据管理机构对提交的数据标准建议、现行数据标准的修改或封存建议进行审查。一经批准，该数据标准将扩充或修改数据模型。
+(4)实施数据标准。本阶段涉及在各信息系统中实施和改进已批准的数据标准。</div>
+                    </div><div class="st_content_txt" id="137225">
+                        <div class="st_content_txt_tm">
+                            <span>20、</span>
+                            <em>[简答]</em>
+                            数据模型分为哪些主要类别?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>根据模型应用的目的不同，可以将数据模型划分为3类：概念模型、逻辑模型和物理模型。
+
+
+(4)数据挖掘与传统数据分析有哪些差别?
+参考答案：
+数据挖掘与传统数据分析存在较大的不同，主要表现在以下4个方面。
+(1)两者分析对象的数据量有差异。数据挖掘所需的数据量比传统数据分析所需的数据量大。数据量越大，数据挖掘的效果越好。
+(2)两者运用的分析方法有差异。传统数据分析主要运用统计学的方法手段对数据进行分 析；而数据挖掘综合运用数据统计、人工智能、可视化等技术对数据进行分析。
+(3)两者分析侧重有差异。传统数据分析通常是回顾型和验证型的，通常分析已经发生了什么;而数据挖掘通常是预测型和发现型的，预测未来的情况，解释发生的原因。
+(4)两者成熟度不同。传统数据分析由于研究较早，其分析方法相当成熟；而数据挖掘除基于统计学等方法外，部分方法仍处于发展阶段。</div>
+                        <div class="jxxq_jx_txt">解析：根据模型应用的目的不同，可以将数据模型划分为3类：概念模型、逻辑模型和物理模型。
+
+
+(4)数据挖掘与传统数据分析有哪些差别?
+参考答案：
+数据挖掘与传统数据分析存在较大的不同，主要表现在以下4个方面。
+(1)两者分析对象的数据量有差异。数据挖掘所需的数据量比传统数据分析所需的数据量大。数据量越大，数据挖掘的效果越好。
+(2)两者运用的分析方法有差异。传统数据分析主要运用统计学的方法手段对数据进行分 析；而数据挖掘综合运用数据统计、人工智能、可视化等技术对数据进行分析。
+(3)两者分析侧重有差异。传统数据分析通常是回顾型和验证型的，通常分析已经发生了什么;而数据挖掘通常是预测型和发现型的，预测未来的情况，解释发生的原因。
+(4)两者成熟度不同。传统数据分析由于研究较早，其分析方法相当成熟；而数据挖掘除基于统计学等方法外，部分方法仍处于发展阶段。</div>
+                    </div><div class="st_content_txt" id="137226">
+                        <div class="st_content_txt_tm">
+                            <span>21、</span>
+                            <em>[简答]</em>
+                            数据脱敏的主要原则是什么?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>数据脱敏原则主要包括:算法不可逆原则、保持数据特征原则、保留引用完整性原则、规避融合风险原则、脱敏过程自动化原则、脱敏结果可重复原则等。</div>
+                        <div class="jxxq_jx_txt">解析：数据脱敏原则主要包括:算法不可逆原则、保持数据特征原则、保留引用完整性原则、规避融合风险原则、脱敏过程自动化原则、脱敏结果可重复原则等。</div>
+                    </div><div class="st_content_txt" id="137227">
+                        <div class="st_content_txt_tm">
+                            <span>22、</span>
+                            <em>[简答]</em>
+                            业务应用集成的工作原理是什么?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>业务应用集成的工作原理：
+在信息化业务运营或日常工作开展过程中，当事件或数据发生变化时，业务应用集成会确保不同业务应用之间保持同步。业务应用集成不同于数据集成，数据集成是共享数据，并不存储数据；而业务应用集成是在功能层面将多个业务应用直接连接起来，帮助打造动态且具有高度适应性的应用和服务。
+由于业务应用集成重点关注的是工作流层面的应用连接，因此需要的数据存储空间和计算时间并不多。业务应用集成既可以部署在云端，集成 SaaS、CRM等云应用；也可以部署在受防火墙保护的本地，集成传统 ERP系统等；还可以部署在混合环境中，集成本地业务应用和托管在专用服务器上的云应用。
+业务应用集成可以帮助协调连接各种业务应用的组件，包括应用编程接口(API)、事件驱动型操作、数据映射。
+(1)应用编程接口(API)。API是定义不同软件交互方式的程序和规则，可以支持应用之间相互通信。API利用特定的数据结构，帮助开发人员快速访问其他应用功能。
+(2)事件驱动型操作。当触发器(即事件)启动一个程序或一组操作时，系统就会执行事件驱动型操作。例如，在订单提交后，进行计费并向客户开具发票；管理从ERP系统到CRM系统的“业务机会到订单”工作流。
+(3)数据映射。数据映射是指将数据从一个系统映射到另一个系统，可以定义数据的交换方式，从而简化后续的数据导出、分组或分析工作。例如，用户在一个应用中填写联系信息表，那么这些信息将被映射到相邻应用的相应字段。
+如今，各行各业不同规模的组织都在利用业务应用集成实现流程互联和数据交换，以提高业务效率。</div>
+                        <div class="jxxq_jx_txt">解析：业务应用集成的工作原理：
+在信息化业务运营或日常工作开展过程中，当事件或数据发生变化时，业务应用集成会确保不同业务应用之间保持同步。业务应用集成不同于数据集成，数据集成是共享数据，并不存储数据；而业务应用集成是在功能层面将多个业务应用直接连接起来，帮助打造动态且具有高度适应性的应用和服务。
+由于业务应用集成重点关注的是工作流层面的应用连接，因此需要的数据存储空间和计算时间并不多。业务应用集成既可以部署在云端，集成 SaaS、CRM等云应用；也可以部署在受防火墙保护的本地，集成传统 ERP系统等；还可以部署在混合环境中，集成本地业务应用和托管在专用服务器上的云应用。
+业务应用集成可以帮助协调连接各种业务应用的组件，包括应用编程接口(API)、事件驱动型操作、数据映射。
+(1)应用编程接口(API)。API是定义不同软件交互方式的程序和规则，可以支持应用之间相互通信。API利用特定的数据结构，帮助开发人员快速访问其他应用功能。
+(2)事件驱动型操作。当触发器(即事件)启动一个程序或一组操作时，系统就会执行事件驱动型操作。例如，在订单提交后，进行计费并向客户开具发票；管理从ERP系统到CRM系统的“业务机会到订单”工作流。
+(3)数据映射。数据映射是指将数据从一个系统映射到另一个系统，可以定义数据的交换方式，从而简化后续的数据导出、分组或分析工作。例如，用户在一个应用中填写联系信息表，那么这些信息将被映射到相邻应用的相应字段。
+如今，各行各业不同规模的组织都在利用业务应用集成实现流程互联和数据交换，以提高业务效率。</div>
+                    </div><div class="st_content_txt" id="137228">
+                        <div class="st_content_txt_tm">
+                            <span>23、</span>
+                            <em>[简答]</em>
+                            对于组织来说，如何建设有效、敏捷的信息安全管理体系?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>在组织机构中应建立安全管理机构，不同安全等级的安全管理机构逐步建立自己的信息系统安全组织机构管理体系，参考步骤包括：
+①配备安全管理人员。管理层中应有一人分管信息系统安全工作，并为信息系统的安全管理配备专职或兼职的安全管理人员。
+②建立安全职能部门。建立管理信息系统安全工作的职能部门，或者明确指定一个职能部门监管信息安全工作，并将此项工作作为该部门的关键职责之一。
+③成立安全领导小组。在管理层成立信息系统安全管理委员会或信息系统安全领导小组，对覆盖全国或跨地区的组织机构，应在总部和下级单位建立各级信息系统安全领导小组，在基层至少要有一位专职的安全管理人员负责信息系统安全工作。
+④主要负责人出任领导。由组织机构的主要负责人出任信息系统安全领导小组负责人。
+⑤建立信息安全保密管理部门。建立信息系统安全保密监督管理的职能部门，或对原有保密部门明确信息安全保密管理责任，加强对信息系统安全管理重要过程和管理人员的保密监督管理。</div>
+                        <div class="jxxq_jx_txt">解析：在组织机构中应建立安全管理机构，不同安全等级的安全管理机构逐步建立自己的信息系统安全组织机构管理体系，参考步骤包括：
+①配备安全管理人员。管理层中应有一人分管信息系统安全工作，并为信息系统的安全管理配备专职或兼职的安全管理人员。
+②建立安全职能部门。建立管理信息系统安全工作的职能部门，或者明确指定一个职能部门监管信息安全工作，并将此项工作作为该部门的关键职责之一。
+③成立安全领导小组。在管理层成立信息系统安全管理委员会或信息系统安全领导小组，对覆盖全国或跨地区的组织机构，应在总部和下级单位建立各级信息系统安全领导小组，在基层至少要有一位专职的安全管理人员负责信息系统安全工作。
+④主要负责人出任领导。由组织机构的主要负责人出任信息系统安全领导小组负责人。
+⑤建立信息安全保密管理部门。建立信息系统安全保密监督管理的职能部门，或对原有保密部门明确信息安全保密管理责任，加强对信息系统安全管理重要过程和管理人员的保密监督管理。</div>
+                    </div><div class="st_content_txt" id="137229">
+                        <div class="st_content_txt_tm">
+                            <span>24、</span>
+                            <em>[简答]</em>
+                            从组织成员或公民视角来看，信息安全意识如何培育?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>一、了解信息安全的重要性
+信息安全是保障社会正常运转、国家安全和人民利益的重要保障。在当今信息化社会，个人和企业信息的重要性不言而喻。保护个人隐私、商业机密和国家机密等信息安全，可以有效避免信息泄露、信息篡改、信息侵权等问题。因此，提高信息安全意识，加强信息安全保护措施是每个人的责任和义务。
+二、加强密码管理
+密码是信息安全的第一道防线，加强密码管理是培养信息安全意识的重要环节。以下是几个建议：
+1. 定期更换密码：为了防止密码被破解，建议定期更换密码，一般建议每3个月更换一次。
+2. 不要使用弱密码：弱密码容易被猜测或破解，建议使用复杂且不易被猜测的密码。
+3. 不要使用相同的密码：使用相同的密码在不同的网站或平台上可能会导致信息泄露。建议使用不同的密码，并确保密码的唯一性。
+4. 启用双重认证：为了提高账户的安全性，建议启用双重认证功能，确保只有授权的用户可以访问账户。
+三、保护个人信息
+个人信息是信息安全的重要组成部分，保护个人信息可以有效避免信息泄露和侵权问题。以下是几个建议：
+1. 不轻易透露个人信息：不要随意在公共场合透露个人姓名、地址、电话号码等敏感信息。
+2. 保护手机和个人电脑安全：安装杀毒软件和防火墙可以有效保护手机和个人电脑的安全，避免信息泄露和被篡改。
+3. 避免使用公共Wi-Fi：公共Wi-Fi可能会被黑客利用，窃取个人信息。建议使用自己的数据流量或者信任的Wi-Fi网络。
+4. 定期清理个人信息：及时清理不再使用的个人信息，避免信息泄露和被滥用。
+四、加强网络安全意识教育
+加强网络安全意识教育是培养信息安全意识的有效途径。以下是一些建议：
+1. 学习网络安全知识：了解网络安全的基本知识和技术，包括网络攻击的类型、手段和防范措施等。
+2. 关注网络安全事件：关注网络安全事件，了解最新的网络安全动态和趋势，及时采取防范措施。
+3. 参加网络安全培训：参加网络安全培训课程或研讨会，提高自身的网络安全意识和技能水平。
+4. 做好备份工作：备份重要数据和文件，以防数据丢失或被篡改。同时，备份数据也可以作为信息恢复的重要手段。
+5. 注意软件安全：及时更新软件和操作系统，避免使用盗版软件或破解版软件，以减少软件漏洞和安全隐患。
+6. 谨慎处理邮件和链接：不要随意点击不明来源的邮件和链接，特别是包含附件或下载链接的邮件，以防恶意软件入侵和个人信息泄露。
+7. 保护移动设备安全：使用安全软件、设置密码和指纹识别等技术手段来保护移动设备的安全，避免个人信息和敏感数据被窃取或滥用。
+8. 建立良好的上网习惯：如不随意下载未知来源的软件、定期清理浏览器缓存等，养成良好的上网习惯可以有效减少个人信息被窃取或滥用的风险。
+9. 加强与他人的沟通与合作：在网络安全领域，加强与他人的沟通与合作可以获得更多的信息和资源，共同应对网络安全威胁和挑战。
+10. 注意防范钓鱼攻击：钓鱼攻击是一种常见的网络攻击方式，通过伪装成正规机构或个人来获取用户的个人信息或敏感数据。要学会识别钓鱼攻击的特征和手段，避免上当受骗。</div>
+                        <div class="jxxq_jx_txt">解析：一、了解信息安全的重要性
+信息安全是保障社会正常运转、国家安全和人民利益的重要保障。在当今信息化社会，个人和企业信息的重要性不言而喻。保护个人隐私、商业机密和国家机密等信息安全，可以有效避免信息泄露、信息篡改、信息侵权等问题。因此，提高信息安全意识，加强信息安全保护措施是每个人的责任和义务。
+二、加强密码管理
+密码是信息安全的第一道防线，加强密码管理是培养信息安全意识的重要环节。以下是几个建议：
+1. 定期更换密码：为了防止密码被破解，建议定期更换密码，一般建议每3个月更换一次。
+2. 不要使用弱密码：弱密码容易被猜测或破解，建议使用复杂且不易被猜测的密码。
+3. 不要使用相同的密码：使用相同的密码在不同的网站或平台上可能会导致信息泄露。建议使用不同的密码，并确保密码的唯一性。
+4. 启用双重认证：为了提高账户的安全性，建议启用双重认证功能，确保只有授权的用户可以访问账户。
+三、保护个人信息
+个人信息是信息安全的重要组成部分，保护个人信息可以有效避免信息泄露和侵权问题。以下是几个建议：
+1. 不轻易透露个人信息：不要随意在公共场合透露个人姓名、地址、电话号码等敏感信息。
+2. 保护手机和个人电脑安全：安装杀毒软件和防火墙可以有效保护手机和个人电脑的安全，避免信息泄露和被篡改。
+3. 避免使用公共Wi-Fi：公共Wi-Fi可能会被黑客利用，窃取个人信息。建议使用自己的数据流量或者信任的Wi-Fi网络。
+4. 定期清理个人信息：及时清理不再使用的个人信息，避免信息泄露和被滥用。
+四、加强网络安全意识教育
+加强网络安全意识教育是培养信息安全意识的有效途径。以下是一些建议：
+1. 学习网络安全知识：了解网络安全的基本知识和技术，包括网络攻击的类型、手段和防范措施等。
+2. 关注网络安全事件：关注网络安全事件，了解最新的网络安全动态和趋势，及时采取防范措施。
+3. 参加网络安全培训：参加网络安全培训课程或研讨会，提高自身的网络安全意识和技能水平。
+4. 做好备份工作：备份重要数据和文件，以防数据丢失或被篡改。同时，备份数据也可以作为信息恢复的重要手段。
+5. 注意软件安全：及时更新软件和操作系统，避免使用盗版软件或破解版软件，以减少软件漏洞和安全隐患。
+6. 谨慎处理邮件和链接：不要随意点击不明来源的邮件和链接，特别是包含附件或下载链接的邮件，以防恶意软件入侵和个人信息泄露。
+7. 保护移动设备安全：使用安全软件、设置密码和指纹识别等技术手段来保护移动设备的安全，避免个人信息和敏感数据被窃取或滥用。
+8. 建立良好的上网习惯：如不随意下载未知来源的软件、定期清理浏览器缓存等，养成良好的上网习惯可以有效减少个人信息被窃取或滥用的风险。
+9. 加强与他人的沟通与合作：在网络安全领域，加强与他人的沟通与合作可以获得更多的信息和资源，共同应对网络安全威胁和挑战。
+10. 注意防范钓鱼攻击：钓鱼攻击是一种常见的网络攻击方式，通过伪装成正规机构或个人来获取用户的个人信息或敏感数据。要学会识别钓鱼攻击的特征和手段，避免上当受骗。</div>
+                    </div><div class="st_content_txt" id="137230">
+                        <div class="st_content_txt_tm">
+                            <span>25、</span>
+                            <em>[简答]</em>
+                            请根据你的理解简要叙述规划质量管理的定义及其主要作用。                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>规划质量管理是识别项目及其可交付成果的质量要求和(或)标准，并书面描述项目将如何证明符合质量要求和(或)标准的过程。本过程的主要作用是在整个项目期间为如何管理和核实质量提供指南和方向。本过程仅开展一次或仅在项目的预定义点开展。</div>
+                        <div class="jxxq_jx_txt">解析：规划质量管理是识别项目及其可交付成果的质量要求和(或)标准，并书面描述项目将如何证明符合质量要求和(或)标准的过程。本过程的主要作用是在整个项目期间为如何管理和核实质量提供指南和方向。本过程仅开展一次或仅在项目的预定义点开展。</div>
+                    </div><div class="st_content_txt" id="137231">
+                        <div class="st_content_txt_tm">
+                            <span>26、</span>
+                            <em>[简答]</em>
+                            规划质量管理的输入包含哪些?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span><img src="https://img01.aura.cn/wx/ueditor/2024/2024-05/20240524114407_43802_486x372.png" title="图片13.png" alt="图片13.png" style="display: block; margin-left: 20px;"></div>
+                        <div class="jxxq_jx_txt">解析：<img src="https://img01.aura.cn/wx/ueditor/2024/2024-05/20240524114416_75557_486x372.png" title="图片13.png" alt="图片13.png" style="display: block; margin-left: 20px;"></div>
+                    </div><div class="st_content_txt" id="137232">
+                        <div class="st_content_txt_tm">
+                            <span>27、</span>
+                            <em>[简答]</em>
+                            某安全要求较高的智能智造园区拟建设智慧安防监控平台，计划采用ARM 架构 CPU芯片的通用服务器，搭载适合神经网络计算的NPU芯片人工智能算力卡，使用高性能计算存储架构及零信任通信加密技术，支撑园区600路高清摄像头的监控运行。同时开发人工智能算法，对园区周界入侵、未授权人员出入安全场所、烟雾火情等不安全情形进行主动报警。报警信息在智慧安防监控平台的驾驶舱界面予以实时展现，并通过加密无线网络实时发送到相关负责人的移动终端。
+项目经理根据项目章程，参考前期相关文件、历史类似项目资料、安防行业标准、信创解决方案及AI技术趋势，直接明确了项目全部范围，随后确定了完成项目的行动方案。
+(1)第一段中，属于规划过程组中的哪个规划?对其做简要说明。
+(2)第二段中，该项目经理有哪些错误?如何改正?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>（1）第一段中，属于规划过程组的规划范围管理。
+规划范围管理是为记录如何定义、确认和控制项目范围及产品范围而创建范围管理计划的 过程。本过程的主要作用是在整个项目期间对如何管理范围提供指南和方向。规划范围管理过程有两个重要的输出：范围管理计划和需求管理计划。
+（2）明确项目全部范围应该属于定义范围过程，从第二段的描述来看，错误有以下几点：1.定义范围的输入；2.项目经理一个人完成项目范围的制定，不合理；
+在定义范围过程中，项目经理应该主要根据项目章程、范围管理计划、假设日志、需求文件、风险登记册、历史类似项目资料、安防行业标准、信创解决方案及AI技术趋势，采用专家判断、数据分析、决策等技术，和相关干系人一起制定项目范围说明书。随后进行WBS分解，完成项目范围管理的规划工作。</div>
+                        <div class="jxxq_jx_txt">解析：（1）第一段中，属于规划过程组的规划范围管理。
+规划范围管理是为记录如何定义、确认和控制项目范围及产品范围而创建范围管理计划的 过程。本过程的主要作用是在整个项目期间对如何管理范围提供指南和方向。规划范围管理过程有两个重要的输出：范围管理计划和需求管理计划。
+（2）明确项目全部范围应该属于定义范围过程，从第二段的描述来看，错误有以下几点：1.定义范围的输入；2.项目经理一个人完成项目范围的制定，不合理；
+在定义范围过程中，项目经理应该主要根据项目章程、范围管理计划、假设日志、需求文件、风险登记册、历史类似项目资料、安防行业标准、信创解决方案及AI技术趋势，采用专家判断、数据分析、决策等技术，和相关干系人一起制定项目范围说明书。随后进行WBS分解，完成项目范围管理的规划工作。</div>
+                    </div><div class="st_content_txt" id="137233">
+                        <div class="st_content_txt_tm">
+                            <span>28、</span>
+                            <em>[简答]</em>
+                            沟通管理和干系人管理的区别是什么?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>项目沟通管理：确保项目信息及时且恰当地规划、收集、生成、发布、存储、检索、管理、控制、监督和最终处置。
+项目干系人管理：识别影响或受项目影响的人员、团队或组织，分析干系人对项目的期望和影响，制定合适的管理策略来有效调动干系人参与项目决策和执行。</div>
+                        <div class="jxxq_jx_txt">解析：项目沟通管理：确保项目信息及时且恰当地规划、收集、生成、发布、存储、检索、管理、控制、监督和最终处置。
+项目干系人管理：识别影响或受项目影响的人员、团队或组织，分析干系人对项目的期望和影响，制定合适的管理策略来有效调动干系人参与项目决策和执行。</div>
+                    </div><div class="st_content_txt" id="137234">
+                        <div class="st_content_txt_tm">
+                            <span>29、</span>
+                            <em>[简答]</em>
+                            团队绩效评价与项目绩效评价的区别是什么?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>（中项3版）团队绩效评价：项目管理团队应该持续地对项目团队绩效进行正式或非正式的评价。不断地评价项目团队绩效，有助于采取措施解决问题、调整沟通方式、解决冲突和改进团队互动。
+
+（中项2版）团队绩效评估：当一些培训、团队建设、集中办公等措施被实施后，项目管理团队可以进行正式或非正式的团队绩效评估。有效的团队发展策略和活动会提高团队的绩效，提高达成项目目标的可能性。团队效率的评估可以包含以下几方面：
+1、提高个人技能，可以使专业人员更高效地完成所分配的活动；
+2、提高团队能力，可以帮助团队更好的共同工作；
+3、较低的员工流动率；
+4、团队凝聚力的加强，从而使团队成员公开分享信息和经验，并互相帮助，来提高项目绩效。
+
+（中项2版）项目绩效评估：在项目实施期间进行绩效评估的目的是澄清角色、责任，从团队成员处得到建设性的反馈，发现一些未知的和未解决的问题，制订个人的培训和训练计划，为将来一段时间制定具体目标。
+正式和非正式的项目绩效评估依赖于项目的持续时间、复杂程度、组织政策、劳动合同的要求，以及定期沟通的数蜇和质量。项目成员需要从其主管那里得到反馈。评估信息的收集也可以采用 360 度反馈的方法，从那些和项目成员交往的人那里得到相关的评估信息。 360 度的意思是绩效信息的收集可以来自多个渠道、多个方面，包括上级领导、同级同事和下级同事。</div>
+                        <div class="jxxq_jx_txt">解析：（中项3版）团队绩效评价：项目管理团队应该持续地对项目团队绩效进行正式或非正式的评价。不断地评价项目团队绩效，有助于采取措施解决问题、调整沟通方式、解决冲突和改进团队互动。
+
+（中项2版）团队绩效评估：当一些培训、团队建设、集中办公等措施被实施后，项目管理团队可以进行正式或非正式的团队绩效评估。有效的团队发展策略和活动会提高团队的绩效，提高达成项目目标的可能性。团队效率的评估可以包含以下几方面：
+1、提高个人技能，可以使专业人员更高效地完成所分配的活动；
+2、提高团队能力，可以帮助团队更好的共同工作；
+3、较低的员工流动率；
+4、团队凝聚力的加强，从而使团队成员公开分享信息和经验，并互相帮助，来提高项目绩效。
+
+（中项2版）项目绩效评估：在项目实施期间进行绩效评估的目的是澄清角色、责任，从团队成员处得到建设性的反馈，发现一些未知的和未解决的问题，制订个人的培训和训练计划，为将来一段时间制定具体目标。
+正式和非正式的项目绩效评估依赖于项目的持续时间、复杂程度、组织政策、劳动合同的要求，以及定期沟通的数蜇和质量。项目成员需要从其主管那里得到反馈。评估信息的收集也可以采用 360 度反馈的方法，从那些和项目成员交往的人那里得到相关的评估信息。 360 度的意思是绩效信息的收集可以来自多个渠道、多个方面，包括上级领导、同级同事和下级同事。</div>
+                    </div><div class="st_content_txt" id="137235">
+                        <div class="st_content_txt_tm">
+                            <span>30、</span>
+                            <em>[简答]</em>
+                            质量改进和过程改进的关系是什么?                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>质量改进方法：在管理质量过程中，要基于过程分析的结果，用质量改进方法去做过程改进。过程改进旨在使生产过程更加顺畅、稳定，减少生产过程中的浪费及降低产品缺陷率。可以用来做过程改进的方法有很多，如戴明环、六西格玛、精益生产和精益六西格玛等。</div>
+                        <div class="jxxq_jx_txt">解析：质量改进方法：在管理质量过程中，要基于过程分析的结果，用质量改进方法去做过程改进。过程改进旨在使生产过程更加顺畅、稳定，减少生产过程中的浪费及降低产品缺陷率。可以用来做过程改进的方法有很多，如戴明环、六西格玛、精益生产和精益六西格玛等。</div>
+                    </div><div class="st_content_txt" id="137236">
+                        <div class="st_content_txt_tm">
+                            <span>31、</span>
+                            <em>[简答]</em>
+                            监控过程组包含哪些项目管理过程。                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span><img src="https://img01.aura.cn/wx/ueditor/2024/2024-05/20240524114530_44264_563x349.png" title="图片15.png" alt="图片15.png" style="display: block; margin-left: 20px;">监控过程组是由监督项目执行情况并在必要时采取纠正措施，识别必要的计划变更并启动相应的变更程序等12个过程组成，包括：项目范围管理中的“确认范围”和“控制范围”;项目进度管理中的“控制进度”;项目成本管理中的“控制成本”;项目质量管理中的“控制质量”; 项目资源管理中的“控制资源”;项目沟通管理中的“监督沟通”;项目风险管理中的“监督风险”; 项目采购管理中的“控制采购”;项目干系人管理中的“监督干系人参与”;项目整合管理中的“监控项目工作”和“实施整体变更控制”。<img src="https://img01.aura.cn/wx/ueditor/2024/2024-05/20240524114606_34322_558x289.png" title="图片17.png" alt="图片17.png" style="display: block; margin-left: 20px;"></div>
+                        <div class="jxxq_jx_txt">解析：<img src="https://img01.aura.cn/wx/ueditor/2024/2024-05/20240524114538_72658_563x349.png" title="图片15.png" alt="图片15.png" style="display: block; margin-left: 20px;">监控过程组是由监督项目执行情况并在必要时采取纠正措施，识别必要的计划变更并启动相应的变更程序等12个过程组成，包括：项目范围管理中的“确认范围”和“控制范围”;项目进度管理中的“控制进度”;项目成本管理中的“控制成本”;项目质量管理中的“控制质量”; 项目资源管理中的“控制资源”;项目沟通管理中的“监督沟通”;项目风险管理中的“监督风险”; 项目采购管理中的“控制采购”;项目干系人管理中的“监督干系人参与”;项目整合管理中的“监控项目工作”和“实施整体变更控制”。<img src="https://img01.aura.cn/wx/ueditor/2024/2024-05/20240524114616_4522_558x289.png" title="图片17.png" alt="图片17.png" style="display: block; margin-left: 20px;"></div>
+                    </div><div class="st_content_txt" id="137237">
+                        <div class="st_content_txt_tm">
+                            <span>32、</span>
+                            <em>[简答]</em>
+                            当项目发生变更时，请简述变更控制的过程。                        </div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">关键词：</span>无</div>
+                        <div class="jxxq_jx_txt"><span class="answer_wrong">你的答案：</span><p>123</p></div>
+                        <div class="jxxq_jx_txt"><span class="answer_right" style="padding-right:0;">正确答案：</span>1.变更申请
+2.对变更的初审
+3.变更方案论证
+4.变更审查
+5.发出通知并实施
+6.实施监控
+7.效果评估
+8.变更收尾</div>
+                        <div class="jxxq_jx_txt">解析：1.变更申请
+2.对变更的初审
+3.变更方案论证
+4.变更审查
+5.发出通知并实施
+6.实施监控
+7.效果评估
+8.变更收尾</div>
+                    </div>            </div>        <!--简答结束↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+
+        <!--视频在此↓↓↓↓↓↓-->
+        <div class="video-box" style="display: none;">
+            <div class="kcbf_wrap_x_box_left_player_exam" id="j_player"></div>
+        </div>
+        <!--视频在此↑↑↑↑↑↑-->
+    </div>
+    <div class="st_content_right" style="position: static; top: 0px; left: 898px; z-index: 9999;">
+        <div class="st_content_right_tit_jx">答题用时：1分钟
+            <br>答题时间：2024-09-04 18:52:58        </div>
+        <div class="st_content_right_wrap">
+            <h5>答题卡</h5>
+            <div class="st_content_right_jindu">
+                    <h4><span></span><em>简答题</em></h4>
+                    <ol class="st_content_right_jindu_num">
+                        <a href="#137206">
+                                <li class="current">1</li>
+                            </a><a href="#137207">
+                                <li class="current">2</li>
+                            </a><a href="#137208">
+                                <li class="current">3</li>
+                            </a><a href="#137209">
+                                <li class="current">4</li>
+                            </a><a href="#137210">
+                                <li class="current">5</li>
+                            </a><a href="#137211">
+                                <li class="current">6</li>
+                            </a><a href="#137212">
+                                <li class="current">7</li>
+                            </a><a href="#137213">
+                                <li class="current">8</li>
+                            </a><a href="#137214">
+                                <li class="current">9</li>
+                            </a><a href="#137215">
+                                <li class="current">10</li>
+                            </a><a href="#137216">
+                                <li class="current">11</li>
+                            </a><a href="#137217">
+                                <li class="current">12</li>
+                            </a><a href="#137218">
+                                <li class="current">13</li>
+                            </a><a href="#137219">
+                                <li class="current">14</li>
+                            </a><a href="#137220">
+                                <li class="current">15</li>
+                            </a><a href="#137221">
+                                <li class="current">16</li>
+                            </a><a href="#137222">
+                                <li class="current">17</li>
+                            </a><a href="#137223">
+                                <li class="current">18</li>
+                            </a><a href="#137224">
+                                <li class="current">19</li>
+                            </a><a href="#137225">
+                                <li class="current">20</li>
+                            </a><a href="#137226">
+                                <li class="current">21</li>
+                            </a><a href="#137227">
+                                <li class="current">22</li>
+                            </a><a href="#137228">
+                                <li class="current">23</li>
+                            </a><a href="#137229">
+                                <li class="current">24</li>
+                            </a><a href="#137230">
+                                <li class="current">25</li>
+                            </a><a href="#137231">
+                                <li class="current">26</li>
+                            </a><a href="#137232">
+                                <li class="current">27</li>
+                            </a><a href="#137233">
+                                <li class="current">28</li>
+                            </a><a href="#137234">
+                                <li class="current">29</li>
+                            </a><a href="#137235">
+                                <li class="current">30</li>
+                            </a><a href="#137236">
+                                <li class="current">31</li>
+                            </a><a href="#137237">
+                                <li class="current">32</li>
+                            </a>                    </ol>
+                </div>        </div>
+        <div class="st_content_right_btn">
+            <a href="/Test/index/tid/6319612.html"><input type="submit" value="返回列表" class="st_content_right_btn_red"></a>
+        </div>
+    </div>
+</div>
+<!--内容结束↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+
+
+<!--footer-->
+    <!--footer-->
+<div class="footer_warp">
+    <div class="ykt_footer">
+        <ul class="f_left">
+            <li>咨询热线：400-0892-521</li>
+            <li>技术支持：186-0032-8316</li>
+            <li>备案号：<a href="http://beian.miit.gov.cn" style="color: #fff;">京ICP备17068716号-1</a></li>
+            <li>Copyright 2019 版权所有 光环国际</li>
+            <li>PMI,&nbsp;PMP,&nbsp;PgMP,&nbsp;PMI-ACP,&nbsp;and&nbsp;PMBOK&nbsp;are&nbsp; <br> registered&nbsp;marks&nbsp;of&nbsp;the&nbsp;Project&nbsp;Management&nbsp;Institute,&nbsp;Inc.</li>
+        </ul>
+
+        <ul class="f_right">
+            <li>意见/建议/服务反馈通道</li>
+            <li class="space_li"></li>
+            <li>客诉：400-8396-658</li>
+            <li>邮箱：feedback@aura.cn</li>
+        </ul>
+
+        <ul class="feedback">
+            <img src="/static/home/images/fmy_feedback3.png" style="display: block; margin-left: 20px;">
+        </ul>
+    </div>
+</div>
+<!--<div style="width: 100%;height: 120px;"></div>-->
+<!--PC埋点-->
+<script>
+    //获取用户id buryingPoint.js中使用   播放页未使用footer 需重新赋值
+    var pcHomeId = "331580";
+</script>
+<!--
+<script src="/static/home/js/buryingPoint.js"></script>
+<script>
+//延迟10秒执行上报接口   浏览器唯一标识异步需要等待
+setTimeout(function () {
+    //启动埋点(播放页未使用footer页面,需单独调用)
+    doStayStateDelay();
+}, 10000);
+</script>
+ -->
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/static/tools/layer/layer.js"></script>
+<!-- jQuery -->
+<script>
+
+	// 修改图片到题干末尾
+	$('.st_content_txt_tm').each(function(i){
+		var numa =  $('.st_content_txt_tm').eq(i).attr('id');
+		$('img').css({"display":"block","margin-left": "20px",});
+		$('#'+numa).append($('#'+numa).find("img"));
+	});
+
+    $(function () {
+        var winHeight = $(window).height();
+        var navHeight = $('.fmy_head_wrap').height();
+        var courseHeight = $('.stxq_mbx').height();
+        var conHeight = $('.stxq_banner').height();
+        var footHeight = $('.footer_warp').height();
+        var pad = 150;
+        $('.st_content_left').css('min-height', winHeight - navHeight - courseHeight - conHeight - footHeight - 150 + 'px');
+
+        //根据类型进行锚点跳转
+        var url = "/Test/alsTyper/tid/6319612/typer/5/write/32/lid/6472.html#short_anchor";
+        if (url) {
+            window.location.href = "/Test/alsTyper/tid/6319612/typer/5/write/32/lid/6472.html#short_anchor";
+        }
+        var type = "5";
+        //选中当期类型
+        $('.typer').each(function (i, v) {
+            if (i + 1 == type) {
+                $(v).addClass('current');
+                return false;
+            }
+        });
+
+        //点击切换类型
+        $('.stxq_banner ul li').click(function () {
+            $('.stxq_banner ul li').removeClass('current');
+            $(this).addClass('current');
+        });
+
+        //处理video
+        $('video').attr('controlslist', 'nodownload');
+        $('video').attr('poster', "https://img01.aura.cn/wx/manage/defset/2018/2018-09/20180913090837_78838_288x152.jpg");
+        $('video').css('display', 'block');
+        $('video').css('margin', '0 auto');
+
+        //处理右击
+        $('body').attr('oncontextmenu', 'window.event.returnValue=false');
+    });
+
+    //屏幕滚动右侧板块固定
+    window.onscroll = function () {
+        var sc = $(document);
+        var leftOf = $('.st_content').offset().left;
+        var mbxHeight = $('.stxq_mbx').height();
+        var topNum = mbxHeight + 279;
+        if (sc.scrollTop() >= topNum) {  //当滚动距离大于250px时执行下面的东西
+            $('.st_content_right').css({
+                'position': 'fixed',
+                'top': 0,
+                'left': leftOf + 880,
+                'z-index': '9999'
+            });
+        } else {//当滚动距离小于250的时候执行下面的内容，也就是让导航栏恢复原状
+            $('.st_content_right').css({
+                'position': 'static',
+            });
+        }
+    }
+
+    //播放解析视频
+    function playVideo(aliVid) {
+        if (!aliVid) {
+            layer.msg('缺少参数，请刷新后重试~', {icon: 0, time: 1500});
+            return false;
+        }
+
+        $.ajax({
+            url: "/Test/ajaxGetPlayAuth.html",
+            data: {aliVid: aliVid},
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                if (data.status) {
+                    $('.video-box').css('display', 'block');
+
+                    var html = "<div id = 'J_prismPlayer' style='width: 100%;height: 100%;' class='prism-player'></div>";
+                    html += "<img class='J_prismPlayer_t' src='/static/home/images/video_x.png' onclick='closeVideo()'>";
+                    $('#j_player').empty().append(html);
+
+                    var configs = {
+                        id: "J_prismPlayer",
+                        //autoplay: true,
+                        vid: aliVid,
+                        playauth: data.data,
+                        encryptType: 1,
+                    };
+
+                    var playerObj = new Aliplayer(configs, function (player) {
+                    });
+                } else {
+                    layer.msg(data.msg, {icon: 2, time: 1500});
+                    return false;
+                }
+            }
+        });
+    }
+    //关闭视频
+    function closeVideo() {
+        $('.video-box').css('display', 'none');
+        $('#J_prismPlayer').empty();
+    }
+</script>
+
+</body></html>

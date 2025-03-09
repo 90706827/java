@@ -43,6 +43,8 @@
         <module>elasticsearch</module>
         <module>jsoup</module>
         <module>springbootAsync</module>
+        <module>mockito-demo</module>
+        <module>html</module>
     </modules>
 
     <properties>
